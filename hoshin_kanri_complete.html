@@ -1,0 +1,3188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoshin Kanri — Bản Đồ Kiến Thức Hoàn Chỉnh — v2 | Adler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&subset=vietnamese&display=swap" rel="stylesheet">
+<style>
+/* ================================================
+   LIGHT BENTO — Hoshin Kanri Knowledge Edition
+   Apple-inspired · Clean · Scholarly · Precise
+================================================ */
+:root {
+  --font: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  /* Backgrounds */
+  --bg-page:     #F2F2F7;
+  --bg-card:     #FFFFFF;
+  --bg-card-alt: #F8F8FC;
+  --bg-subtle:   #EFEFF4;
+
+  /* Text */
+  --tx-1: #1D1D1F;
+  --tx-2: #48484A;
+  --tx-3: #8E8E93;
+
+  /* Accent palette — rich indigo for knowledge */
+  --violet:      #5856D6;
+  --violet-lt:   #EBE9FC;
+  --violet-md:   rgba(88,86,214,.12);
+
+  /* Amber — X-Matrix / Structure */
+  --amber:       #C47B00;
+  --amber-lt:    #FEF3C7;
+  --amber-md:    rgba(245,158,11,.10);
+  --amber-border: rgba(196,123,0,.20);
+
+  /* Blue — A3 / Communication */
+  --blue:        #0071E3;
+  --blue-lt:     #E3F0FF;
+  --blue-md:     rgba(0,113,227,.10);
+  --blue-border: rgba(0,113,227,.20);
+
+  /* Emerald — Connections */
+  --emerald:     #1D7A4E;
+  --emerald-lt:  #D1FAE5;
+  --emerald-md:  rgba(16,185,129,.10);
+
+  /* Red — warnings */
+  --red:         #D70015;
+  --red-lt:      #FFE5E7;
+
+  /* Borders & shadows */
+  --border:      rgba(0,0,0,0.08);
+  --border-md:   rgba(0,0,0,0.12);
+  --shadow-sm:   0 1px 3px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.06);
+  --shadow-md:   0 4px 20px rgba(0,0,0,.09), 0 1px 4px rgba(0,0,0,.05);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06);
+
+  /* Shape */
+  --r:    20px;
+  --r-in: 14px;
+  --r-sm: 10px;
+  --r-xs: 6px;
+  --r-pill: 999px;
+
+  /* Spacing */
+  --gap: 18px;
+  --p:   28px;
+  --p-sm: 20px;
+
+  /* Motion */
+  --spring: cubic-bezier(0.34,1.56,0.64,1);
+  --smooth: cubic-bezier(0.25,0.46,0.45,0.94);
+  --tx: transform 280ms var(--spring), box-shadow 280ms ease;
+}
+
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:var(--font);
+  background:var(--bg-page);
+  color:var(--tx-1);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+  background-image:
+    radial-gradient(circle,rgba(0,0,0,.025) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+
+/* ─── PAGE ─── */
+.page{max-width:1260px;margin:0 auto;padding:52px 24px 96px;}
+
+/* ─── HEADER ─── */
+.page-header{text-align:center;margin-bottom:56px;}
+
+.overline-hero{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--violet);margin-bottom:18px;
+}
+.overline-hero::before,.overline-hero::after{
+  content:'';width:32px;height:1px;background:var(--violet);opacity:.4;
+}
+
+.page-title{
+  font-size:clamp(32px,5vw,56px);
+  font-weight:800;letter-spacing:-.03em;line-height:1.08;
+  color:var(--tx-1);margin-bottom:16px;
+}
+.page-title .hi{
+  background:linear-gradient(135deg,#5856D6 0%,#007AFF 50%,#C47B00 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+
+.page-subtitle{
+  font-size:17px;color:var(--tx-2);max-width:580px;
+  margin:0 auto;line-height:1.7;
+}
+
+.badge-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px;}
+.badge{
+  font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:4px 12px;border-radius:var(--r-pill);border:1px solid;
+}
+.bk{color:#0071E3;border-color:rgba(0,113,227,.25);background:rgba(0,113,227,.06);}
+.bv{color:#1D7A4E;border-color:rgba(29,122,78,.25);background:rgba(29,122,78,.06);}
+.bj{color:#D70015;border-color:rgba(215,0,21,.20);background:rgba(215,0,21,.05);}
+.bd{color:#C47B00;border-color:rgba(196,123,0,.25);background:rgba(196,123,0,.06);}
+
+/* ─── SECTION LABEL ─── */
+.sec{
+  display:flex;align-items:center;gap:12px;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tx-3);margin:52px 0 20px;
+}
+.sec::after{content:'';flex:1;height:1px;background:var(--border-md);}
+.sec span{
+  padding:4px 12px;border-radius:var(--r-pill);font-size:10px;
+}
+.sec-v span{background:var(--violet-lt);color:var(--violet);}
+.sec-a span{background:var(--amber-lt);color:var(--amber);}
+.sec-b span{background:var(--blue-lt);color:var(--blue);}
+.sec-e span{background:var(--emerald-lt);color:var(--emerald);}
+
+/* ─── BENTO GRID ─── */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:var(--gap);
+}
+.c3{grid-column:span 3;}
+.c4{grid-column:span 4;}
+.c5{grid-column:span 5;}
+.c6{grid-column:span 6;}
+.c7{grid-column:span 7;}
+.c8{grid-column:span 8;}
+.c9{grid-column:span 9;}
+.c12{grid-column:span 12;}
+.r2{grid-row:span 2;}
+
+/* ─── BASE CARD ─── */
+.card{
+  background:var(--bg-card);
+  border-radius:var(--r);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-sm);
+  padding:var(--p);
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:186px;
+  transition:var(--tx);
+}
+.card.r2{min-height:390px;}
+.card:hover{
+  transform:translateY(-3px) scale(1.003);
+  box-shadow:var(--shadow-lg);
+}
+
+/* Card variants */
+.cv{ /* violet tint */
+  background:linear-gradient(145deg,#FAFAFF 0%,#F0EFFD 100%);
+  border-color:rgba(88,86,214,.18);
+}
+.ca{ /* amber tint */
+  background:linear-gradient(145deg,#FFFEF7 0%,#FEF9E7 100%);
+  border-color:var(--amber-border);
+}
+.cb{ /* blue tint */
+  background:linear-gradient(145deg,#F5FAFF 0%,#E8F3FF 100%);
+  border-color:var(--blue-border);
+}
+.ce{ /* emerald tint */
+  background:linear-gradient(145deg,#F3FFF9 0%,#E6F9F0 100%);
+  border-color:rgba(29,122,78,.18);
+}
+.c-dark{
+  background:linear-gradient(145deg,#1D1D1F 0%,#2D2D2F 100%);
+  border-color:rgba(255,255,255,.08);
+  color:#FAFAFA;
+}
+.c-dark .overline,.c-dark .card-title,.c-dark .card-title-lg{color:#FAFAFA;}
+.c-dark .card-body{color:rgba(255,255,255,.7);}
+.c-dark .divider{background:rgba(255,255,255,.10);}
+
+/* ─── OVERLINE ─── */
+.overline{
+  font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:10px;display:block;
+}
+.ov{color:var(--tx-3);}
+.ov-v{color:var(--violet);}
+.ov-a{color:var(--amber);}
+.ov-b{color:var(--blue);}
+.ov-e{color:var(--emerald);}
+
+/* ─── TYPOGRAPHY ─── */
+.card-title-lg{
+  font-size:clamp(22px,2.8vw,32px);font-weight:800;
+  letter-spacing:-.025em;line-height:1.12;margin-bottom:12px;color:var(--tx-1);
+}
+.card-title{
+  font-size:clamp(17px,2vw,22px);font-weight:700;
+  letter-spacing:-.02em;line-height:1.25;margin-bottom:10px;color:var(--tx-1);
+}
+.card-title-sm{
+  font-size:15px;font-weight:700;letter-spacing:-.01em;
+  line-height:1.3;margin-bottom:8px;color:var(--tx-1);
+}
+.card-body{
+  font-size:14px;line-height:1.75;color:var(--tx-2);flex:1;
+}
+.card-body strong{color:var(--tx-1);font-weight:600;}
+.card-body em{color:var(--tx-2);font-style:italic;}
+
+.stat-num{
+  font-size:clamp(44px,6vw,72px);font-weight:800;
+  letter-spacing:-.04em;line-height:1;color:var(--tx-1);
+}
+
+/* ─── TAG ─── */
+.tag{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;padding:3px 10px;
+  border-radius:var(--r-pill);border:1px solid;
+}
+.tv{color:var(--violet);border-color:rgba(88,86,214,.25);background:var(--violet-md);}
+.ta{color:var(--amber);border-color:var(--amber-border);background:var(--amber-md);}
+.tb{color:var(--blue);border-color:var(--blue-border);background:var(--blue-md);}
+.te{color:var(--emerald);border-color:rgba(29,122,78,.20);background:var(--emerald-md);}
+.tr{color:var(--red);border-color:rgba(215,0,21,.20);background:rgba(215,0,21,.06);}
+
+/* ─── DIVIDER ─── */
+.divider{height:1px;background:var(--border);margin:16px 0;}
+
+/* ─── PILL STAT ─── */
+.pill-stat{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:600;color:var(--tx-2);
+  background:var(--bg-subtle);
+  padding:5px 12px;border-radius:var(--r-pill);
+  border:1px solid var(--border);
+}
+
+/* ─── STEP LIST ─── */
+.steps{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+.step{display:flex;gap:12px;align-items:flex-start;}
+.snum{
+  width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:800;flex-shrink:0;margin-top:1px;
+}
+.snum-v{background:var(--violet-lt);color:var(--violet);}
+.snum-a{background:var(--amber-lt);color:var(--amber);}
+.snum-b{background:var(--blue-lt);color:var(--blue);}
+.snum-e{background:var(--emerald-lt);color:var(--emerald);}
+.stitle{font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:2px;}
+.sdesc{font-size:12px;color:var(--tx-2);line-height:1.6;}
+
+/* ─── PHILOSOPHY BOX ─── */
+.pbox{
+  background:var(--bg-subtle);
+  border:1px solid var(--border-md);
+  border-radius:var(--r-in);
+  padding:16px 18px;margin-top:14px;
+  position:relative;overflow:hidden;
+}
+.pbox::before{
+  content:'"';position:absolute;top:-8px;left:10px;
+  font-size:72px;font-weight:900;opacity:.06;
+  color:var(--tx-1);line-height:1;font-family:Georgia,serif;
+}
+.pbox-text{
+  font-size:13.5px;line-height:1.7;color:var(--tx-2);
+  font-style:italic;position:relative;z-index:1;
+}
+.pbox-text strong{color:var(--tx-1);font-style:normal;}
+.pbox-src{font-size:11px;color:var(--tx-3);margin-top:8px;font-style:normal;position:relative;z-index:1;}
+
+/* ─── FEYNMAN ─── */
+.feynman{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.flevel{
+  display:flex;gap:10px;align-items:flex-start;
+  padding:12px 14px;border-radius:var(--r-sm);
+  background:var(--bg-subtle);border:1px solid var(--border);
+}
+.flv{
+  font-size:9px;font-weight:800;letter-spacing:.08em;
+  padding:3px 7px;border-radius:var(--r-xs);
+  flex-shrink:0;text-transform:uppercase;margin-top:2px;
+}
+.lv1{background:var(--emerald-lt);color:var(--emerald);}
+.lv2{background:var(--blue-lt);color:var(--blue);}
+.lv3{background:var(--violet-lt);color:var(--violet);}
+.ftext{font-size:13px;line-height:1.65;color:var(--tx-2);}
+.ftext strong{color:var(--tx-1);}
+
+/* ─── TABLE ─── */
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:14px;}
+.tbl th{
+  text-align:left;padding:8px 10px;
+  font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;
+  color:var(--tx-3);border-bottom:1.5px solid var(--border-md);
+}
+.tbl td{
+  padding:9px 10px;border-bottom:1px solid var(--border);
+  vertical-align:top;line-height:1.5;color:var(--tx-2);
+}
+.tbl td:first-child{font-weight:600;color:var(--tx-1);width:36%;}
+.tbl tr:last-child td{border-bottom:none;}
+
+/* ─── X-MATRIX VISUAL ─── */
+.xm{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr;
+  gap:3px;width:100%;aspect-ratio:1;max-width:240px;margin:14px auto 0;
+}
+.xc{
+  border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:700;text-align:center;
+  letter-spacing:.05em;text-transform:uppercase;padding:4px;line-height:1.3;
+}
+.xc-n{background:var(--blue-lt);color:var(--blue);border:1px solid var(--blue-border);}
+.xc-s{background:var(--amber-lt);color:var(--amber);border:1px solid var(--amber-border);}
+.xc-w{background:var(--violet-lt);color:var(--violet);border:1px solid rgba(88,86,214,.2);}
+.xc-e{background:var(--emerald-lt);color:var(--emerald);border:1px solid rgba(29,122,78,.2);}
+.xc-x{background:var(--tx-1);color:#fff;border:none;font-size:20px;font-weight:900;}
+.xc-0{background:var(--bg-subtle);border:1px solid var(--border);}
+
+/* correlation dots */
+.dotgrid{display:flex;flex-direction:column;gap:4px;margin-top:14px;}
+.dotrow{display:flex;gap:4px;align-items:center;}
+.dlabel{font-size:10px;color:var(--tx-3);width:76px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.chdr{font-size:9px;font-weight:600;color:var(--tx-3);text-align:center;width:20px;flex-shrink:0;}
+.dot{
+  width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:8px;font-weight:800;flex-shrink:0;
+}
+.d-s{background:var(--amber);color:#fff;}
+.d-m{background:var(--amber-lt);color:var(--amber);border:1px solid var(--amber-border);}
+.d-0{background:var(--bg-subtle);border:1px solid var(--border);}
+
+/* ─── A3 DOC ─── */
+.a3doc{
+  width:100%;
+  background:var(--bg-page);
+  border:1px solid var(--blue-border);
+  border-radius:var(--r-in);
+  overflow:hidden;margin-top:14px;
+  box-shadow:0 2px 8px rgba(0,113,227,.08);
+}
+.a3hd{
+  background:var(--blue-lt);
+  border-bottom:1px solid var(--blue-border);
+  padding:9px 14px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.a3hd-title{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.10em;}
+.a3hd-meta{font-size:10px;color:var(--tx-3);}
+.a3body{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+.a3cell{background:var(--bg-card);padding:10px 13px;}
+.a3cell-full{grid-column:span 2;background:var(--bg-card);padding:10px 13px;border-top:1px solid var(--border);}
+.a3lbl{font-size:9px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--blue);margin-bottom:5px;}
+.a3val{font-size:11px;color:var(--tx-2);line-height:1.5;}
+.a3val span{display:block;color:var(--tx-1);font-weight:600;font-size:12px;margin-bottom:2px;}
+
+/* ─── A3 TYPE LIST ─── */
+.a3types{display:flex;flex-direction:column;gap:7px;margin-top:12px;}
+.a3ti{
+  display:flex;align-items:center;gap:11px;
+  padding:9px 13px;border-radius:var(--r-sm);
+  border:1px solid var(--border);background:var(--bg-card);
+  transition:box-shadow 200ms ease;
+}
+.a3ti:hover{box-shadow:var(--shadow-md);}
+.a3badge{font-size:11px;font-weight:800;padding:3px 9px;border-radius:var(--r-xs);flex-shrink:0;letter-spacing:.04em;}
+.bi{background:var(--violet-lt);color:var(--violet);}
+.bx{background:var(--amber-lt);color:var(--amber);}
+.bt{background:var(--blue-lt);color:var(--blue);}
+.br{background:var(--emerald-lt);color:var(--emerald);}
+.bp{background:var(--red-lt);color:var(--red);}
+.bsr{background:#FEF3C7;color:#92400E;}
+.a3tname{font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:2px;}
+.a3tuse{font-size:11px;color:var(--tx-2);}
+
+/* ─── FLOW ARROW ─── */
+.flow{display:flex;align-items:center;gap:6px;margin:14px 0;flex-wrap:wrap;}
+.fstep{
+  flex:1;min-width:100px;
+  padding:9px 10px;border-radius:var(--r-sm);
+  font-size:11px;font-weight:700;text-align:center;
+  border:1px solid;
+}
+.ficon{font-size:16px;color:var(--tx-3);flex-shrink:0;padding:0 2px;}
+
+/* ─── LEGEND ─── */
+.legend{display:flex;flex-direction:column;gap:0;}
+.leg-row{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--tx-2);
+  padding:7px 0;border-bottom:1px solid var(--border);
+}
+.leg-row:last-child{border-bottom:none;}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+/* ─── CONCEPT MAP ─── */
+.cmap-center{
+  background:var(--tx-1);border-radius:var(--r-in);
+  padding:16px 20px;margin-bottom:16px;text-align:center;
+}
+.cmap-center h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:4px;}
+.cmap-center p{font-size:12px;color:rgba(255,255,255,.6);}
+.cmap-branches{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.cmap-branch{
+  background:var(--bg-card);
+  border-radius:var(--r-sm);padding:12px;
+  border-top:3px solid;box-shadow:var(--shadow-sm);
+}
+.cmap-branch h4{font-size:12px;font-weight:700;margin-bottom:6px;}
+.cmap-branch ul{list-style:none;}
+.cmap-branch ul li{
+  font-size:11px;color:var(--tx-2);padding:2px 0;
+}
+.cmap-branch ul li::before{content:"→ ";color:var(--tx-3);}
+
+/* ─── PDCA FLOW ─── */
+.pdca-row{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  border-radius:var(--r-in);overflow:hidden;
+  border:1px solid var(--border);gap:1px;background:var(--border);
+  margin-top:14px;
+}
+.pdca-step{
+  background:var(--bg-card);
+  padding:16px 12px;text-align:center;
+}
+.pdca-lbl{font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;margin-bottom:8px;}
+.pdca-name{font-size:15px;font-weight:800;margin-bottom:6px;letter-spacing:-.01em;}
+.pdca-desc{font-size:11px;color:var(--tx-2);line-height:1.5;}
+
+/* ─── INSIGHT BOX ─── */
+.insight{
+  background:var(--violet-lt);
+  border:1px solid rgba(88,86,214,.20);
+  border-radius:var(--r-sm);
+  padding:12px 14px;margin-top:12px;
+}
+.insight p{font-size:12.5px;color:var(--tx-1);line-height:1.65;}
+.insight p strong{color:var(--violet);}
+
+.warn{
+  background:var(--red-lt);
+  border:1px solid rgba(215,0,21,.18);
+  border-radius:var(--r-sm);
+  padding:12px 14px;margin-top:10px;
+}
+.warn p{font-size:12px;color:var(--tx-1);line-height:1.65;}
+
+/* ─── SCROLL REVEAL ─── */
+@supports(animation-timeline:view()){
+  .card{
+    animation:reveal linear both;
+    animation-timeline:view();
+    animation-range:entry 0% cover 25%;
+  }
+  @keyframes reveal{
+    from{opacity:0;transform:translateY(18px) scale(0.985);}
+    to{opacity:1;transform:none;}
+  }
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1023px){
+  .grid{grid-template-columns:repeat(6,1fr);}
+  .c3{grid-column:span 3;}.c4{grid-column:span 3;}
+  .c5{grid-column:span 3;}.c6{grid-column:span 6;}
+  .c7{grid-column:span 6;}.c8{grid-column:span 6;}
+  .c9{grid-column:span 6;}.c12{grid-column:span 6;}
+  .r2{grid-row:span 1;min-height:auto;}
+  .pdca-row{grid-template-columns:repeat(3,1fr);}
+  .cmap-branches{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:639px){
+  .grid{grid-template-columns:1fr;gap:14px;}
+  .c3,.c4,.c5,.c6,.c7,.c8,.c9,.c12{grid-column:span 1;}
+  .page{padding:32px 16px 64px;}
+  .a3body{grid-template-columns:1fr;}
+  .a3cell-full{grid-column:span 1;}
+  .pdca-row{grid-template-columns:1fr 1fr;}
+  .cmap-branches{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){
+  .card,.card:hover{animation:none!important;transition:none!important;transform:none!important;}
+}
+
+/* ─── ADDITIONS FROM DO/EXECUTION PHASE ─── */
+/* Teal — Kaikaku */
+:root {
+  --teal:    #0095A8;
+  --tl-lt:   #CCFBF1;
+  --tl-md:   rgba(0,149,168,.10);
+  --tl-bd:   rgba(0,149,168,.20);
+  --em-bd:   rgba(29,122,78,.20);
+  --vi:      #5856D6;
+  --vi-lt:   #EBE9FC;
+  --vi-md:   rgba(88,86,214,.10);
+  --vi-bd:   rgba(88,86,214,.20);
+  --em:      #1D7A4E;
+  --em-lt:   #D1FAE5;
+  --em-md:   rgba(29,122,78,.10);
+  --bl:      #0071E3;
+  --bl-lt:   #E3F0FF;
+  --bl-md:   rgba(0,113,227,.10);
+  --bl-bd:   rgba(0,113,227,.20);
+  --rd:      #D70015;
+  --rd-lt:   #FFE5E7;
+  --rd-bd:   rgba(215,0,21,.18);
+  --rd-md:   rgba(215,0,21,.08);
+  --am:      #C47B00;
+  --am-lt:   #FEF3C7;
+  --am-md:   rgba(196,123,0,.10);
+  --am-bd:   rgba(196,123,0,.20);
+}
+/* Section variants */
+.s-e span{background:var(--emerald-lt);color:var(--emerald);}
+.s-v span{background:var(--violet-lt);color:var(--violet);}
+.s-b span{background:var(--blue-lt);color:var(--blue);}
+.s-t span{background:var(--tl-lt);color:var(--teal);}
+.s-a span{background:var(--amber-lt);color:var(--amber);}
+
+/* Overlines from do-file (aliases) */
+.ov-t{color:var(--teal);}
+.ov-3{color:var(--tx-3);}
+
+/* Tag aliases */
+.tt{color:var(--teal);border-color:var(--tl-bd);background:var(--tl-md);}
+
+/* Steps — shorthand aliases */
+.sn{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;margin-top:1px;}
+.sn-e{background:var(--emerald-lt);color:var(--emerald);}
+.sn-v{background:var(--violet-lt);color:var(--violet);}
+.sn-b{background:var(--blue-lt);color:var(--blue);}
+.sn-t{background:var(--tl-lt);color:var(--teal);}
+.sn-a{background:var(--amber-lt);color:var(--amber);}
+.st{font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:2px;}
+.sd{font-size:12px;color:var(--tx-2);line-height:1.6;}
+
+/* Badge aliases for do-file */
+.bv{color:var(--violet);border-color:var(--vi-bd);background:var(--vi-md);}
+.be{color:var(--emerald);border-color:var(--em-bd);background:var(--em-md);}
+.ba{color:var(--amber);border-color:var(--am-bd);background:var(--am-md);}
+.bb{color:var(--blue);border-color:var(--bl-bd);background:var(--bl-md);}
+
+/* Pill */
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--tx-2);background:var(--bg-subtle);padding:5px 12px;border-radius:var(--r-pill);border:1px solid var(--border);}
+
+/* Numbered list */
+.num-list{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.num-item{display:flex;gap:10px;align-items:flex-start;}
+.num{min-width:22px;height:22px;border-radius:var(--r-xs);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;margin-top:1px;}
+.ne{background:var(--emerald);color:#fff;}
+.nv{background:var(--violet);color:#fff;}
+.nb{background:var(--blue);color:#fff;}
+.nt{background:var(--teal);color:#fff;}
+.num-text{font-size:13px;color:var(--tx-2);line-height:1.65;}
+.num-text strong{color:var(--tx-1);}
+
+/* Card teal tint */
+.ct{background:linear-gradient(145deg,#F0FFFD 0%,#E0F7F4 100%);border-color:var(--tl-bd);}
+.c-dark .ov{color:rgba(255,255,255,.5);}
+.c-dark strong{color:#FAFAFA;}
+
+/* Z-Deploy layout */
+.z-wrap{display:flex;flex-direction:column;gap:6px;margin-top:14px;}
+.z-level{display:grid;grid-template-columns:80px 1fr 1fr;align-items:stretch;gap:6px;}
+.z-lbl{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:var(--r-sm);padding:8px 4px;text-align:center;flex-shrink:0;}
+.z-what{border-radius:var(--r-sm);padding:10px 12px;border:1px solid;}
+.z-how{border-radius:var(--r-sm);padding:10px 12px;border:1px solid;}
+.z-title{font-size:11px;font-weight:700;margin-bottom:3px;}
+.z-desc{font-size:10.5px;color:var(--tx-2);line-height:1.5;}
+
+/* Team cascade */
+.team-cascade{display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+.team-row{display:grid;grid-template-columns:120px 1fr;gap:8px;align-items:start;}
+.team-badge{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:var(--r-sm);padding:8px 6px;text-align:center;border:1px solid;}
+.team-content{border-radius:var(--r-sm);padding:10px 14px;border:1px solid var(--border);background:var(--bg-subtle);}
+.team-name{font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:4px;}
+.team-desc{font-size:11.5px;color:var(--tx-2);line-height:1.6;}
+.team-tag{display:inline-flex;font-size:10px;font-weight:600;padding:2px 8px;border-radius:var(--r-pill);border:1px solid;margin-top:6px;margin-right:4px;}
+
+/* Kaikaku grid */
+.kk-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;}
+.kk-card{border-radius:var(--r-sm);padding:12px 14px;border:1px solid;}
+.kk-title{font-size:12px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px;}
+.kk-list{list-style:none;}
+.kk-list li{font-size:11.5px;color:var(--tx-2);padding:3px 0;display:flex;gap:6px;align-items:flex-start;border-bottom:1px solid var(--border);}
+.kk-list li:last-child{border-bottom:none;}
+.kk-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+
+/* Masterplan table */
+.mp-table{width:100%;border-collapse:collapse;font-size:11.5px;margin-top:12px;border-radius:var(--r-in);overflow:hidden;}
+.mp-table thead th{background:var(--emerald);color:#fff;padding:9px 10px;font-size:10px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;border:none;}
+.mp-table td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--tx-2);line-height:1.5;}
+.mp-table td:first-child{font-weight:600;color:var(--tx-1);}
+.mp-table tr:last-child td{border-bottom:none;}
+.mp-table tr:nth-child(even) td{background:rgba(29,122,78,.04);}
+
+/* Flow shortcuts */
+.fs{flex:1;min-width:90px;padding:9px 10px;border-radius:var(--r-sm);font-size:11px;font-weight:700;text-align:center;border:1px solid;}
+.fi{font-size:18px;color:var(--tx-3);flex-shrink:0;padding:0 2px;}
+
+/* Insight / warn / danger aliases */
+.danger{background:var(--rd-md);border:1px solid var(--rd-bd);border-radius:var(--r-sm);padding:12px 14px;margin-top:10px;}
+.danger p{font-size:12px;color:var(--tx-1);line-height:1.65;}
+
+/* Do-file hero overline */
+.ov-hero{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--emerald);margin-bottom:18px;}
+.ov-hero::before,.ov-hero::after{content:'';width:32px;height:1px;background:var(--emerald);opacity:.4;}
+
+/* Responsive additions */
+@media(max-width:1023px){
+  .z-level{grid-template-columns:60px 1fr 1fr;}
+  .kk-grid{grid-template-columns:1fr;}
+}
+@media(max-width:639px){
+  .z-level{grid-template-columns:1fr;}
+  .team-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="page-header">
+  <p class="overline-hero">Hoshin Kanri · Knowledge Map · Adler Deep Learning</p>
+  <h1 class="page-title">
+    <span class="hi">Hoshin Kanri</span><br>Bản Đồ Kiến Thức Hoàn Chỉnh
+  </h1>
+  <p class="page-subtitle">Từ định nghĩa gốc, X-Matrix, A3 Report đến Z-Deployment, Cascading Teams, Masterplan, Kaikaku & Kaizen — toàn bộ hệ thống từ chiến lược đến hành động hàng ngày.</p>
+  <div class="badge-row">
+    <span class="badge bk">📘 Kesterson 2015</span>
+    <span class="badge bv">📗 Vinardi 2023</span>
+    <span class="badge bj">📕 Jackson 2006</span>
+    <span class="badge bd">📙 Villalba-Diez 2017</span>
+  </div>
+</header>
+<!-- ═══════════════════ SECTION I — ĐỊNH NGHĨA GỐC ═══════════════════ -->
+<div class="sec sec-v"><span>I · Định Nghĩa & Nguồn Gốc</span></div>
+
+<div class="grid">
+
+  <!-- Định nghĩa từ nguyên -->
+  <div class="card cv c8">
+    <span class="overline ov-v">Từ nguyên tiếng Nhật</span>
+    <h2 class="card-title-lg">Hoshin Kanri là gì?</h2>
+    <p class="card-body">
+      <strong>Ho</strong> = phương pháp / hình thức · <strong>Shin</strong> = kim la bàn · <strong>Kanri</strong> = quản lý, kiểm soát, chỉ đạo thay đổi.<br>
+      Nghĩa tổng hợp: <em>"Đi theo hướng la bàn chỉ"</em> — phương pháp đảm bảo toàn bộ tổ chức di chuyển theo cùng một hướng chiến lược.<br><br>
+      Jackson (2006): Hoshin Kanri vừa là <strong>hệ thống lập kế hoạch chiến lược</strong>, vừa là <strong>hệ thống học tập tổ chức</strong> và <strong>phát triển năng lực cạnh tranh</strong> — đặt ở trung tâm của mọi hệ thống Lean & Six Sigma thành công.
+    </p>
+    <div class="divider"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="tag tv">Policy Deployment</span>
+      <span class="tag tv">Strategy Deployment</span>
+      <span class="tag tv">Management by Policy</span>
+      <span class="tag tv">Hoshin Planning</span>
+    </div>
+    <div class="insight" style="margin-top:12px;">
+      <p>Jackson: Từ "policy" gợi lên hình ảnh quan liêu — hoàn toàn ngược lại bản chất <strong>học tập tổ chức</strong> của Hoshin Kanri. Các chuyên gia khuyến nghị giữ nguyên tên gốc Nhật.</p>
+    </div>
+  </div>
+
+  <!-- Stat cards -->
+  <div class="card c4" style="justify-content:space-between;">
+    <span class="overline ov-v">Tác động thực tế</span>
+    <div>
+      <div class="stat-num" style="color:var(--violet);">73%</div>
+      <p style="font-size:14px;font-weight:600;color:var(--tx-1);margin-top:4px;">lãnh đạo đồng ý</p>
+      <p style="font-size:12px;color:var(--tx-2);margin-top:6px;line-height:1.6;">Thực thi chiến lược <em>khó hơn</em> hoạch định chiến lược — Cândido & Santos, 2015 · (Vinardi, 2023)</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-top:12px;">
+      <div class="pill-stat">🏭 Toyota · Danaher · GE · HP</div>
+      <div class="pill-stat">📅 Ra đời thập niên 1950–60</div>
+      <div class="pill-stat">🔬 Nền tảng của Malcolm Baldrige & Shingo Prize</div>
+    </div>
+  </div>
+
+  <!-- Các tên gọi & phân biệt -->
+  <div class="card c5">
+    <span class="overline ov-v">Phân biệt quan trọng</span>
+    <h3 class="card-title">Strategic vs Daily Management</h3>
+    <table class="tbl">
+      <thead><tr><th>Tiêu chí</th><th>Strategic Mgmt</th><th>Daily Mgmt</th></tr></thead>
+      <tbody>
+        <tr><td>Tầm</td><td>3–5 năm</td><td>Hàng ngày</td></tr>
+        <tr><td>Nội dung</td><td>3–5 ưu tiên đột phá/năm</td><td>Giảm biến động, chữa cháy</td></tr>
+        <tr><td>Công cụ</td><td>X-Matrix, A3, Hoshin</td><td>Visual board, SOP, KPI</td></tr>
+        <tr><td>Mục đích</td><td>Transformation</td><td>Stability</td></tr>
+      </tbody>
+    </table>
+    <div class="warn">
+      <p>⚠️ Hoshin Kanri <strong>chỉ quản lý những ưu tiên đột phá</strong> — không phải mọi hoạt động hàng ngày. Lẫn lộn hai tầng này là lỗi phổ biến nhất khi triển khai.</p>
+    </div>
+  </div>
+
+  <!-- Định nghĩa từ chuyên gia -->
+  <div class="card c7">
+    <span class="overline ov-v">Góc nhìn chuyên gia (Kesterson, 2015)</span>
+    <h3 class="card-title">3 Cách định nghĩa nổi bật nhất</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-v">1</div>
+        <div>
+          <div class="stitle">Joe Colletti — Visual Alignment System</div>
+          <div class="sdesc">"Hoshin tạo ra visual templates ở mỗi cấp tổ chức, kết nối kế hoạch từ trên xuống theo cách đảm bảo alignment dọc và ngang. Nó cho bạn thấy bạn đang đi đâu và giúp bạn làm việc cùng nhau."</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">2</div>
+        <div>
+          <div class="stitle">Mara Melum — Breakthrough Focus</div>
+          <div class="sdesc">"Hoshin giúp lãnh đạo xác định mục tiêu quan trọng nhất để đột phá lên tầm cao mới, rồi align toàn tổ chức để có sự tham gia sâu rộng đạt breakthrough goal đó."</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">3</div>
+        <div>
+          <div class="stitle">Tom Jackson — Scientific Method</div>
+          <div class="sdesc">"Hoshin là ứng dụng của phương pháp khoa học vào quản lý chiến lược. Balanced Scorecard được phát triển từ Hoshin. PDCA chính là Hoshin — a.k.a. Strategy Deployment."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid I -->
+
+<!-- ═══════════════════ SECTION II — PDCA FRAMEWORK ═══════════════════ -->
+<div class="sec sec-v"><span>II · Khung Quy Trình: SCAN → PDCA</span></div>
+
+<div class="grid">
+
+  <div class="card c12">
+    <span class="overline ov-v">Xương sống vận hành — đồng thuận từ tất cả 4 tác giả</span>
+    <h3 class="card-title">Chu trình SCAN → Plan → Do → Check → Act/Adjust</h3>
+    <div class="pdca-row">
+      <div class="pdca-step" style="border-top:3px solid var(--violet);">
+        <div class="pdca-lbl" style="color:var(--violet);">Bước 0</div>
+        <div class="pdca-name">SCAN</div>
+        <div class="pdca-desc">Phân tích môi trường. Xác định Current State & Desired Future State. Tiền đề bắt buộc trước PDCA.</div>
+      </div>
+      <div class="pdca-step" style="border-top:3px solid var(--blue);">
+        <div class="pdca-lbl" style="color:var(--blue);">P</div>
+        <div class="pdca-name">PLAN</div>
+        <div class="pdca-desc">Xác định 3–5 mục tiêu đột phá. Thiết kế X-Matrix. Chạy Catchball để đồng thuận.</div>
+      </div>
+      <div class="pdca-step" style="border-top:3px solid var(--emerald);">
+        <div class="pdca-lbl" style="color:var(--emerald);">D</div>
+        <div class="pdca-name">DO</div>
+        <div class="pdca-desc">Triển khai kế hoạch. Phát triển lãnh đạo. Đưa nhân viên tham gia thực thi qua A3-T.</div>
+      </div>
+      <div class="pdca-step" style="border-top:3px solid var(--amber);">
+        <div class="pdca-lbl" style="color:var(--amber);">C</div>
+        <div class="pdca-name">CHECK</div>
+        <div class="pdca-desc">Review hàng tháng qua Bowling Chart & A3-R. Tổng kiểm tra hàng năm: President's Diagnosis.</div>
+      </div>
+      <div class="pdca-step" style="border-top:3px solid var(--red);">
+        <div class="pdca-lbl" style="color:var(--red);">A</div>
+        <div class="pdca-name">ACT/ADJUST</div>
+        <div class="pdca-desc">Tiêu chuẩn hóa kết quả tốt. Kaizen liên tục. Điều chỉnh kế hoạch, chuẩn bị chu kỳ tiếp.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Catchball / Nemawashi -->
+  <div class="card ce c6">
+    <span class="overline ov-e">Cơ chế đồng thuận</span>
+    <h3 class="card-title">⚾ Catchball / Nemawashi</h3>
+    <p class="card-body">
+      Quá trình "ném qua ném lại" giữa các cấp — mục tiêu và kế hoạch được thảo luận, phản biện, tinh chỉnh trước khi chốt. <strong>Không phải mệnh lệnh từ trên xuống.</strong>
+    </p>
+    <div class="divider"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-e">⚾</div>
+        <div>
+          <div class="stitle">Catchball (Anglo-Saxon)</div>
+          <div class="sdesc">Vòng tròn trẻ em tung bóng — ý tưởng được "tung" qua lại để cùng tinh chỉnh. Đơn giản, trực quan.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-e">🌱</div>
+        <div>
+          <div class="stitle">Nemawashi (Nhật Bản)</div>
+          <div class="sdesc">"Làm đất trước khi trồng cây" — chuẩn bị đồng thuận từ gốc lên. Vinardi: Nemawashi lột tả được chiều sâu mà Catchball không thể hiện.</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:12px;">
+      <p>Kết quả: Mục tiêu vừa <strong>tham vọng</strong> vừa <strong>thực tế</strong>, và được mọi cấp <strong>sở hữu thực sự</strong> — không chỉ chấp nhận thụ động.</p>
+    </div>
+  </div>
+
+  <!-- Bowling Chart + President's Diagnosis -->
+  <div class="card c6" style="gap:0;">
+    <span class="overline ov-a">Công cụ CHECK</span>
+    <h3 class="card-title">🎳 Bowling Chart & 🩺 President's Diagnosis</h3>
+    <p class="card-body" style="margin-bottom:14px;">
+      <strong>Bowling Chart:</strong> Bảng theo dõi hàng tháng (12 khung như bowling). Hàng = mục tiêu, cột = tháng, xanh/đỏ = đạt/không đạt. Nhìn một cái biết ngay sức khỏe chiến lược.
+    </p>
+    <div class="divider"></div>
+    <p class="card-body">
+      <strong>President's Diagnosis</strong> (Jackson, 2006): Tổng kiểm tra hàng năm — lãnh đạo cao nhất <em>đi trực tiếp xuống shopfloor</em>, quan sát thực tế, không ngồi phòng họp nhận báo cáo. Dùng "Transformation Ruler" đo mức độ Lean của từng bộ phận theo 3 giai đoạn: Chuẩn bị → Kiểm tra tại chỗ → Tổng hợp hành động khắc phục.
+    </p>
+  </div>
+
+</div><!-- /grid II -->
+
+<!-- ═══════════════════ SECTION II-B — SCAN DEEP DIVE ═══════════════════ -->
+<div class="sec sec-v"><span>II-B · Giai Đoạn SCAN — Nền Tảng Trước PDCA</span></div>
+
+<div class="grid">
+
+  <!-- HERO: SCAN là gì -->
+  <div class="card cv c8">
+    <span class="overline ov-v">Jackson (2006) · Experiment 1 · Hoshin Pre-PDCA Phase</span>
+    <h2 class="card-title-lg">SCAN là gì và tại sao bắt buộc?</h2>
+    <p class="card-body">
+      SCAN là giai đoạn <strong>tiền-PDCA</strong> — công việc chuẩn bị mà Hoshin Team phải hoàn thành <em>trước khi</em> bắt đầu Plan → Do → Check → Act. Không có SCAN tốt, mọi kế hoạch về sau đều xây trên nền không vững.<br><br>
+      Jackson (2006): <em>"Once the team has been through the hoshin process, many of these inputs will be natural outputs of the annual review described in Chapters 7 and 8."</em> — Nghĩa là, trong chu kỳ đầu tiên, SCAN là bắt buộc phải làm từ đầu. Từ năm thứ 2 trở đi, SCAN được nuôi dưỡng liên tục bởi kết quả của annual review (President's Diagnosis).
+    </p>
+    <div class="divider"></div>
+    <p class="card-body">
+      SCAN giải quyết <strong>Hoshin Experiment 1</strong> — phát triển <em>các yếu tố của Strategic Intent</em>:
+    </p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px;">
+      <div style="background:var(--violet-lt);border:1px solid rgba(88,86,214,.2);border-radius:var(--r-sm);padding:12px 14px;">
+        <div style="font-size:10px;font-weight:800;color:var(--violet);letter-spacing:.10em;margin-bottom:6px;">MISSION</div>
+        <div style="font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:4px;">Lý do tồn tại</div>
+        <div style="font-size:12px;color:var(--tx-2);line-height:1.6;">Định nghĩa loại sản phẩm/dịch vụ anh cung cấp, cho ai. Ít khi thay đổi trừ khi có biến cố lớn (M&A, thị trường đổ vỡ).</div>
+      </div>
+      <div style="background:var(--emerald-lt);border:1px solid rgba(29,122,78,.2);border-radius:var(--r-sm);padding:12px 14px;">
+        <div style="font-size:10px;font-weight:800;color:var(--emerald);letter-spacing:.10em;margin-bottom:6px;">VISION</div>
+        <div style="font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:4px;">Bức tranh lý tưởng</div>
+        <div style="font-size:12px;color:var(--tx-2);line-height:1.6;">Tiêu chuẩn để đo gap chiến lược. Vinardi: "to be" hoặc "to become" — rõ ràng, cảm hứng, đủ ngắn để nhớ. Review hàng năm.</div>
+      </div>
+      <div style="background:var(--amber-lt);border:1px solid var(--amber-border);border-radius:var(--r-sm);padding:12px 14px;">
+        <div style="font-size:10px;font-weight:800;color:var(--amber);letter-spacing:.10em;margin-bottom:6px;">LONG-TERM STRATEGY</div>
+        <div style="font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:4px;">Cách thực hiện</div>
+        <div style="font-size:12px;color:var(--tx-2);line-height:1.6;">Giải thích cách differentiate: phân khúc thị trường, giá, tính năng. Và cách phát triển/mua nguồn lực cần thiết.</div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:14px;">
+      <p>Jackson: <strong>Strategic Intent là baseline, không phải điểm đến cố định.</strong> Khi thị trường thay đổi, Hoshin Kanri giúp tổ chức tiếp tục tiến về phía mục tiêu — thậm chí phải dời mục tiêu nếu cần, kể cả khi phải "reinvent" lý do tồn tại từ đầu.</p>
+    </div>
+  </div>
+
+  <!-- 7 Environmental Trends -->
+  <div class="card c4">
+    <span class="overline ov-v">7 Xu hướng môi trường cần scan</span>
+    <h3 class="card-title">Hoshin Team cần hiểu rõ 7 xu hướng này</h3>
+    <p style="font-size:12px;color:var(--tx-2);margin-bottom:12px;line-height:1.6;">Jackson (2006): 6 công cụ SCAN được thiết kế để nhìn đủ 7 chiều của thị trường.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-v">1</div>
+        <div><div class="stitle">Competitive Positioning</div><div class="sdesc">Đối thủ đang định vị ở đâu? Anh mạnh/yếu hơn họ điểm nào?</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">2</div>
+        <div><div class="stitle">Customer Requirements</div><div class="sdesc">Khách hàng cần gì? Xu hướng thay đổi nhu cầu theo hướng nào?</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">3</div>
+        <div><div class="stitle">Technology & Business Process</div><div class="sdesc">Đột phá công nghệ/quy trình nào sẽ thay đổi cuộc chơi?</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">4</div>
+        <div><div class="stitle">Human Resources</div><div class="sdesc">Xu hướng nguồn nhân lực, năng lực cần phát triển?</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">5</div>
+        <div><div class="stitle">Government Regulation</div><div class="sdesc">Quy định pháp lý (địa phương, quốc gia, quốc tế) ảnh hưởng gì?</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">6</div>
+        <div><div class="stitle">Financial Requirements</div><div class="sdesc">Cổ đông/nhà đầu tư kỳ vọng gì về tài chính?</div></div>
+      </div>
+      <div class="step">
+        <div class="snum" style="background:var(--amber-lt);color:var(--amber);">+</div>
+        <div><div class="stitle">Internal Capabilities (Vinardi)</div><div class="sdesc">Feedback từ nội bộ: đâu là điểm mạnh/yếu từ kinh nghiệm năm trước?</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 TOOLS HEADER -->
+  <div class="card c12" style="min-height:auto;padding:20px var(--p);">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div>
+        <span class="overline ov-v" style="margin-bottom:6px;">Jackson (2006) · Chapter 2 · Hoshin Experiment 1</span>
+        <h3 class="card-title" style="margin-bottom:4px;">6 Công Cụ Scan Môi Trường — Hiểu Điều Kiện Cung & Cầu</h3>
+        <p style="font-size:13px;color:var(--tx-2);">Hoshin Team cần chạy tối thiểu 5/6 công cụ nếu chưa từng thực hiện environmental scan. Mỗi công cụ chiếu sáng một góc nhìn khác nhau về thị trường và năng lực cạnh tranh.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0;">
+        <span class="tag tv">Pre-PDCA</span>
+        <span class="tag tv">Experiment 1</span>
+        <span class="tag tv">A3-i Output</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tool 1: Porter Matrix -->
+  <div class="card ca c4">
+    <span class="overline ov-a">Công cụ 1 · Competitive Positioning</span>
+    <h3 class="card-title">Porter Matrix</h3>
+    <p class="card-body" style="margin-bottom:12px;">
+      Phân tích vị trí cạnh tranh: <strong>trục Y</strong> = mức độ phân khúc thị trường (Broad ↔ Narrow), <strong>trục X</strong> = mức độ differentiation sản phẩm (Low cost ↔ High differentiation).
+    </p>
+    <!-- Mini Porter Matrix Visual -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;margin:10px 0;">
+      <div style="background:rgba(196,123,0,.08);border:1px solid var(--amber-border);border-radius:var(--r-xs);padding:8px;font-size:10px;text-align:center;">
+        <div style="font-weight:700;color:var(--amber);margin-bottom:3px;">BROAD + LOW COST</div>
+        <div style="color:var(--tx-3);">Coca-Cola · Ford · Uniqlo</div>
+      </div>
+      <div style="background:rgba(88,86,214,.08);border:1px solid rgba(88,86,214,.2);border-radius:var(--r-xs);padding:8px;font-size:10px;text-align:center;">
+        <div style="font-weight:700;color:var(--violet);margin-bottom:3px;">BROAD + DIFFERENTIATED</div>
+        <div style="color:var(--tx-3);">Mercedes E-class · Apple</div>
+      </div>
+      <div style="background:rgba(29,122,78,.08);border:1px solid rgba(29,122,78,.2);border-radius:var(--r-xs);padding:8px;font-size:10px;text-align:center;">
+        <div style="font-weight:700;color:var(--emerald);margin-bottom:3px;">NARROW + LOW COST</div>
+        <div style="color:var(--tx-3);">Local gym giá rẻ · Budget airline</div>
+      </div>
+      <div style="background:rgba(0,113,227,.08);border:1px solid var(--blue-border);border-radius:var(--r-xs);padding:8px;font-size:10px;text-align:center;">
+        <div style="font-weight:700;color:var(--blue);margin-bottom:3px;">NARROW + DIFFERENTIATED</div>
+        <div style="color:var(--tx-3);">Bentley · Ladysfit (fitness nữ)</div>
+      </div>
+    </div>
+    <div class="insight" style="background:var(--amber-md);border-color:var(--amber-border);">
+      <p>Đặt tên đối thủ lên sticky note, vị trí hóa trên matrix. Xác định nguồn lực cần thay đổi nếu muốn dời vị trí. <strong style="color:var(--amber);">Cảnh báo Jackson:</strong> Ai cũng muốn "low-cost" nhưng ít ai có kỷ luật focus đủ hẹp để làm được.</p>
+    </div>
+  </div>
+
+  <!-- Tool 2: Product/Market Matrix -->
+  <div class="card c4">
+    <span class="overline ov-v">Công cụ 2 · Revenue Analysis</span>
+    <h3 class="card-title">Product/Market Matrix</h3>
+    <p class="card-body" style="margin-bottom:12px;">
+      Phân tích giá trị thực của từng phân khúc: <strong>hàng = sản phẩm/dịch vụ</strong>, <strong>cột = khách hàng/thị trường</strong>. Đánh giá H/M/L theo mức đóng góp vào lợi nhuận thực tế.
+    </p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:11px;min-width:280px;">
+        <thead>
+          <tr style="background:var(--bg-subtle);">
+            <th style="padding:6px 8px;text-align:left;font-size:10px;color:var(--tx-3);border-bottom:1.5px solid var(--border-md);">Dịch vụ</th>
+            <th style="padding:6px 8px;text-align:center;font-size:10px;color:var(--tx-3);border-bottom:1.5px solid var(--border-md);">KH Văn phòng</th>
+            <th style="padding:6px 8px;text-align:center;font-size:10px;color:var(--tx-3);border-bottom:1.5px solid var(--border-md);">Sinh viên</th>
+            <th style="padding:6px 8px;text-align:center;font-size:10px;color:var(--tx-3);border-bottom:1.5px solid var(--border-md);">Sau sinh</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:6px 8px;font-weight:600;color:var(--tx-1);">Gói Premium</td>
+            <td style="padding:6px 8px;text-align:center;font-weight:800;color:var(--emerald);">H</td>
+            <td style="padding:6px 8px;text-align:center;color:var(--tx-3);">L</td>
+            <td style="padding:6px 8px;text-align:center;font-weight:700;color:var(--amber);">M</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:6px 8px;font-weight:600;color:var(--tx-1);">Gói Cơ bản</td>
+            <td style="padding:6px 8px;text-align:center;font-weight:700;color:var(--amber);">M</td>
+            <td style="padding:6px 8px;text-align:center;font-weight:800;color:var(--emerald);">H</td>
+            <td style="padding:6px 8px;text-align:center;font-weight:700;color:var(--amber);">M</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 8px;font-weight:600;color:var(--tx-1);">PT cá nhân</td>
+            <td style="padding:6px 8px;text-align:center;font-weight:800;color:var(--emerald);">H</td>
+            <td style="padding:6px 8px;text-align:center;color:var(--tx-3);">L</td>
+            <td style="padding:6px 8px;text-align:center;font-weight:800;color:var(--emerald);">H</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight" style="margin-top:10px;">
+      <p>Jackson: Robin Cooper phát hiện 20% sản phẩm đang <strong>mất 200% lợi nhuận</strong>. Công cụ này buộc anh phải biết sản phẩm nào thực sự trả tiền — không phải theo doanh thu mà theo <strong style="color:var(--violet);">margin thực</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Tool 3: Market/Technology Matrix -->
+  <div class="card c4">
+    <span class="overline ov-b">Công cụ 3 · Innovation Radar</span>
+    <h3 class="card-title">Market/Technology Matrix</h3>
+    <p class="card-body" style="margin-bottom:12px;">
+      Câu hỏi cốt lõi: <em>"Đột phá nào sẽ thay đổi hoàn toàn cách anh kinh doanh?"</em> Phân tích giao điểm giữa thị trường (Existing → Related → New) và công nghệ (Hard/Soft — Existing → Related → New).
+    </p>
+    <div style="display:grid;grid-template-columns:60px 1fr 1fr 1fr;gap:3px;font-size:10px;">
+      <div style="background:var(--bg-subtle);border-radius:var(--r-xs);"></div>
+      <div style="background:var(--bl-lt);border-radius:var(--r-xs);padding:5px;text-align:center;font-weight:700;color:var(--blue);">TT Hiện có</div>
+      <div style="background:var(--bl-lt);border-radius:var(--r-xs);padding:5px;text-align:center;font-weight:700;color:var(--blue);">TT Liên quan</div>
+      <div style="background:var(--bl-lt);border-radius:var(--r-xs);padding:5px;text-align:center;font-weight:700;color:var(--blue);">TT Mới</div>
+      <div style="background:var(--am-lt);border-radius:var(--r-xs);padding:5px;font-weight:700;color:var(--amber);">CN hiện có</div>
+      <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--r-xs);padding:5px;text-align:center;color:var(--tx-2);">Core biz</div>
+      <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--r-xs);padding:5px;text-align:center;color:var(--tx-2);">Mở rộng</div>
+      <div style="background:rgba(196,123,0,.08);border:1px solid var(--amber-border);border-radius:var(--r-xs);padding:5px;text-align:center;color:var(--amber);">Rủi ro cao</div>
+      <div style="background:var(--am-lt);border-radius:var(--r-xs);padding:5px;font-weight:700;color:var(--amber);">CN mới</div>
+      <div style="background:rgba(29,122,78,.08);border:1px solid rgba(29,122,78,.2);border-radius:var(--r-xs);padding:5px;text-align:center;color:var(--emerald);">Opportunity</div>
+      <div style="background:rgba(88,86,214,.08);border:1px solid var(--vi-bd);border-radius:var(--r-xs);padding:5px;text-align:center;color:var(--violet);">Breakthrough</div>
+      <div style="background:rgba(0,113,227,.08);border:1px solid var(--bl-bd);border-radius:var(--r-xs);padding:5px;text-align:center;color:var(--blue);">Moonshot</div>
+    </div>
+    <p style="font-size:11px;color:var(--tx-3);margin-top:8px;line-height:1.5;">VD Ladysfit: App tracking (CN mới × TT hiện có) · Corporate wellness (CN hiện có × TT liên quan)</p>
+  </div>
+
+  <!-- Tools 4, 5, 6 -->
+  <div class="card ca c4">
+    <span class="overline ov-a">Công cụ 4 · Financial Reality Check</span>
+    <h3 class="card-title">Value Stream P&L Statement</h3>
+    <p class="card-body" style="margin-bottom:12px;">
+      Báo cáo lợi nhuận theo <strong>value stream</strong> — không theo trung tâm chi phí truyền thống. Chuyển mọi cải tiến quy trình thành con số đô la/đồng cụ thể.
+    </p>
+    <div style="background:var(--bg-subtle);border-radius:var(--r-sm);padding:12px;border:1px solid var(--border);">
+      <div style="font-size:10px;font-weight:700;color:var(--tx-3);letter-spacing:.08em;margin-bottom:8px;">ANATOMY VALUE STREAM P&L</div>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;">
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);">
+          <span style="font-weight:600;color:var(--tx-1);">Dollar Sales</span>
+          <span style="color:var(--emerald);font-weight:700;">+2,000,000,000</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);">
+          <span style="color:var(--tx-2);">Development Costs</span>
+          <span style="color:var(--red);">−140,000,000</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);">
+          <span style="color:var(--tx-2);">Material / COGS</span>
+          <span style="color:var(--red);">−1,200,000,000</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);">
+          <span style="color:var(--tx-2);">Conversion Costs</span>
+          <span style="color:var(--red);">−480,000,000</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0 0;">
+          <span style="font-weight:800;color:var(--tx-1);">Value Stream Profit</span>
+          <span style="color:var(--emerald);font-weight:800;">= 180,000,000</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--tx-3);margin-top:8px;line-height:1.5;">Mỗi cải tiến process (giảm lead time, giảm lỗi) phải được quy ra tiền — đây là ngôn ngữ CEO hiểu.</p>
+  </div>
+
+  <div class="card c4">
+    <span class="overline ov-e">Công cụ 5 · Flow Visibility</span>
+    <h3 class="card-title">Value Stream Maps (VSM)</h3>
+    <p class="card-body" style="margin-bottom:12px;">
+      Bản đồ trực quan dòng chảy giá trị — từ nguyên liệu/đầu vào đến tay khách hàng. Phơi bày <strong>7 loại lãng phí</strong> (muda) đang ẩn trong quy trình và xác định cơ hội breakthrough.
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-e">①</div>
+        <div><div class="stitle">Current State Map</div><div class="sdesc">Vẽ quy trình thực tế đang diễn ra — không phải quy trình "trên giấy". Đo thời gian, tồn kho, người thực hiện từng bước.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-e">②</div>
+        <div><div class="stitle">Identify Waste</div><div class="sdesc">Xác định 7 lãng phí: Overproduction · Transportation · Waiting · Inventory · Defects · Overprocessing · Motion. Mỗi lãng phí = cơ hội breakthrough.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-e">③</div>
+        <div><div class="stitle">Future State Map</div><div class="sdesc">Thiết kế quy trình lý tưởng. Khoảng cách Current → Future = input trực tiếp cho X-Matrix breakthroughs.</div></div>
+      </div>
+    </div>
+    <div class="insight" style="background:var(--emerald-md);border-color:var(--em-bd);">
+      <p>VSM là công cụ duy nhất trong 6 công cụ nhìn vào <strong style="color:var(--emerald);">bên trong tổ chức</strong> — 5 công cụ kia nhìn ra ngoài (thị trường, đối thủ, công nghệ).</p>
+    </div>
+  </div>
+
+  <div class="card c4 cv">
+    <span class="overline ov-v">Công cụ 6 · Internal Health Check</span>
+    <h3 class="card-title">President's Diagnosis</h3>
+    <p class="card-body" style="margin-bottom:12px;">
+      Đánh giá toàn diện mức độ "Lean" của tổ chức — CEO/lãnh đạo cao nhất <strong>đi trực tiếp xuống shopfloor/frontline</strong> để quan sát thực tế, không ngồi phòng họp nhận báo cáo.
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-v">1</div>
+        <div><div class="stitle">Chuẩn bị</div><div class="sdesc">Xem xét dữ liệu, xác định khu vực và tiêu chí cần kiểm tra. Không phải kiểm toán — là học hỏi.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">2</div>
+        <div><div class="stitle">Gemba Walk</div><div class="sdesc">Đến tận nơi (Gemba = nơi tạo ra giá trị). Dùng "Transformation Ruler" đo mức độ Lean từng bộ phận.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">3</div>
+        <div><div class="stitle">Tổng hợp & Action</div><div class="sdesc">Phát hiện gap, xác định hành động khắc phục → Input trực tiếp cho SCAN và PLAN chu kỳ tiếp theo.</div></div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:10px;">
+      <p>Từ năm thứ 2, <strong>President's Diagnosis trở thành SCAN tự nhiên</strong> — kết quả của nó nuôi dưỡng SCAN mà không cần làm lại từ đầu. Đây là vòng học tập tự duy trì của Hoshin Kanri.</p>
+    </div>
+  </div>
+
+  <!-- A3-i Output -->
+  <div class="card c-dark c12" style="min-height:auto;">
+    <span class="overline" style="color:rgba(255,255,255,.5);">Output của SCAN · Jackson (2006)</span>
+    <h3 class="card-title" style="margin-bottom:14px;">SCAN kết thúc bằng A3-i — Competitive Information Report</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.10em;margin-bottom:5px;">INPUT CỦA SCAN</div>
+        <div style="font-size:12.5px;color:#FAFAFA;line-height:1.6;">Mission · Vision · Long-term Strategy hiện tại. Kết quả President's Diagnosis năm trước. Dữ liệu thị trường, đối thủ.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.10em;margin-bottom:5px;">6 CÔNG CỤ PHÂN TÍCH</div>
+        <div style="font-size:12.5px;color:#FAFAFA;line-height:1.6;">Porter · Product/Market · Market/Tech · Value Stream P&L · VSM · President's Diagnosis → Nhìn đủ 7 chiều môi trường.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.10em;margin-bottom:5px;">OUTPUT: A3-i</div>
+        <div style="font-size:12.5px;color:#FAFAFA;line-height:1.6;">Competitive Information Report — tài liệu 1 trang tổng hợp phát hiện từ SCAN. Xây dựng đồng thuận về "thực trạng thị trường" trước khi design X-Matrix.</div>
+      </div>
+      <div style="background:rgba(88,86,214,.25);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(88,86,214,.4);">
+        <div style="font-size:10px;font-weight:700;color:#C4B5FD;letter-spacing:.10em;margin-bottom:5px;">CHUYỂN SANG PLAN</div>
+        <div style="font-size:12.5px;color:#FAFAFA;line-height:1.6;">SCAN → Xác định Breakthrough Opportunities → Record vào A3-X (X-Matrix) → PLAN bắt đầu với nền tảng vững chắc.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;padding:12px 16px;background:rgba(255,255,255,.04);border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.06);">
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.10em;margin-bottom:6px;">SCAN TRONG VÒNG LẶP HOSHIN — SELF-REINFORCING CYCLE</div>
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+        <div style="background:rgba(196,123,0,.25);border:1px solid rgba(196,123,0,.4);border-radius:var(--r-xs);padding:7px 12px;font-size:11px;font-weight:700;color:#FCD34D;">SCAN (năm 1)<br><small style="font-weight:400;color:rgba(255,255,255,.6);">6 công cụ từ đầu</small></div>
+        <span style="font-size:16px;color:rgba(255,255,255,.3);">→</span>
+        <div style="background:rgba(29,122,78,.2);border:1px solid rgba(29,122,78,.4);border-radius:var(--r-xs);padding:7px 12px;font-size:11px;font-weight:700;color:#6EE7B7;">PLAN → DO → CHECK</div>
+        <span style="font-size:16px;color:rgba(255,255,255,.3);">→</span>
+        <div style="background:rgba(88,86,214,.2);border:1px solid rgba(88,86,214,.4);border-radius:var(--r-xs);padding:7px 12px;font-size:11px;font-weight:700;color:#C4B5FD;">Annual Review +<br>President's Diagnosis</div>
+        <span style="font-size:16px;color:rgba(255,255,255,.3);">→</span>
+        <div style="background:rgba(0,113,227,.2);border:1px solid rgba(0,113,227,.4);border-radius:var(--r-xs);padding:7px 12px;font-size:11px;font-weight:700;color:#93C5FD;">SCAN (năm 2+)<br><small style="font-weight:400;color:rgba(255,255,255,.6);">Tự nhiên từ review</small></div>
+        <span style="font-size:16px;color:rgba(255,255,255,.3);">↻</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vinardi's Feedback of Experience -->
+  <div class="card ce c6">
+    <span class="overline ov-e">Vinardi (2023) · Chiều kích bổ sung</span>
+    <h3 class="card-title">Feedback of Experience — Chiều Kích Nội Tại của SCAN</h3>
+    <p class="card-body" style="margin-bottom:14px;">
+      Vinardi thêm một chiều quan trọng mà Jackson không nhấn mạnh: <strong>Feedback từ kinh nghiệm nội bộ</strong>. Không chỉ nhìn ra ngoài (thị trường, đối thủ) — mà còn phải học từ bên trong (tại sao chúng ta thành công hoặc thất bại năm qua).
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-e">↑</div>
+        <div>
+          <div class="stitle">Bottom-up Feedback</div>
+          <div class="sdesc">Frontline teams chia sẻ: "Chúng tôi đã làm gì, tại sao thành công/thất bại, đề xuất gì cho năm tới?" Đây là input cho các strategic objectives mới.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-e">↓</div>
+        <div>
+          <div class="stitle">Top-down Confirmation</div>
+          <div class="sdesc">Top executives validate, challenge, hoặc điều chỉnh đề xuất từ dưới lên. Kết quả: objectives được confirm từ cả hai chiều.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-e">📋</div>
+        <div>
+          <div class="stitle">Format: A3 one-page report</div>
+          <div class="sdesc">Summary ngắn gọn chia sẻ được ngay trong Nemawashi. Không phải báo cáo dày — là tài liệu kích hoạt cuộc đối thoại.</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="background:var(--emerald-md);border-color:var(--em-bd);">
+      <p>Vinardi: Feedback of experience = cách tổ chức trở thành <strong style="color:var(--emerald);">"learning organization"</strong> — hiểu được tại sao thành công trong quá khứ để lặp lại nó, và tại sao thất bại để tránh.</p>
+    </div>
+  </div>
+
+  <!-- SCAN Checklist -->
+  <div class="card c6">
+    <span class="overline ov-v">Checklist thực hành</span>
+    <h3 class="card-title">SCAN Checklist — Hoshin Team Cần Làm Gì?</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-v">✓</div>
+        <div><div class="stitle">Review Mission, Vision, Long-term Strategy</div><div class="sdesc">Toàn team có hiểu và đồng thuận không? Cần cập nhật gì? Disagreement ở đây = cần revisit nền tảng.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">✓</div>
+        <div><div class="stitle">Chạy ≥5/6 công cụ SCAN</div><div class="sdesc">Porter + Product/Market + Market/Tech + Value Stream P&L + VSM. President's Diagnosis nếu có.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">✓</div>
+        <div><div class="stitle">Thu thập Feedback of Experience</div><div class="sdesc">Từ frontline lên top. Tại sao thành công/thất bại năm qua? Đề xuất gì?</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">✓</div>
+        <div><div class="stitle">Xác định Breakthrough Opportunities</div><div class="sdesc">Từ kết quả 6 công cụ: đâu là gap lớn nhất, cơ hội lớn nhất? Tối đa 3–5 items để ưu tiên hóa.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">✓</div>
+        <div><div class="stitle">Ghi lại kết quả vào A3-i</div><div class="sdesc">1 trang: Phát hiện chính → Hàm ý chiến lược → Link tới X-Matrix. Chia sẻ với toàn Hoshin Team để đạt đồng thuận.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-v">→</div>
+        <div><div class="stitle">Chuyển sang PLAN với nền tảng vững</div><div class="sdesc">A3-i hoàn chỉnh → bắt đầu điền X-Matrix với breakthroughs được xác định rõ ràng từ evidence.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid II-B -->
+
+<!-- ════ SECTION I: VẤN ĐỀ CỐT LÕI ════ -->
+<div class="sec sec-e"><span>III · Tại Sao Mục Tiêu Tốt Vẫn Thất Bại?</span></div>
+
+<div class="grid">
+
+  <div class="card cv c8">
+    <span class="ov ov-v">Diagnose trước khi prescribe</span>
+    <h2 class="card-title-lg">MBO vs Hoshin Kanri — Khác nhau ở điểm nào?</h2>
+    <p class="card-body">
+      Vinardi (2023) chỉ ra một lỗi phổ biến: nhiều tổ chức nghĩ mình đang làm Hoshin Kanri, nhưng thực chất đang làm <strong>MBO (Management by Objectives)</strong> — tức là chỉ cascade <em>mục tiêu</em> xuống từng cấp mà để mỗi cấp tự xác định hành động độc lập.
+      <br><br>
+      Kết quả: hai bộ phận cùng nhận một mục tiêu có thể đưa ra các hành động <strong>hoàn toàn ngược chiều nhau</strong> — Manufacturing tăng buffer stocks trong khi Supply Chain giảm tồn kho nhà cung cấp, vô tình phá hoại nhau.
+    </p>
+    <div class="divider"></div>
+    <div class="tbl" style="margin-top:0;">
+      <table class="tbl">
+        <thead><tr><th>Tiêu chí</th><th>MBO</th><th>Hoshin Kanri</th></tr></thead>
+        <tbody>
+          <tr><td>Cascade cái gì?</td><td>Cascade <strong>Mục tiêu</strong> ↓</td><td>Cascade <strong>Hành động</strong> ↓ (Z-Deploy)</td></tr>
+          <tr><td>Alignment giữa cấp</td><td>Không có cơ chế kiểm tra</td><td>Bắt buộc align trước khi cascade</td></tr>
+          <tr><td>Hành động các cấp</td><td>Độc lập, có thể mâu thuẫn</td><td>Kết nối — hành động cấp trên = mục tiêu cấp dưới</td></tr>
+          <tr><td>Kết quả thường thấy</td><td>Bộ phận tối ưu cục bộ, tổng thể kém</td><td>Toàn tổ chức cùng một hướng</td></tr>
+          <tr><td>Accountability</td><td>Mờ — ai cũng có thể đổ lỗi</td><td>Rõ — mỗi A3-T có 1 owner duy nhất</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card c4" style="gap:14px;">
+    <span class="ov ov-e">Số liệu thực tế</span>
+    <div>
+      <div class="stat-num" style="color:var(--vi);">73%</div>
+      <p style="font-size:14px;font-weight:600;color:var(--tx-1);margin-top:6px;">lãnh đạo đồng ý</p>
+      <p style="font-size:12px;color:var(--tx-2);margin-top:6px;line-height:1.6;">Thực thi chiến lược <em>khó hơn nhiều</em> so với hoạch định — Cândido & Santos, 2015</p>
+    </div>
+    <div class="divider"></div>
+    <p style="font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:8px;">3 lý do thất bại phổ biến nhất:</p>
+    <div class="num-list">
+      <div class="num-item"><div class="num ne">1</div><div class="num-text"><strong>Cascade mục tiêu thay vì hành động</strong> — các cấp tự interpret, kết quả phân kỳ.</div></div>
+      <div class="num-item"><div class="num ne">2</div><div class="num-text"><strong>Không có Catchball thực sự</strong> — chỉ thông báo xuống, không nghe ngược lên.</div></div>
+      <div class="num-item"><div class="num ne">3</div><div class="num-text"><strong>Quá nhiều mục tiêu</strong> — Vinardi: tối đa 5 strategic actions, không hơn.</div></div>
+    </div>
+  </div>
+
+</div><!-- /grid I -->
+
+<!-- ════ SECTION II: Z-DEPLOYMENT ════ -->
+<div class="sec sec-e"><span>IV · Z-Deployment — Cách Hoshin Kanri Cascade Hành Động</span></div>
+
+<div class="grid">
+
+  <div class="card ce c12">
+    <span class="ov ov-e">Vinardi (2023) · Nguyên lý cốt lõi phân biệt Hoshin Kanri với mọi hệ thống khác</span>
+    <h2 class="card-title-lg" style="margin-bottom:8px;">Quy tắc Z: <em>"Hành động cấp trên = Mục tiêu cấp dưới"</em></h2>
+    <p style="font-size:14px;color:var(--tx-2);line-height:1.7;margin-bottom:20px;">
+      Thay vì cascade <em>mục tiêu</em> (MBO), Hoshin Kanri cascade <em>hành động</em>. Hành động chiến lược của Level 1 trở thành mục tiêu chiến lược của Level 2. Level 2 xác định hành động của mình → thành mục tiêu của Level 3. Cứ vậy đến "điểm tác động" — nơi hành động thực sự được thực thi.
+    </p>
+
+    <!-- Z-Deploy Diagram -->
+    <div class="z-wrap">
+
+      <!-- Level 1 -->
+      <div class="z-level">
+        <div class="z-lbl" style="background:var(--vi-lt);color:var(--vi);border:1px solid var(--vi-bd);">Level 1<br>CEO /<br>Exec Team</div>
+        <div class="z-what" style="background:var(--vi-lt);border-color:var(--vi-bd);">
+          <div class="z-title" style="color:var(--vi);">🎯 MỤC TIÊU CHIẾN LƯỢC (WHAT)</div>
+          <div class="z-desc">"Giảm 40% chi phí liên quan đến khiếu nại khách hàng"<br><em>Được phân tích, align, và xác nhận bởi toàn Executive Team trước khi cascade</em></div>
+        </div>
+        <div class="z-how" style="background:var(--em-lt);border-color:var(--em-bd);">
+          <div class="z-title" style="color:var(--em);">⚡ HÀNH ĐỘNG CHIẾN LƯỢC (HOW)</div>
+          <div class="z-desc">"Cải thiện customer satisfaction từ 50% lên 80%"<br><em>Hành động này dựa trên phân tích correlation giữa cost và satisfaction</em></div>
+        </div>
+      </div>
+
+      <!-- Arrow down-right (Z shape) -->
+      <div style="display:flex;align-items:center;padding:0 0 0 86px;gap:0;">
+        <div style="width:30px;height:16px;border-right:2px solid var(--em);border-bottom:2px solid var(--em);border-radius:0 0 4px 0;"></div>
+        <div style="flex:1;height:2px;background:linear-gradient(90deg,var(--em) 0%,var(--vi) 100%);"></div>
+        <div style="font-size:10px;font-weight:700;color:var(--em);margin-left:6px;letter-spacing:.04em;">Z-DEPLOY ↘</div>
+      </div>
+
+      <!-- Level 2 -->
+      <div class="z-level">
+        <div class="z-lbl" style="background:var(--em-lt);color:var(--em);border:1px solid var(--em-bd);">Level 2<br>Director<br>Ops</div>
+        <div class="z-what" style="background:var(--em-lt);border-color:var(--em-bd);">
+          <div class="z-title" style="color:var(--em);">🎯 MỤC TIÊU NHẬN VỀ (= HOW của Level 1)</div>
+          <div class="z-desc">"Cải thiện customer satisfaction từ 50% lên 80%"<br><em>Đây là hành động từ L1, nay trở thành mục tiêu của L2</em></div>
+        </div>
+        <div class="z-how" style="background:var(--tl-lt);border-color:var(--tl-bd);">
+          <div class="z-title" style="color:var(--tl);">⚡ HÀNH ĐỘNG CỦA LEVEL 2</div>
+          <div class="z-desc">"Giảm lead time giao hàng 35%"<br><em>Operations tự xác định — không do L1 chỉ định chi tiết</em></div>
+        </div>
+      </div>
+
+      <!-- Arrow again -->
+      <div style="display:flex;align-items:center;padding:0 0 0 86px;gap:0;">
+        <div style="width:30px;height:16px;border-right:2px solid var(--tl);border-bottom:2px solid var(--tl);border-radius:0 0 4px 0;"></div>
+        <div style="flex:1;height:2px;background:linear-gradient(90deg,var(--tl) 0%,var(--em) 100%);"></div>
+        <div style="font-size:10px;font-weight:700;color:var(--tl);margin-left:6px;letter-spacing:.04em;">Z-DEPLOY ↘</div>
+      </div>
+
+      <!-- Level 3 -->
+      <div class="z-level">
+        <div class="z-lbl" style="background:var(--tl-lt);color:var(--tl);border:1px solid var(--tl-bd);">Level 3<br>Logistics<br>Mgr</div>
+        <div class="z-what" style="background:var(--tl-lt);border-color:var(--tl-bd);">
+          <div class="z-title" style="color:var(--tl);">🎯 MỤC TIÊU NHẬN VỀ (= HOW của Level 2)</div>
+          <div class="z-desc">"Giảm lead time giao hàng 35%"<br><em>Action của L2 = mục tiêu của L3</em></div>
+        </div>
+        <div class="z-how" style="background:var(--bl-lt);border-color:var(--bl-bd);">
+          <div class="z-title" style="color:var(--bl);">⚡ HÀNH ĐỘNG TRIỂN KHAI (IMPACT POINT)</div>
+          <div class="z-desc">"Tối ưu quản lý tồn kho nhà cung cấp — giảm 25% safety stock"<br><em>Đây là "điểm tác động" — nơi masterplan được thực thi cụ thể</em></div>
+        </div>
+      </div>
+
+    </div><!-- /z-wrap -->
+
+    <div class="insight" style="margin-top:16px;">
+      <p><strong>Nguyên tắc tự chủ cấp dưới:</strong> Level 1 <em>không được</em> quyết định chi tiết hành động cho Level 2. Level 2 tự đề xuất "HOW" của mình — điều này tạo ra sự <strong style="color:var(--em);">tự chủ, engagement, và trách nhiệm thực sự</strong>, thay vì thực thi mệnh lệnh. Đây là điểm khác biệt cốt lõi.</p>
+    </div>
+  </div>
+
+  <!-- 3 scenarios Z-deploy -->
+  <div class="card c4">
+    <span class="ov ov-e">Scenario 1</span>
+    <h3 class="card-title-sm">Mục tiêu cascade xuống 2 cấp</h3>
+    <p style="font-size:12px;color:var(--tx-2);margin-bottom:10px;line-height:1.6;">Khi "điểm tác động" ở Level 3 — hành động chạy qua Operations (L2) rồi mới đến Logistics (L3) mới thực thi được.</p>
+    <div style="background:var(--em-lt);border:1px solid var(--em-bd);border-radius:var(--r-sm);padding:10px 12px;">
+      <div style="font-size:10px;font-weight:700;color:var(--em);margin-bottom:4px;">L1 → L2 → L3 (Impact Point)</div>
+      <div style="font-size:11px;color:var(--tx-2);line-height:1.5;">Phổ biến nhất. L2 cần đủ năng lực để bridge giữa strategic intent và operational execution.</div>
+    </div>
+  </div>
+
+  <div class="card c4">
+    <span class="ov ov-v">Scenario 2</span>
+    <h3 class="card-title-sm">Mục tiêu KHÔNG cascade — L1 tự thực thi</h3>
+    <p style="font-size:12px;color:var(--tx-2);margin-bottom:10px;line-height:1.6;">Khi hành động mang tính chiến lược cao, chỉ CEO/Executive có thể thực thi. VD: Mua lại công ty Z để có công nghệ Y.</p>
+    <div style="background:var(--vi-lt);border:1px solid var(--vi-bd);border-radius:var(--r-sm);padding:10px 12px;">
+      <div style="font-size:10px;font-weight:700;color:var(--vi);margin-bottom:4px;">L1 chỉ (Impact Point = L1)</div>
+      <div style="font-size:11px;color:var(--tx-2);line-height:1.5;">Masterplan được formalize và track trực tiếp ở cấp Executive — không delegate.</div>
+    </div>
+  </div>
+
+  <div class="card c4">
+    <span class="ov ov-a">Scenario 3 — Cảnh báo</span>
+    <h3 class="card-title-sm">2 bộ phận cùng nhận 1 mục tiêu</h3>
+    <p style="font-size:12px;color:var(--tx-2);margin-bottom:10px;line-height:1.6;">Cần align Executive Team TRƯỚC khi cascade. Nếu không align: Manufacturing tăng stock, Supply Chain giảm stock → ngược chiều.</p>
+    <div class="warn" style="margin-top:0;">
+      <p>⚠️ Top leaders phải <strong>align với nhau trước</strong>, sau đó mới để cấp dưới đề xuất hành động của mình. Đây là bước hay bị bỏ qua nhất.</p>
+    </div>
+  </div>
+
+</div><!-- /grid II -->
+
+<!-- ════ SECTION III: 4 TẦNG TEAM CASCADE ════ -->
+<div class="sec sec-v"><span>V · Cascading Teams — 4 Tầng từ CEO đến Tuyến Đầu</span></div>
+
+<div class="grid">
+
+  <div class="card cv c6 r2">
+    <span class="ov ov-v">Jackson (2006) · Nested Experiments · Hệ thống team lồng nhau</span>
+    <h2 class="card-title-lg">4 Tầng Team trong Hoshin Kanri</h2>
+    <p class="card-body" style="margin-bottom:16px;">
+      Jackson mô tả Hoshin Kanri như một <strong>hệ thống thực nghiệm lồng nhau</strong> — mỗi team là một scientist-project manager, vừa tuân thủ PDCA vừa chịu trách nhiệm deliver kết quả theo schedule. Tất cả mọi nhân viên cuối cùng đều được engaged.
+    </p>
+
+    <div class="team-cascade">
+
+      <div class="team-row">
+        <div class="team-badge" style="background:var(--vi-lt);color:var(--vi);border-color:var(--vi-bd);">
+          🏛️ HOSHIN<br>TEAM<br>(CEO + C-Suite)
+        </div>
+        <div class="team-content">
+          <div class="team-name">Experiment 1–3: Strategy Design</div>
+          <div class="team-desc">Thiết kế chiến lược trung hạn (3–5 năm) + Annual Hoshin. Build X-Matrix tổng. Khởi động Catchball Round A. Chịu trách nhiệm toàn bộ chiến lược công ty.</div>
+          <span class="team-tag" style="color:var(--vi);border-color:var(--vi-bd);background:var(--vi-md);">A3-X tổng</span>
+          <span class="team-tag" style="color:var(--vi);border-color:var(--vi-bd);background:var(--vi-md);">Annual Hoshin</span>
+        </div>
+      </div>
+
+      <div style="padding-left:60px;font-size:11px;font-weight:700;color:var(--tx-3);">↓ Catchball Round A — Phân công Tactical Teams</div>
+
+      <div class="team-row">
+        <div class="team-badge" style="background:var(--em-lt);color:var(--em);border-color:var(--em-bd);">
+          ⚙️ TACTICAL<br>TEAMS<br>(Directors)
+        </div>
+        <div class="team-content">
+          <div class="team-name">Experiment 4: Tactical Projects</div>
+          <div class="team-desc">Một Director cho mỗi member của Hoshin Team. Develop tactical A3-X + A3-T cho từng tactic. Charter Operational Teams bên dưới. Roughly 1 team per hoshin team member.</div>
+          <span class="team-tag" style="color:var(--em);border-color:var(--em-bd);background:var(--em-md);">A3-X tactical</span>
+          <span class="team-tag" style="color:var(--em);border-color:var(--em-bd);background:var(--em-md);">A3-T per tactic</span>
+        </div>
+      </div>
+
+      <div style="padding-left:60px;font-size:11px;font-weight:700;color:var(--tx-3);">↓ Catchball Round B — Phân công Operational Teams</div>
+
+      <div class="team-row">
+        <div class="team-badge" style="background:var(--tl-lt);color:var(--tl);border-color:var(--tl-bd);">
+          🔧 OPERATIONAL<br>TEAMS<br>(Managers)
+        </div>
+        <div class="team-content">
+          <div class="team-name">Experiment 5: Operational Projects</div>
+          <div class="team-desc">Cải thiện các processes cụ thể cấu thành mỗi tactical initiative. Charter Action Teams bên dưới. Chịu trách nhiệm về các operational improvement projects.</div>
+          <span class="team-tag" style="color:var(--tl);border-color:var(--tl-bd);background:var(--tl-md);">A3-T operational</span>
+          <span class="team-tag" style="color:var(--tl);border-color:var(--tl-bd);background:var(--tl-md);">Process improvements</span>
+        </div>
+      </div>
+
+      <div style="padding-left:60px;font-size:11px;font-weight:700;color:var(--tx-3);">↓ Catchball Round C/D — Charter Action Teams</div>
+
+      <div class="team-row">
+        <div class="team-badge" style="background:var(--bl-lt);color:var(--bl);border-color:var(--bl-bd);">
+          🎯 ACTION<br>TEAMS<br>(Everyone)</div>
+        <div class="team-content">
+          <div class="team-name">Experiment 6 & 7: Kaikaku + Kaizen</div>
+          <div class="team-desc">Toàn bộ nhân viên — mỗi người là một scientist-executor. Thực thi focused improvement (Kaikaku) và cải tiến liên tục hàng ngày (Kaizen). Đây là nơi strategy thực sự xảy ra.</div>
+          <span class="team-tag" style="color:var(--bl);border-color:var(--bl-bd);background:var(--bl-md);">A3-T action</span>
+          <span class="team-tag" style="color:var(--bl);border-color:var(--bl-bd);background:var(--bl-md);">Kaikaku</span>
+          <span class="team-tag" style="color:var(--bl);border-color:var(--bl-bd);background:var(--bl-md);">Kaizen</span>
+        </div>
+      </div>
+
+    </div><!-- /team-cascade -->
+
+    <div class="insight">
+      <p>Jackson: Hoshin Team bao gồm mọi managers sau giai đoạn PLAN. Action Teams engage <strong style="color:var(--em);">toàn bộ nhân viên</strong> trong giai đoạn DO. Một lean enterprise = một network của hoshin teams.</p>
+    </div>
+  </div>
+
+  <!-- Catchball 5 vòng -->
+  <div class="card c6">
+    <span class="ov ov-v">Quy trình triển khai</span>
+    <h3 class="card-title">5 Vòng Catchball — Từ Strategy xuống Action</h3>
+    <div class="num-list">
+      <div class="num-item">
+        <div class="num nv">A</div>
+        <div class="num-text"><strong>Round A — Hoshin → Tactical Teams</strong><br>Hoshin Team present Annual Hoshin + A3-X tổng. Tactical team leaders discuss, challenge, finalize tactical A3-T và tactical A3-X của mình.</div>
+      </div>
+      <div class="num-item">
+        <div class="num nv">B</div>
+        <div class="num-text"><strong>Round B — Tactical → Operational Teams</strong><br>Tactical leaders present A3-T + A3-X của mình xuống Operational team members. Operational leaders charter Operational Teams + viết Operational A3-T.</div>
+      </div>
+      <div class="num-item">
+        <div class="num nv">C</div>
+        <div class="num-text"><strong>Round C — Operational → Action Teams</strong><br>Operational teams discuss và revise operational project plans với Action team members. Action teams đề xuất input từ tuyến đầu.</div>
+      </div>
+      <div class="num-item">
+        <div class="num nv">D</div>
+        <div class="num-text"><strong>Round D — Finalize Action Plans</strong><br>Operational và Action teams cùng finalize chi tiết action và operational project plans. Mọi người ký "objectives contract" của mình.</div>
+      </div>
+      <div class="num-item">
+        <div class="num nv">E</div>
+        <div class="num-text"><strong>Round E — Finalize Hoshin & Tactical Plans</strong><br>Kết quả từ cấp dưới feedback ngược lên để finalize toàn bộ Hoshin và Tactical Plans. X-Matrix được lock. DO phase bắt đầu.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI Tree -->
+  <div class="card c6">
+    <span class="ov ov-e">Vinardi (2023) · Từ KPI tổng xuống KPI tuyến đầu</span>
+    <h3 class="card-title">🌳 KPI Tree — Cây Chỉ Số Hiệu Suất</h3>
+    <p style="font-size:13px;color:var(--tx-2);margin-bottom:14px;line-height:1.65;">
+      Giống dashboard xe hơi: CEO chỉ thấy vài chỉ số trọng yếu. Bên dưới có hàng trăm sensor — chỉ hiện lên khi có vấn đề. Mỗi KPI cấp trên được <em>decompose</em> thành các KPI cấp dưới.
+    </p>
+    <div style="background:var(--bg-subtle);border-radius:var(--r-sm);padding:14px;border:1px solid var(--border);">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+        <thead>
+          <tr style="border-bottom:1.5px solid var(--em-bd);">
+            <th style="text-align:left;padding:6px 8px;color:var(--em);font-size:10px;letter-spacing:.08em;text-transform:uppercase;">Cấp</th>
+            <th style="text-align:left;padding:6px 8px;color:var(--em);font-size:10px;letter-spacing:.08em;text-transform:uppercase;">KPI ví dụ (Chi phí chất lượng)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 8px;font-weight:700;color:var(--vi);">L0 · CEO</td>
+            <td style="padding:7px 8px;color:var(--tx-2);">Operating Margin (€) — Chỉ số tổng thể</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(26,122,80,.03);">
+            <td style="padding:7px 8px;font-weight:700;color:var(--em);">L1 · Director</td>
+            <td style="padding:7px 8px;color:var(--tx-2);">Production Cost Price (€/product)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 8px;font-weight:700;color:var(--tl);">L2 · Manager</td>
+            <td style="padding:7px 8px;color:var(--tx-2);">Cost of Raw Materials (€)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(26,122,80,.03);">
+            <td style="padding:7px 8px;font-weight:700;color:var(--bl);">L3 · Team Lead</td>
+            <td style="padding:7px 8px;color:var(--tx-2);">Cost of Rejected Raw Materials (€)</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 8px;font-weight:700;color:var(--tx-3);">L4 · Frontline</td>
+            <td style="padding:7px 8px;color:var(--tx-2);">% lỗi / mẻ sản xuất, thời gian phát hiện lỗi</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight" style="margin-top:10px;">
+      <p>CEO không cần biết tất cả KPI cấp dưới — chỉ cần được báo khi KPI nào đó lệch ngưỡng và chưa được tự khắc phục. Đây là <strong style="color:var(--em);">escalation by exception</strong>.</p>
+    </div>
+  </div>
+
+</div><!-- /grid III -->
+
+<!-- ════ SECTION IV: MASTERPLAN ════ -->
+<div class="sec sec-b"><span>VI · Masterplan — Từ Strategic Action Xuống Action Plan Cụ Thể</span></div>
+
+<div class="grid">
+
+  <div class="card cb c8">
+    <span class="ov ov-b">Vinardi (2023) · "Objectives Contract" · Công cụ execution cốt lõi</span>
+    <h2 class="card-title-lg">Masterplan là gì?</h2>
+    <p class="card-body">
+      Masterplan (còn gọi là <strong>"Objectives Contract"</strong>) là tài liệu cụ thể hóa chiến lược thành hành động — danh sách <strong>Strategic Actions</strong> kèm planning, milestones, và resources. Đây là công cụ chính để Hoshin Kanri duy trì tính dynamic và đảm bảo execution.<br><br>
+      Tên "objectives contract" phản ánh bản chất: đây là cam kết hai chiều giữa lãnh đạo và team — <em>không phải lệnh từ trên xuống</em>.
+    </p>
+    <div class="divider"></div>
+
+    <!-- Masterplan mock table -->
+    <p class="ov ov-b" style="margin-bottom:8px;">Cấu trúc Masterplan — 7 cột cốt lõi</p>
+    <table class="mp-table">
+      <thead>
+        <tr>
+          <th>Strategic Action</th>
+          <th>KPI / Target</th>
+          <th>Owner</th>
+          <th>Milestone 1</th>
+          <th>Milestone 2</th>
+          <th>Resources</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Giảm lead time giao hàng 35%</td>
+          <td>Từ 14 ngày → 9 ngày<br><span style="color:var(--tx-3);font-size:10px;">Q4 2025</span></td>
+          <td>Logistics Director</td>
+          <td>VSM current state<br><span style="color:var(--tx-3);font-size:10px;">T2</span></td>
+          <td>Pilot 1 khu vực<br><span style="color:var(--tx-3);font-size:10px;">T4</span></td>
+          <td>2 FTE + consultant</td>
+          <td style="color:var(--em);font-weight:700;">🟢 On track</td>
+        </tr>
+        <tr>
+          <td>Tăng customer satisfaction 50% → 80%</td>
+          <td>CSAT ≥ 80%<br><span style="color:var(--tx-3);font-size:10px;">Q3 2025</span></td>
+          <td>CS Director</td>
+          <td>Survey baseline<br><span style="color:var(--tx-3);font-size:10px;">T1</span></td>
+          <td>New SLA deploy<br><span style="color:var(--tx-3);font-size:10px;">T3</span></td>
+          <td>CS team + tool</td>
+          <td style="color:var(--am);font-weight:700;">🟡 At risk</td>
+        </tr>
+        <tr>
+          <td>Giảm tỷ lệ lỗi sản xuất 60%</td>
+          <td>Từ 5% → 2%<br><span style="color:var(--tx-3);font-size:10px;">Q2 2025</span></td>
+          <td>Production Mgr</td>
+          <td>Root cause analysis<br><span style="color:var(--tx-3);font-size:10px;">T1</span></td>
+          <td>Poka-yoke install<br><span style="color:var(--tx-3);font-size:10px;">T2</span></td>
+          <td>Kaizen team</td>
+          <td style="color:var(--rd);font-weight:700;">🔴 Late</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="divider"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <div class="pill">📏 Tối đa 5 Strategic Actions / năm</div>
+      <div class="pill">🔄 Cập nhật monthly qua review meetings</div>
+      <div class="pill">📄 Format đơn giản — dễ điều chỉnh</div>
+    </div>
+  </div>
+
+  <div class="card c4">
+    <span class="ov ov-b">Nguyên tắc Masterplan</span>
+    <h3 class="card-title">5 Quy tắc xây dựng Masterplan tốt</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="sn sn-b">1</div>
+        <div><div class="st">Tối đa 5 strategic actions</div><div class="sd">Vinardi & Collins: actions đa chức năng, tốn nhiều thời gian và năng lượng. Hơn 5 = tất cả đều thất bại.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-b">2</div>
+        <div><div class="st">Action ở đúng cấp triển khai</div><div class="sd">"Impact point" không phải lúc nào cũng ở cấp thấp nhất — phụ thuộc vào bản chất action. CEO có thể là impact point.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-b">3</div>
+        <div><div class="st">Format đơn giản, dễ điều chỉnh</div><div class="sd">Masterplan phải adaptable. Khi context thay đổi, điều chỉnh dễ dàng với đầy đủ người liên quan. Record changes để học.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-b">4</div>
+        <div><div class="st">Coordinate trước deadline ngân sách</div><div class="sd">Masterplan phải align với budget validation. Vinardi: discussions phải xảy ra trước cuối năm tài chính.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-b">5</div>
+        <div><div class="st">Monthly review có cấu trúc</div><div class="sd">Ít nhất 1 meeting/tháng: review results + giải quyết vấn đề phát sinh. Không có review = masterplan chết.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid IV -->
+
+<!-- ════ SECTION V: KAIKAKU vs KAIZEN ════ -->
+<div class="sec sec-e"><span>VII · Kaikaku & Kaizen — 2 Cơ Chế Thực Thi Của Action Teams</span></div>
+
+<div class="grid">
+
+  <div class="card ct c8">
+    <span class="ov ov-t">Jackson (2006) · Experiment 6 & 7 · Hai tốc độ cải tiến</span>
+    <h2 class="card-title-lg">Kaikaku vs Kaizen — Không phải chọn một</h2>
+    <p class="card-body" style="margin-bottom:16px;">
+      Jackson định nghĩa Action Teams thực hiện <strong>hai loại thực nghiệm song song</strong> — Kaikaku cho breakthrough có chủ đích, Kaizen cho continuous improvement hàng ngày. Cả hai đều yêu cầu nền tảng standardized work trước.
+    </p>
+    <div class="kk-grid">
+      <div class="kk-card" style="background:var(--tl-lt);border-color:var(--tl-bd);">
+        <div class="kk-title" style="color:var(--tl);">🔥 KAIKAKU — Breakthrough Change</div>
+        <ul class="kk-list">
+          <li><span class="kk-dot" style="background:var(--tl);"></span><div>Thay đổi lớn, có chủ đích, trong thời gian ngắn</div></li>
+          <li><span class="kk-dot" style="background:var(--tl);"></span><div>Thường kéo dài <strong>1 tuần đến 3 tháng</strong></div></li>
+          <li><span class="kk-dot" style="background:var(--tl);"></span><div>Focused improvement — phá vỡ trạng thái cũ</div></li>
+          <li><span class="kk-dot" style="background:var(--tl);"></span><div>Yêu cầu intensive training trước</div></li>
+          <li><span class="kk-dot" style="background:var(--tl);"></span><div>Là Experiment 6 — trọng tâm của DO phase</div></li>
+          <li><span class="kk-dot" style="background:var(--tl);"></span><div>Output: Standardized work mới ở mức cao hơn</div></li>
+        </ul>
+        <div style="margin-top:10px;font-size:11px;color:var(--tl);font-weight:600;">VD: VSM workshop 5 ngày · DFSS project · TPM implementation</div>
+      </div>
+      <div class="kk-card" style="background:var(--em-lt);border-color:var(--em-bd);">
+        <div class="kk-title" style="color:var(--em);">🌱 KAIZEN — Continuous Improvement</div>
+        <ul class="kk-list">
+          <li><span class="kk-dot" style="background:var(--em);"></span><div>Cải tiến nhỏ, liên tục, trong công việc hàng ngày</div></li>
+          <li><span class="kk-dot" style="background:var(--em);"></span><div>Diễn ra <strong>hàng ngày, không ngừng</strong></div></li>
+          <li><span class="kk-dot" style="background:var(--em);"></span><div>Problem-solving trong dòng chảy công việc</div></li>
+          <li><span class="kk-dot" style="background:var(--em);"></span><div>Mọi nhân viên đều tham gia</div></li>
+          <li><span class="kk-dot" style="background:var(--em);"></span><div>Là Experiment 7 — institutionalize hoshin</div></li>
+          <li><span class="kk-dot" style="background:var(--em);"></span><div>Output: Culture học hỏi liên tục</div></li>
+        </ul>
+        <div style="margin-top:10px;font-size:11px;color:var(--em);font-weight:600;">VD: 5S daily · Andon pull · Daily standup PDCA · Quick fix</div>
+      </div>
+    </div>
+    <div class="pbox" style="margin-top:14px;">
+      <p class="pbox-text">Standardized work là điều kiện tiên quyết cho cả Kaikaku lẫn Kaizen. <strong>Không có standardized work = không có baseline để cải tiến</strong>. Hoshin is not about standing still — nó về việc dùng phương pháp khoa học để liên tục thích nghi.</p>
+      <p class="pbox-src">— Jackson (2006) · Chapter 9</p>
+    </div>
+  </div>
+
+  <div class="card c4">
+    <span class="ov ov-t">DO Phase checklist</span>
+    <h3 class="card-title">6 Điều kiện để DO Phase thành công</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="sn sn-t">✓</div>
+        <div><div class="st">Standardized work đã có</div><div class="sd">Không có baseline → không thể đo improvement. Bước này thường bị bỏ qua.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-t">✓</div>
+        <div><div class="st">Mỗi A3-T có 1 owner rõ ràng</div><div class="sd">Không phải committee. Một người chịu trách nhiệm — kể cả khi team thực thi.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-t">✓</div>
+        <div><div class="st">Training trước Kaikaku</div><div class="sd">Intensive training in productivity và quality methods. Thiếu training → lặp lại vấn đề cũ.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-t">✓</div>
+        <div><div class="st">Leaders là teachers, không chỉ là managers</div><div class="sd">Jackson: Develop Leaders Who Can Teach. Teachable moments = cốt lõi của lean culture.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-t">✓</div>
+        <div><div class="st">No-blame environment</div><div class="sd">Check phase yêu cầu báo cáo thực tế. No-blame = điều kiện để mọi người báo cáo sự thật.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-t">✓</div>
+        <div><div class="st">Visual Management</div><div class="sd">Hoshin Management Boards. Mọi người nhìn thấy tiến độ real-time — không cần meeting để biết status.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid V -->
+
+<!-- ════ SECTION VI: TỔNG HỢP FLOW ════ -->
+<div class="sec sec-e"><span>VIII · Tổng Hợp Giai Đoạn DO — Từ Annual Hoshin đến Daily Action</span></div>
+
+<div class="grid">
+
+  <div class="card c-dark c12" style="min-height:auto;">
+    <span class="ov" style="color:rgba(255,255,255,.5);">End-to-End Execution Flow · Tổng hợp từ 4 nguồn</span>
+    <h3 class="card-title" style="margin-bottom:16px;">Roadmap: Annual Hoshin → Daily Work</h3>
+
+    <div class="flow" style="gap:8px;">
+      <div class="fs" style="background:rgba(88,86,214,.2);color:#C4B5FD;border-color:rgba(88,86,214,.3);font-size:10px;">
+        1️⃣ ANNUAL HOSHIN<br><small style="font-weight:400;">3–5 Breakthroughs trên X-Matrix</small>
+      </div>
+      <span class="fi">→</span>
+      <div class="fs" style="background:rgba(26,122,80,.2);color:#6EE7B7;border-color:rgba(26,122,80,.3);font-size:10px;">
+        2️⃣ Z-DEPLOYMENT<br><small style="font-weight:400;">What → How qua 3–4 cấp</small>
+      </div>
+      <span class="fi">→</span>
+      <div class="fs" style="background:rgba(0,113,227,.2);color:#93C5FD;border-color:rgba(0,113,227,.3);font-size:10px;">
+        3️⃣ CATCHBALL 5 ROUNDS<br><small style="font-weight:400;">Top-down + Bottom-up</small>
+      </div>
+      <span class="fi">→</span>
+      <div class="fs" style="background:rgba(0,149,168,.2);color:#67E8F9;border-color:rgba(0,149,168,.3);font-size:10px;">
+        4️⃣ MASTERPLAN + A3-T<br><small style="font-weight:400;">Action · Owner · Deadline</small>
+      </div>
+      <span class="fi">→</span>
+      <div class="fs" style="background:rgba(196,123,0,.2);color:#FCD34D;border-color:rgba(196,123,0,.3);font-size:10px;">
+        5️⃣ KAIKAKU<br><small style="font-weight:400;">Breakthrough 1–12 weeks</small>
+      </div>
+      <span class="fi">→</span>
+      <div class="fs" style="background:rgba(26,122,80,.3);color:#A7F3D0;border-color:rgba(26,122,80,.4);font-size:10px;">
+        6️⃣ KAIZEN<br><small style="font-weight:400;">Daily continuous improvement</small>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px;">
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.10em;margin-bottom:6px;">KEY RULE 1</div>
+        <div style="font-size:13px;color:#FAFAFA;line-height:1.6;">Cascade <strong>Hành động</strong>, không phải mục tiêu. Hành động cấp trên = Mục tiêu cấp dưới.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.10em;margin-bottom:6px;">KEY RULE 2</div>
+        <div style="font-size:13px;color:#FAFAFA;line-height:1.6;">Tối đa <strong>5 Strategic Actions</strong>. Mỗi action có 1 owner, 1 A3-T, và milestone rõ ràng.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.10em;margin-bottom:6px;">KEY RULE 3</div>
+        <div style="font-size:13px;color:#FAFAFA;line-height:1.6;">Leaders phải <strong>align trước</strong> khi cùng cascade một mục tiêu cho nhiều bộ phận.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Bridge -->
+  <div class="card ce c6">
+    <span class="ov ov-e">OE Lens · Góc Tư Vấn</span>
+    <h3 class="card-title">Áp dụng vào Ladysfit Franchise</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="sn sn-e">🏆</div>
+        <div>
+          <div class="st">Annual Hoshin System-Level</div>
+          <div class="sd">Ladysfit HQ thiết kế X-Matrix tổng với 3–5 breakthrough: VD "Tăng retention rate 40% toàn hệ thống", "Open 10 cơ sở mới", "Standardize service quality 80% pass rate".</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn sn-e">⚡</div>
+        <div>
+          <div class="st">Z-Deploy xuống Franchise Level</div>
+          <div class="sd">"Tăng retention rate 40%" → (Z-deploy) → "Cải thiện member journey từ week 4-8" → (Z-deploy) → "Trainer gọi điện check-in 100% member tuần 4".</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn sn-e">📋</div>
+        <div>
+          <div class="st">Masterplan cho từng Franchisee</div>
+          <div class="sd">Mỗi cơ sở có Masterplan riêng — 5 actions tối đa, có owner và milestones. Được review hàng tháng giữa Franchisee Owner và Field Consultant.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn sn-e">🌱</div>
+        <div>
+          <div class="st">Kaikaku + Kaizen cho Trainers</div>
+          <div class="sd">Kaikaku: Workshop 3 ngày retraining toàn bộ onboarding process. Kaizen: Trainer log 1 improvement mỗi tuần vào Kaizen board — HQ tổng hợp best practices.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Common mistakes -->
+  <div class="card c6">
+    <span class="ov ov-a">Điểm mù thực tế</span>
+    <h3 class="card-title">⚠️ 5 Sai Lầm Phổ Biến Nhất trong Giai Đoạn DO</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="sn" style="background:var(--rd-lt);color:var(--rd);border:1px solid var(--rd-bd);">1</div>
+        <div><div class="st">Bỏ qua Standardized Work</div><div class="sd">Muốn improve nhưng chưa có baseline. Kết quả: improvement không đo được, không sustainable.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn" style="background:var(--rd-lt);color:var(--rd);border:1px solid var(--rd-bd);">2</div>
+        <div><div class="st">Quá nhiều objectives</div><div class="sd">"Tất cả đều ưu tiên" = không có gì ưu tiên. 5 actions là maximum thực sự, không phải guideline.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn" style="background:var(--rd-lt);color:var(--rd);border:1px solid var(--rd-bd);">3</div>
+        <div><div class="st">Leader chỉ định detail cho cấp dưới</div><div class="sd">Vinardi: L1 không được quyết định hành động chi tiết cho L2. Đây tước đi sự tự chủ và engagement thực sự.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn" style="background:var(--rd-lt);color:var(--rd);border:1px solid var(--rd-bd);">4</div>
+        <div><div class="st">Không có monthly review</div><div class="sd">Masterplan không có review = document chết. Review phải có cấu trúc: results + problem solving + decisions.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn" style="background:var(--rd-lt);color:var(--rd);border:1px solid var(--rd-bd);">5</div>
+        <div><div class="st">Convert A3 thành PowerPoint</div><div class="sd">Jackson: "Do not convert A3s into presentation slides!" A3 là handout — không phải deck. Giữ nguyên format.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid VI -->
+
+<!-- ═══════════════════ SECTION IX — X-MATRIX DEEP DIVE ═══════════════════ -->
+<div class="sec sec-a"><span>IX · X-Matrix — Kiến Trúc Chiến Lược Trên 1 Trang</span></div>
+
+<div class="grid">
+
+  <!-- Hero X-Matrix -->
+  <div class="card ca c8 r2">
+    <span class="overline ov-a">Định nghĩa & Bản chất</span>
+    <h2 class="card-title-lg">X-Matrix là gì?</h2>
+    <p class="card-body">
+      Bảng kế hoạch hình chữ X cho phép nhìn thấy <strong>toàn bộ mối liên kết</strong> giữa Chiến lược dài hạn, Chiến thuật hàng năm, Dự án triển khai, và Metrics đo lường — tất cả trên <strong>một trang duy nhất</strong>.
+      <br><br>
+      Bruce Sheridan: <em>"X-Matrix liên kết Long-Term Strategy, Tactical Agenda, Projects, và Metrics trên một trang, đồng thời cho thấy cách nguồn lực được phân bổ."</em>
+      <br><br>
+      Jackson (2006): X-Matrix biến chiến lược thành <strong>thiết kế thực nghiệm</strong> (experimental design) — 7 thí nghiệm lồng nhau mà toàn tổ chức cùng thực hiện như một cộng đồng khoa học.
+    </p>
+    <div class="divider"></div>
+    <p class="overline ov-a" style="margin-bottom:8px;">4 Trục của X-Matrix</p>
+    <div class="flow">
+      <div class="fstep" style="background:var(--violet-lt);color:var(--violet);border-color:rgba(88,86,214,.2);">◀ TÂY<br><small style="font-weight:400;font-size:9px;">Chiến lược<br>Dài hạn</small></div>
+      <span class="ficon">↕</span>
+      <div class="fstep" style="background:var(--blue-lt);color:var(--blue);border-color:var(--blue-border);">BẮC ▲<br><small style="font-weight:400;font-size:9px;">Chiến thuật<br>Hàng năm</small></div>
+      <span class="ficon">↕</span>
+      <div class="fstep" style="background:var(--amber-lt);color:var(--amber);border-color:var(--amber-border);">NAM ▼<br><small style="font-weight:400;font-size:9px;">Dự án &<br>Teams</small></div>
+      <span class="ficon">↕</span>
+      <div class="fstep" style="background:var(--emerald-lt);color:var(--emerald);border-color:rgba(29,122,78,.2);">ĐÔNG ▶<br><small style="font-weight:400;font-size:9px;">Metrics<br>Kết quả</small></div>
+    </div>
+    <div class="pbox">
+      <p class="pbox-text">Nếu một dự án <strong>không điền được vào ô tương quan</strong> — đó là tín hiệu đỏ: dự án đó không phục vụ chiến lược nào. Nếu một chiến lược không có dự án nào → chiến lược đó chỉ tồn tại trên giấy.</p>
+      <p class="pbox-src">— Jackson, 2006 · Diễn giải Adler</p>
+    </div>
+    <div class="divider"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="tag ta">Organizational Alignment</span>
+      <span class="tag tv">Giai đoạn PLAN</span>
+      <span class="tag te">Nested Experiments</span>
+    </div>
+  </div>
+
+  <!-- X-Matrix Visual -->
+  <div class="card c4 r2">
+    <span class="overline ov-a">Cấu trúc trực quan</span>
+    <h3 class="card-title" style="font-size:15px;">Anatomy của X-Matrix</h3>
+    <div class="xm">
+      <div class="xc xc-0"></div>
+      <div class="xc xc-n">Chiến thuật<br>Hàng năm<br>↑ BẮC</div>
+      <div class="xc xc-0"></div>
+      <div class="xc xc-w">◀ TÂY<br>Chiến lược<br>Dài hạn</div>
+      <div class="xc xc-x">✕</div>
+      <div class="xc xc-e">ĐÔNG ▶<br>Metrics<br>Kết quả</div>
+      <div class="xc xc-0"></div>
+      <div class="xc xc-s">↓ NAM<br>Dự án &<br>Teams</div>
+      <div class="xc xc-0"></div>
+    </div>
+    <div class="divider" style="margin:14px 0 10px;"></div>
+    <p class="overline ov-a" style="margin-bottom:6px;">Ma trận tương quan</p>
+    <p style="font-size:11px;color:var(--tx-2);margin-bottom:10px;line-height:1.5;">● = liên kết mạnh · ◉ = liên kết vừa · ○ = không liên kết</p>
+    <div class="dotgrid">
+      <div class="dotrow">
+        <span class="dlabel"></span>
+        <span class="chdr">T1</span><span class="chdr">T2</span><span class="chdr">T3</span><span class="chdr">M1</span>
+      </div>
+      <div class="dotrow">
+        <span class="dlabel">Chiến lược 1</span>
+        <span class="dot d-s">●</span><span class="dot d-m">◉</span><span class="dot d-0"></span><span class="dot d-s">●</span>
+      </div>
+      <div class="dotrow">
+        <span class="dlabel">Chiến lược 2</span>
+        <span class="dot d-0"></span><span class="dot d-s">●</span><span class="dot d-s">●</span><span class="dot d-m">◉</span>
+      </div>
+      <div class="dotrow">
+        <span class="dlabel">Chiến lược 3</span>
+        <span class="dot d-m">◉</span><span class="dot d-0"></span><span class="dot d-s">●</span><span class="dot d-s">●</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quy trình điền -->
+  <div class="card c6">
+    <span class="overline ov-a">Cách vận hành</span>
+    <h3 class="card-title">5 bước điền X-Matrix</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-a">1</div>
+        <div><div class="stitle">Điền Chiến lược Dài hạn (Tây)</div><div class="sdesc">3–5 "breakthroughs" trong 2–3 năm tới. Chỉ những gì thực sự đột phá — không phải mọi thứ.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-a">2</div>
+        <div><div class="stitle">Điền Chiến thuật Hàng năm (Bắc)</div><div class="sdesc">Tactical projects 6–18 tháng. Cụ thể, có người chịu trách nhiệm, có deadline rõ ràng.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-a">3</div>
+        <div><div class="stitle">Xác định Ô Tương quan</div><div class="sdesc">● hoặc ◉ tại giao điểm chiến lược ↔ chiến thuật. Ô trống = gap chiến lược cần giải quyết.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-a">4</div>
+        <div><div class="stitle">Gán Teams & Metrics (Nam + Đông)</div><div class="sdesc">Phân công team thực hiện. Xác định process metrics và results metrics cho từng mục tiêu.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum snum-a">5</div>
+        <div><div class="stitle">Chạy Catchball để tinh chỉnh</div><div class="sdesc">Đưa X-Matrix qua các vòng Catchball. Kết quả: được tất cả cấp sở hữu và đồng thuận thực sự.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- X-Matrix vai trò trong 3 giai đoạn -->
+  <div class="card c6">
+    <span class="overline ov-a">Vị trí trong Hoshin</span>
+    <h3 class="card-title">X-Matrix trong 3 giai đoạn Hoshin</h3>
+    <p style="font-size:13px;color:var(--tx-2);margin-bottom:12px;">Bruce Sheridan (Kesterson, 2015): Hoshin gồm 3 bước — X-Matrix phục vụ bước <strong>Organizational Alignment</strong>.</p>
+    <table class="tbl">
+      <thead><tr><th>Giai đoạn</th><th>Công cụ</th><th>Mục đích</th></tr></thead>
+      <tbody>
+        <tr><td>Strategy Development</td><td><span class="tag tv" style="font-size:10px;">Scan Tools</span></td><td>Phân tích MT, xác định tầm nhìn</td></tr>
+        <tr><td><strong style="color:var(--amber);">Alignment</strong></td><td><span class="tag ta" style="font-size:10px;">X-Matrix</span></td><td>Liên kết chiến lược → chiến thuật → metric</td></tr>
+        <tr><td>Execution</td><td><span class="tag tb" style="font-size:10px;">A3 Report</span></td><td>Hướng dẫn team thực thi từng bước</td></tr>
+      </tbody>
+    </table>
+    <div class="divider"></div>
+    <p style="font-size:12px;color:var(--tx-2);line-height:1.65;">
+      <strong style="color:var(--tx-1);">Nguyên tắc phân cấp:</strong> X-Matrix cấp cao nhất sinh ra X-Matrix cấp thấp hơn — tạo ra hệ thống thực nghiệm lồng nhau (nested experiments) theo Jackson. Mỗi cấp team có X-Matrix riêng, kết nối ngược lên X-Matrix của cấp trên.
+    </p>
+  </div>
+
+  <!-- Feynman X-Matrix -->
+  <div class="card c12 cv">
+    <span class="overline ov-v">Feynman Compression — X-Matrix</span>
+    <h3 class="card-title">Hiểu X-Matrix theo 3 mức độ</h3>
+    <div class="feynman">
+      <div class="flevel">
+        <span class="flv lv1">L1</span>
+        <p class="ftext">X-Matrix giống như bảng điểm FIFA — nhìn vào thấy ngay đội nào (dự án) đang chiến đấu cho mục tiêu nào (chiến lược), đang thắng hay thua (metrics), theo cùng một format nhất quán cho toàn giải đấu.</p>
+      </div>
+      <div class="flevel">
+        <span class="flv lv2">L2</span>
+        <p class="ftext">X-Matrix là <strong>"bảng trực quan hóa sự căn chỉnh"</strong> — buộc tổ chức chứng minh tính nhất quán theo chiều dọc (mỗi chiến thuật phải phục vụ ít nhất một chiến lược) và chiều ngang (mỗi chiến lược được đo bằng ít nhất một metric). Những ô trống trong ma trận tương quan chính là những điểm mù chiến lược chưa được nhận ra.</p>
+      </div>
+      <div class="flevel">
+        <span class="flv lv3">L3</span>
+        <p class="ftext"><strong>Mental Model:</strong> X-Matrix là "bản đồ gen" của chiến lược — DNA kết nối giữa mọi thứ tổ chức đang làm. Nếu không thể vẽ đường từ một hành động hàng ngày lên đến một chiến lược trên X-Matrix — hành động đó là <em>muda</em> (lãng phí).</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid III -->
+
+<!-- ═══════════════════ SECTION X — A3 REPORT DEEP DIVE ═══════════════════ -->
+<div class="sec sec-b"><span>X · A3 Report — Tư Duy Được Vật Chất Hóa</span></div>
+
+<div class="grid">
+
+  <!-- Hero: định nghĩa + 9 elements chính thống -->
+  <div class="card cb c8">
+    <span class="overline ov-b">Nguồn gốc Toyota · Jackson (2006) · Kanban Tool · LEI</span>
+    <h2 class="card-title-lg">A3 Report là gì?</h2>
+    <p class="card-body">
+      Tài liệu khổ A3 (297×420mm / 11"×17") — đặt tên theo kích thước giấy. <strong>Toyota</strong> phát triển A3 như một phần của Toyota Production System: mọi vấn đề quan trọng phải được ghi lại, phân tích, và giải quyết trên <strong>một tờ giấy duy nhất</strong> theo nguyên lý <em>Genchi Genbutsu</em> (đến tận nơi xem thực tế).<br><br>
+      Taiichi Ōno — cha đẻ TPS — nổi tiếng với việc từ chối đọc bất kỳ báo cáo nào dài hơn một trang. Ryuji Fukuda và các nhà tư vấn Nhật cũng khuyến nghị thực hành này. A3 không phải <em>form điền</em> — nó là <strong>tư duy được vật chất hóa</strong>, một storyboard logic từ vấn đề đến hành động.
+    </p>
+    <div class="divider"></div>
+    <p class="overline ov-b" style="margin-bottom:8px;">9 Elements Chính Thống của Toyota A3 (Jackson, 2006)</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+      <div style="background:var(--blue-lt);border:1px solid var(--blue-border);border-radius:var(--r-sm);padding:8px 10px;">
+        <div style="font-size:9px;font-weight:800;color:var(--blue);letter-spacing:.08em;margin-bottom:3px;">① THEME</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Thesis / Tiêu đề</div>
+        <div style="font-size:10px;color:var(--tx-2);">Phát biểu vấn đề hoặc thách thức ở đầu form</div>
+      </div>
+      <div style="background:var(--blue-lt);border:1px solid var(--blue-border);border-radius:var(--r-sm);padding:8px 10px;">
+        <div style="font-size:9px;font-weight:800;color:var(--blue);letter-spacing:.08em;margin-bottom:3px;">② PROBLEM STATEMENT</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Phát biểu vấn đề</div>
+        <div style="font-size:10px;color:var(--tx-2);">Current state ban đầu — định nghĩa motive dự án</div>
+      </div>
+      <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 10px;">
+        <div style="font-size:9px;font-weight:800;color:var(--tx-3);letter-spacing:.08em;margin-bottom:3px;">③ TARGET STATEMENT</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Tuyên bố mục tiêu</div>
+        <div style="font-size:10px;color:var(--tx-2);">Future state — xác định phạm vi dự án</div>
+      </div>
+      <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 10px;">
+        <div style="font-size:9px;font-weight:800;color:var(--tx-3);letter-spacing:.08em;margin-bottom:3px;">④ SCIENTIFIC PROCESS</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Quy trình khoa học</div>
+        <div style="font-size:10px;color:var(--tx-2);">PDCA — phương pháp điều tra vấn đề</div>
+      </div>
+      <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 10px;">
+        <div style="font-size:9px;font-weight:800;color:var(--tx-3);letter-spacing:.08em;margin-bottom:3px;">⑤ SYSTEMATIC ANALYSIS</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Phân tích hệ thống</div>
+        <div style="font-size:10px;color:var(--tx-2);">5 Whys · Fishbone · Cost-benefit · DOE</div>
+      </div>
+      <div style="background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 10px;">
+        <div style="font-size:9px;font-weight:800;color:var(--tx-3);letter-spacing:.08em;margin-bottom:3px;">⑥ PROPOSED SOLUTION</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Giải pháp đề xuất</div>
+        <div style="font-size:10px;color:var(--tx-2);">Countermeasures + phối hợp cross-functional</div>
+      </div>
+      <div style="background:var(--emerald-lt);border:1px solid rgba(29,122,78,.18);border-radius:var(--r-sm);padding:8px 10px;">
+        <div style="font-size:9px;font-weight:800;color:var(--emerald);letter-spacing:.08em;margin-bottom:3px;">⑦ IMPLEMENTATION TIMELINE</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Kế hoạch thực thi</div>
+        <div style="font-size:10px;color:var(--tx-2);">Action · Responsible · Deadline</div>
+      </div>
+      <div style="background:var(--emerald-lt);border:1px solid rgba(29,122,78,.18);border-radius:var(--r-sm);padding:8px 10px;">
+        <div style="font-size:9px;font-weight:800;color:var(--emerald);letter-spacing:.08em;margin-bottom:3px;">⑧ GRAPHIC ILLUSTRATIONS</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Hình ảnh trực quan</div>
+        <div style="font-size:10px;color:var(--tx-2);">Charts · VSM · Fishbone · Bar graph</div>
+      </div>
+      <div style="background:var(--amber-lt);border:1px solid var(--amber-border);border-radius:var(--r-sm);padding:8px 10px;grid-column:span 2;">
+        <div style="font-size:9px;font-weight:800;color:var(--amber);letter-spacing:.08em;margin-bottom:3px;">⑨ DATE & REPORTING UNIT / OWNER</div>
+        <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Ngày & Người chịu trách nhiệm</div>
+        <div style="font-size:10px;color:var(--tx-2);">Ở cuối form — cá nhân hoặc team sở hữu A3 này</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A3 Philosophy + Metric A3 / Countermeasure A3 từ thực tế -->
+  <div class="card c4" style="gap:12px;">
+    <span class="overline ov-b">Triết lý & Thực hành</span>
+    <h3 class="card-title" style="font-size:15px;">Tại sao chỉ 1 trang?</h3>
+    <div class="pbox" style="margin-top:0;">
+      <p class="pbox-text"><strong>Nếu không vừa 1 trang A3</strong> — bạn chưa hiểu đủ rõ vấn đề. Taiichi Ōno từ chối đọc báo cáo dài hơn 1 trang. A3 là nơi <strong>tinh chế tư duy</strong>, không phải thu gọn thông tin.</p>
+      <p class="pbox-src">— Toyota Production System · Jackson, 2006</p>
+    </div>
+    <div class="divider"></div>
+    <p class="overline ov-b" style="margin-bottom:6px;">2 loại A3 trong giai đoạn CHECK</p>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-b">📊</div>
+        <div>
+          <div class="stitle">Metric A3</div>
+          <div class="sdesc">Đi kèm Bowling Chart — cung cấp chi tiết về cách metric được tính, data theo khu vực/sản phẩm, và phân tích trend. Giải thích <em>tại sao</em> một ô đỏ trên Bowling Chart.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-b">🔧</div>
+        <div>
+          <div class="stitle">Countermeasure A3</div>
+          <div class="sdesc">Khi Bowling Chart đỏ, dùng RCA (Fishbone + 5 Whys) để tìm root cause, đề xuất countermeasures cụ thể. Cam kết hành động để đưa metric về xanh.</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <p style="font-size:11px;color:var(--tx-2);line-height:1.6;">
+      <strong style="color:var(--tx-1);">Tip from Toyota:</strong> A3 cực kỳ linh hoạt — công ty <strong>nên adapt, không phải adopt</strong>. Revise thuật ngữ cho phù hợp với văn hoá. Đây là "starter set", không phải khuôn cứng.
+    </p>
+  </div>
+
+</div><!-- /row 1 -->
+
+<!-- ─── ROW 2: 6 A3 forms chính thống với layout đầy đủ ─── -->
+<div class="grid" style="margin-top:var(--gap);">
+
+  <!-- Tiêu đề phân loại -->
+  <div class="card cb c12" style="min-height:auto;padding:20px var(--p);">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div>
+        <span class="overline ov-b" style="margin-bottom:4px;">Jackson (2006) · Toyota A3 Starter Set · 6 Loại Chính Thống</span>
+        <h3 class="card-title" style="margin-bottom:0;">Hệ Sinh Thái A3 — Mỗi Loại Phục Vụ Một Giai Đoạn PDCA</h3>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">
+        <span class="tag tv">SCAN</span>
+        <span class="tag ta">PLAN</span>
+        <span class="tag tb">CHECK</span>
+        <span class="tag tr">PROBLEM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- A3-i: Competitive Information Report -->
+  <div class="card c6">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+      <div>
+        <span class="overline ov-v" style="margin-bottom:4px;">Giai đoạn: SCAN</span>
+        <h3 class="card-title" style="margin-bottom:2px;">A3-i · Competitive Information Report</h3>
+        <p style="font-size:11px;color:var(--tx-2);">Free-form · Dùng khi nào: Bất kỳ lúc nào cần raise awareness về biến động cạnh tranh</p>
+      </div>
+      <span class="a3badge bi" style="flex-shrink:0;font-size:13px;padding:4px 12px;">A3-i</span>
+    </div>
+    <div class="a3doc">
+      <div class="a3hd" style="background:#EBE9FC;border-color:rgba(88,86,214,.2);">
+        <span class="a3hd-title" style="color:var(--violet);">A3-i · Competitive Information</span>
+        <span class="a3hd-meta">SCAN Phase · Free-form</span>
+      </div>
+      <div class="a3body">
+        <div class="a3cell-full">
+          <div class="a3lbl" style="color:var(--violet);">① THEME — Chủ đề thông tin</div>
+          <div class="a3val"><span>Tên sự kiện / xu hướng cạnh tranh</span>VD: "Đối thủ X ra mắt dòng sản phẩm mới — ảnh hưởng đến thị phần phân khúc Y"</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--violet);">② CURRENT CONDITIONS</div>
+          <div class="a3val"><span>Môi trường hiện tại</span>Data thị trường · Voice of Customer · Xu hướng ngành · Đối thủ</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--violet);">③ IMPLICATIONS</div>
+          <div class="a3val"><span>Hàm ý chiến lược</span>Tác động đến strategy hiện tại? Cần điều chỉnh gì trên X-Matrix?</div>
+        </div>
+        <div class="a3cell-full">
+          <div class="a3lbl" style="color:var(--violet);">⑧ VISUAL DATA · ⑨ OWNER / DATE</div>
+          <div class="a3val"><span>Biểu đồ · Dữ liệu minh họa</span>Charts · Market data · Trend lines — [Tên người báo cáo] · [Ngày]</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:10px;background:rgba(88,86,214,.05);border-color:rgba(88,86,214,.15);">
+      <p style="color:var(--tx-1);">Mục đích: <strong style="color:var(--violet);">Xây dựng đồng thuận về thực trạng thị trường</strong> trước khi design X-Matrix. Input cho quá trình Scan của Hoshin Team.</p>
+    </div>
+  </div>
+
+  <!-- A3-X: The X-Matrix -->
+  <div class="card c6">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+      <div>
+        <span class="overline ov-a" style="margin-bottom:4px;">Giai đoạn: PLAN</span>
+        <h3 class="card-title" style="margin-bottom:2px;">A3-X · The X-Matrix</h3>
+        <p style="font-size:11px;color:var(--tx-2);">A3 của các A3 · Bundle tất cả A3-T thành 1 grand experiment</p>
+      </div>
+      <span class="a3badge bx" style="flex-shrink:0;font-size:13px;padding:4px 12px;">A3-X</span>
+    </div>
+    <div class="a3doc">
+      <div class="a3hd" style="background:var(--amber-lt);border-color:var(--amber-border);">
+        <span class="a3hd-title" style="color:var(--amber);">A3-X · X-Matrix (Hoshin Plan)</span>
+        <span class="a3hd-meta">PLAN Phase · Tabloid / A3 paper</span>
+      </div>
+      <div class="a3body">
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--amber);">TÂY — Long-term Strategies</div>
+          <div class="a3val"><span>Chiến lược 3–5 năm</span>3–5 breakthrough objectives · Link tới Mission & Vision</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--amber);">BẮC — Annual Tactics</div>
+          <div class="a3val"><span>Chiến thuật năm nay</span>6–18 month projects · Mỗi tactic = 1 A3-T riêng</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--amber);">NAM — Projects & Teams</div>
+          <div class="a3val"><span>Dự án & Nhân sự</span>Team owners · Accountability matrix</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--amber);">ĐÔNG — Results Metrics</div>
+          <div class="a3val"><span>Process & Results KPIs</span>Leading + Lagging indicators · Targets</div>
+        </div>
+        <div class="a3cell-full">
+          <div class="a3lbl" style="color:var(--amber);">CORRELATION MATRIX — Ô tương quan</div>
+          <div class="a3val"><span>● Mạnh · ◉ Vừa · Trống = Không liên kết</span>Giao điểm Chiến lược ↔ Chiến thuật ↔ Metrics — ô trống là tín hiệu đỏ</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:10px;background:var(--amber-md);border-color:var(--amber-border);">
+      <p style="color:var(--tx-1);">Jackson: A3-X là <strong style="color:var(--amber);">"A3 of A3s"</strong> — nó liên kết tất cả A3-T thành một thí nghiệm chiến lược thống nhất. Managers mang A3-X có trách nhiệm điều phối tất cả projects trong tactics section.</p>
+    </div>
+  </div>
+
+  <!-- A3-T: Team Charter -->
+  <div class="card c6">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+      <div>
+        <span class="overline ov-b" style="margin-bottom:4px;">Giai đoạn: PLAN → DO</span>
+        <h3 class="card-title" style="margin-bottom:2px;">A3-T · Team Charter</h3>
+        <p style="font-size:11px;color:var(--tx-2);">Proposal A3 · Dùng trong Catchball · Mỗi tactic trên A3-X có 1 A3-T riêng</p>
+      </div>
+      <span class="a3badge bt" style="flex-shrink:0;font-size:13px;padding:4px 12px;">A3-T</span>
+    </div>
+    <div class="a3doc">
+      <div class="a3hd">
+        <span class="a3hd-title">A3-T · Team Charter</span>
+        <span class="a3hd-meta">PLAN/DO Phase · A3 paper</span>
+      </div>
+      <div class="a3body">
+        <div class="a3cell">
+          <div class="a3lbl">① THEME</div>
+          <div class="a3val"><span>Tên dự án / Tactic</span>Link rõ ràng về tactic nào trên A3-X</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl">② PROBLEM STATEMENT + BACKGROUND</div>
+          <div class="a3val"><span>Current state + Bối cảnh chiến lược</span>Tại sao team này được thành lập?</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl">③ TARGET STATEMENT</div>
+          <div class="a3val"><span>Future state cụ thể</span>SMART target · Scope · Deadline</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl">④ SCIENTIFIC PROCESS + ⑤ ANALYSIS</div>
+          <div class="a3val"><span>PDCA Investigation</span>5 Whys · Fishbone · Root cause analysis</div>
+        </div>
+        <div class="a3cell-full">
+          <div class="a3lbl">⑥⑦ PROPOSED SOLUTION + IMPLEMENTATION TIMELINE</div>
+          <div class="a3val"><span>Action Plan · Who · What · When</span>Countermeasures | Owner | Deadline | Milestone | Status tracker</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl">⑧ GRAPHICS</div>
+          <div class="a3val"><span>Hình ảnh minh họa</span>Value Stream Map · Charts · Process diagram</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl">⑨ TEAM OWNER + DATE</div>
+          <div class="a3val"><span>Manager chịu trách nhiệm</span>Có thể in back-to-back với A3-X liên quan</div>
+        </div>
+      </div>
+    </div>
+    <div class="legend" style="margin-top:10px;">
+      <div class="leg-row"><div class="leg-dot" style="background:var(--blue);"></div><span>Trái (①–⑤): <strong>PLAN</strong> — Define & Analyze vấn đề</span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:var(--emerald);"></div><span>Phải (⑥–⑨): <strong>DO/CHECK/ACT</strong> — Solve & Track</span></div>
+    </div>
+  </div>
+
+  <!-- A3-SR + A3-SSR: Status Reports -->
+  <div class="card c6">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+      <div>
+        <span class="overline ov-e" style="margin-bottom:4px;">Giai đoạn: CHECK</span>
+        <h3 class="card-title" style="margin-bottom:2px;">A3-SR & A3-SSR · Status Reports</h3>
+        <p style="font-size:11px;color:var(--tx-2);">Monthly review tool · Đi kèm Bowling Chart</p>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0;">
+        <span class="a3badge br" style="font-size:11px;padding:3px 8px;">A3-SR</span>
+        <span class="a3badge bsr" style="font-size:11px;padding:3px 8px;">A3-SSR</span>
+      </div>
+    </div>
+
+    <!-- A3-SR -->
+    <p style="font-size:11px;font-weight:700;color:var(--emerald);margin-bottom:6px;letter-spacing:.06em;">A3-SR — STATUS REPORT (Individual Project)</p>
+    <div class="a3doc" style="margin-bottom:10px;">
+      <div class="a3hd" style="background:var(--emerald-lt);border-color:rgba(29,122,78,.2);">
+        <span class="a3hd-title" style="color:var(--emerald);">A3-SR · Monthly Status Report</span>
+        <span class="a3hd-meta">Monthly · Per A3-T or A3-P</span>
+      </div>
+      <div class="a3body">
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--emerald);">PROGRESS vs MILESTONES</div>
+          <div class="a3val"><span>Tiến độ so với cột mốc</span>% hoàn thành · On track / At risk / Late</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--emerald);">OBSTACLES & NEXT STEPS</div>
+          <div class="a3val"><span>Rào cản & Bước tiếp theo</span>Vấn đề gặp phải + Kế hoạch vượt qua</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- A3-SSR -->
+    <p style="font-size:11px;font-weight:700;color:#92400E;margin-bottom:6px;letter-spacing:.06em;">A3-SSR — SUMMARY STATUS REPORT (Multiple Projects)</p>
+    <div class="a3doc">
+      <div class="a3hd" style="background:#FEF3C7;border-color:rgba(146,64,14,.2);">
+        <span class="a3hd-title" style="color:#92400E;">A3-SSR · Summary Status Report</span>
+        <span class="a3hd-meta">Monthly/Quarterly · Per A3-X</span>
+      </div>
+      <div class="a3body">
+        <div class="a3cell">
+          <div class="a3lbl" style="color:#92400E;">PROJECTS SUMMARY</div>
+          <div class="a3val"><span>Tóm tắt nhiều dự án</span>Toàn bộ A3-T và A3-P liên kết với 1 A3-X</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:#92400E;">OVERALL STATUS</div>
+          <div class="a3val"><span>Trạng thái tổng thể</span>Print back-to-back với A3-X liên quan</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:10px;background:var(--emerald-md);border-color:rgba(29,122,78,.15);">
+      <p style="color:var(--tx-1);">Cả A3-SR và A3-SSR đều dùng trong <strong style="color:var(--emerald);">giai đoạn CHECK</strong> — là bridge giữa Bowling Chart (thấy đỏ) và A3-P (xử lý đỏ).</p>
+    </div>
+  </div>
+
+  <!-- A3-P: Problem Solving Report -->
+  <div class="card c6">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+      <div>
+        <span class="overline" style="color:var(--red);margin-bottom:4px;">Giai đoạn: CHECK → ACT</span>
+        <h3 class="card-title" style="margin-bottom:2px;">A3-P · Problem Solving Report</h3>
+        <p style="font-size:11px;color:var(--tx-2);">Classic Toyota A3 · Format gần giống A3-T · Dùng khi lệch milestone hoặc có vấn đề bất ngờ</p>
+      </div>
+      <span class="a3badge bp" style="flex-shrink:0;font-size:13px;padding:4px 12px;">A3-P</span>
+    </div>
+    <div class="a3doc">
+      <div class="a3hd" style="background:var(--red-lt);border-color:rgba(215,0,21,.2);">
+        <span class="a3hd-title" style="color:var(--red);">A3-P · Problem Solving Report</span>
+        <span class="a3hd-meta">CHECK Phase · Course Correction</span>
+      </div>
+      <div class="a3body">
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--red);">① THEME — Tên vấn đề</div>
+          <div class="a3val"><span>Vấn đề cụ thể cần giải quyết</span>"Failure to meet milestone X" hoặc "Vấn đề bất ngờ Y"</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--red);">② PROBLEM STATEMENT</div>
+          <div class="a3val"><span>Gap so với kế hoạch</span>Milestone nào bị miss? Gap lớn bao nhiêu? Tác động gì?</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--red);">③–⑤ RCA + TARGET</div>
+          <div class="a3val"><span>Root cause analysis</span>5 Whys · Fishbone → Target state mới</div>
+        </div>
+        <div class="a3cell">
+          <div class="a3lbl" style="color:var(--red);">⑥⑦ COUNTERMEASURES + TIMELINE</div>
+          <div class="a3val"><span>Hành động khắc phục</span>Proposal to charter new team nếu cần · Owner · Deadline</div>
+        </div>
+        <div class="a3cell-full">
+          <div class="a3lbl" style="color:var(--red);">⑧⑨ GRAPHICS + OWNER</div>
+          <div class="a3val"><span>Minh họa trực quan</span>Control charts · Run charts · Process maps — [Owner] · [Date]</div>
+        </div>
+      </div>
+    </div>
+    <div class="warn" style="margin-top:10px;">
+      <p>⚠️ A3-P khác A3-T ở chỗ: nó phản ứng với <strong>sự cố thực tế</strong> — không phải kế hoạch từ trước. Đây là "course correction" — giúp hệ thống tự điều chỉnh mà không cần phá vỡ cả X-Matrix.</p>
+    </div>
+  </div>
+
+  <!-- A3 Map: Timeline theo PDCA -->
+  <div class="card c12">
+    <span class="overline ov-b">Tổng quan hệ thống</span>
+    <h3 class="card-title">Mỗi A3 Xuất Hiện Khi Nào trong Vòng PDCA?</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px;">
+      <div style="text-align:center;">
+        <div style="background:var(--violet-lt);border:1px solid rgba(88,86,214,.2);border-radius:var(--r-sm);padding:12px 8px;margin-bottom:8px;">
+          <div style="font-size:11px;font-weight:800;color:var(--violet);letter-spacing:.08em;margin-bottom:4px;">SCAN</div>
+          <span class="a3badge bi" style="font-size:12px;">A3-i</span>
+        </div>
+        <p style="font-size:10px;color:var(--tx-2);line-height:1.5;">Phân tích MT · Build consensus trước khi plan</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:var(--amber-lt);border:1px solid var(--amber-border);border-radius:var(--r-sm);padding:12px 8px;margin-bottom:8px;">
+          <div style="font-size:11px;font-weight:800;color:var(--amber);letter-spacing:.08em;margin-bottom:4px;">PLAN</div>
+          <div style="display:flex;gap:4px;justify-content:center;flex-wrap:wrap;">
+            <span class="a3badge bx" style="font-size:10px;">A3-X</span>
+            <span class="a3badge bt" style="font-size:10px;">A3-T</span>
+          </div>
+        </div>
+        <p style="font-size:10px;color:var(--tx-2);line-height:1.5;">X-Matrix + Team Charters · Catchball</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:var(--emerald-lt);border:1px solid rgba(29,122,78,.2);border-radius:var(--r-sm);padding:12px 8px;margin-bottom:8px;">
+          <div style="font-size:11px;font-weight:800;color:var(--emerald);letter-spacing:.08em;margin-bottom:4px;">DO</div>
+          <span class="a3badge bt" style="font-size:12px;">A3-T</span>
+        </div>
+        <p style="font-size:10px;color:var(--tx-2);line-height:1.5;">Execute theo A3-T · Phát triển lãnh đạo</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:#FEF3C7;border:1px solid rgba(146,64,14,.15);border-radius:var(--r-sm);padding:12px 8px;margin-bottom:8px;">
+          <div style="font-size:11px;font-weight:800;color:#92400E;letter-spacing:.08em;margin-bottom:4px;">CHECK</div>
+          <div style="display:flex;gap:4px;justify-content:center;flex-wrap:wrap;">
+            <span class="a3badge br" style="font-size:10px;">A3-SR</span>
+            <span class="a3badge bsr" style="font-size:10px;">A3-SSR</span>
+          </div>
+        </div>
+        <p style="font-size:10px;color:var(--tx-2);line-height:1.5;">Monthly review · Bowling Chart trigger</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="background:var(--red-lt);border:1px solid rgba(215,0,21,.15);border-radius:var(--r-sm);padding:12px 8px;margin-bottom:8px;">
+          <div style="font-size:11px;font-weight:800;color:var(--red);letter-spacing:.08em;margin-bottom:4px;">ACT/PROBLEM</div>
+          <span class="a3badge bp" style="font-size:12px;">A3-P</span>
+        </div>
+        <p style="font-size:10px;color:var(--tx-2);line-height:1.5;">Course correction · Xử lý vấn đề bất ngờ</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+      <span style="font-size:12px;color:var(--tx-2);">Kết nối thực tế:</span>
+      <span class="tag ta" style="font-size:10px;">Bowling Chart đỏ</span>
+      <span style="font-size:12px;color:var(--tx-3);">→</span>
+      <span class="tag tb" style="font-size:10px;">Metric A3 giải thích</span>
+      <span style="font-size:12px;color:var(--tx-3);">→</span>
+      <span class="tag tr" style="font-size:10px;">A3-P / Countermeasure A3 xử lý</span>
+      <span style="font-size:12px;color:var(--tx-3);">→</span>
+      <span class="tag te" style="font-size:10px;">Bowling Chart về xanh</span>
+    </div>
+  </div>
+
+</div><!-- /row 2 -->
+
+<!-- ─── ROW 3: Feynman + So sánh ─── -->
+<div class="grid" style="margin-top:var(--gap);">
+
+  <!-- Feynman A3 -->
+  <div class="card c7 cb">
+    <span class="overline ov-b">Feynman Compression — A3 Report</span>
+    <h3 class="card-title">Hiểu A3 theo 3 mức độ</h3>
+    <div class="feynman">
+      <div class="flevel">
+        <span class="flv lv1">L1</span>
+        <p class="ftext">A3 giống tờ tóm tắt bệnh án của bác sĩ — chứa đủ thông tin để bất kỳ ai cũng hiểu ngay tình trạng, vấn đề là gì, đang điều trị gì, bước tiếp theo là gì — tất cả trên 1 tờ, không cần đọc cả hồ sơ dày.</p>
+      </div>
+      <div class="flevel">
+        <span class="flv lv2">L2</span>
+        <p class="ftext">A3 là <strong>container tư duy chuẩn hóa</strong> — buộc người viết trả lời đúng thứ tự PDCA: hiểu vấn đề trước (①–⑤), giải quyết sau (⑥–⑨). Giới hạn 1 trang không phải để tiết kiệm giấy — đó là cơ chế tự kiểm tra: không viết vừa = chưa đủ rõ để hành động. Graphic illustrations là bắt buộc — không phải tùy chọn.</p>
+      </div>
+      <div class="flevel">
+        <span class="flv lv3">L3</span>
+        <p class="ftext"><strong>Mental Model:</strong> A3 là "X-quang tư duy" — làm quá trình suy nghĩ của một team trở nên <strong>nhìn thấy được</strong> và <strong>challenge được</strong>. Toyota gọi đây là "kanban democracy" — quyền lực không đến từ chức vụ, mà đến từ ai có A3 tốt nhất sống sót qua quá trình phản biện.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- So sánh A3 vs truyền thống -->
+  <div class="card c5">
+    <span class="overline ov-b">Phân biệt</span>
+    <h3 class="card-title">A3 vs Báo cáo truyền thống</h3>
+    <table class="tbl">
+      <thead><tr><th>Tiêu chí</th><th>Truyền thống</th><th>A3</th></tr></thead>
+      <tbody>
+        <tr><td>Độ dài</td><td>10–50+ trang</td><td><strong style="color:var(--blue);">1 trang cố định</strong></td></tr>
+        <tr><td>Cấu trúc</td><td>Tự do</td><td><strong style="color:var(--blue);">9 elements Toyota</strong></td></tr>
+        <tr><td>Root cause</td><td>Thường bỏ qua</td><td><strong style="color:var(--blue);">Bắt buộc (5 Whys)</strong></td></tr>
+        <tr><td>Visual</td><td>PowerPoint slides</td><td><strong style="color:var(--blue);">Graphics embedded</strong></td></tr>
+        <tr><td>Người đọc</td><td>Nhận thụ động</td><td><strong style="color:var(--blue);">Catchball đối thoại</strong></td></tr>
+        <tr><td>Cập nhật</td><td>Document tĩnh</td><td><strong style="color:var(--blue);">Sống — theo PDCA</strong></td></tr>
+        <tr><td>Link chiến lược</td><td>Không rõ</td><td><strong style="color:var(--blue);">Truy ngược về X-Matrix</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /row 3 -->
+
+<!-- ═══════════════════ SECTION X-B — A3 FORMS CHI TIẾT ═══════════════════ -->
+<div class="sec sec-b"><span>X-B · 6 A3 Forms — Cấu Trúc Chính Thống (Jackson, 2006)</span></div>
+
+<!-- Tab nav -->
+<div class="a3-tab-nav" id="a3nav">
+  <button class="a3-tab active" data-tab="a3i">A3-i<span>Scan</span></button>
+  <button class="a3-tab" data-tab="a3x">A3-X<span>X-Matrix</span></button>
+  <button class="a3-tab" data-tab="a3t">A3-T<span>Team Charter</span></button>
+  <button class="a3-tab" data-tab="a3sr">A3-SR<span>Status Report</span></button>
+  <button class="a3-tab" data-tab="a3ssr">A3-SSR<span>Summary</span></button>
+  <button class="a3-tab" data-tab="a3p">A3-P<span>Problem</span></button>
+</div>
+
+<!-- A3-i -->
+<div class="a3-panel active" id="tab-a3i">
+  <div class="grid">
+    <div class="card cb c5">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div class="a3-form-badge" style="background:var(--violet-lt);color:var(--violet);">A3-i</div>
+        <div>
+          <h3 class="card-title" style="margin:0 0 4px;">Competitive Information Report</h3>
+          <p style="font-size:12px;color:var(--tx-3);">Scan Phase · Free-form · Concise · Anytime</p>
+        </div>
+      </div>
+      <p class="card-body" style="margin-bottom:14px;">Báo cáo súc tích về những diễn biến quan trọng trong môi trường cạnh tranh. Dùng <strong>bất kỳ lúc nào</strong> trong chu trình Hoshin khi phát hiện thay đổi về điều kiện kinh doanh cần phản ánh vào chiến lược.</p>
+      <div class="a3-meta-row">
+        <span class="tag tv">Scan Phase</span>
+        <span class="tag" style="color:var(--tx-3);border-color:var(--border);background:var(--bg-subtle);">Free-form</span>
+        <span class="tag te">Anytime</span>
+      </div>
+      <div class="divider"></div>
+      <div class="steps">
+        <div class="step"><div class="snum snum-b">!</div><div><div class="stitle">Mục đích</div><div class="sdesc">Xây dựng sự đồng thuận về những thay đổi trong điều kiện cung-cầu <em>trước khi</em> xây dựng A3-X. Kết quả của environmental scan nuôi dữ liệu vào X-Matrix.</div></div></div>
+      </div>
+    </div>
+    <div class="card c7">
+      <span class="overline ov-b">Cấu trúc form A3-i (Toyota origin)</span>
+      <div class="a3-form-preview" style="border-color:rgba(88,86,214,.25);background:linear-gradient(145deg,#FAFAFF,#F0EFFD);">
+        <div class="a3fp-header" style="background:rgba(88,86,214,.12);border-color:rgba(88,86,214,.2);">
+          <span class="a3fp-title" style="color:var(--violet);">A3-i · Competitive Information Report</span>
+          <div class="a3fp-meta">
+            <span>Date:</span><span>Division:</span><span>Author:</span>
+          </div>
+        </div>
+        <div class="a3fp-body-3col">
+          <div class="a3fp-cell" style="grid-column:span 3;background:rgba(88,86,214,.06);">
+            <div class="a3fp-lbl" style="color:var(--violet);">THEME / Chủ đề</div>
+            <div class="a3fp-hint">Phát biểu vấn đề / cơ hội trong môi trường cạnh tranh — 1 câu ngắn gọn, rõ ràng</div>
+          </div>
+          <div class="a3fp-cell" style="grid-column:span 2;">
+            <div class="a3fp-lbl" style="color:var(--violet);">MARKET CONDITIONS / Điều kiện thị trường</div>
+            <div class="a3fp-hint">Phân tích Porter Matrix: Khách hàng · Đối thủ · Nhà cung cấp · Sản phẩm thay thế · Rào cản gia nhập</div>
+            <div class="a3fp-subgrid">
+              <div class="a3fp-sub"><div class="a3fp-sublbl">Customers</div><div class="a3fp-subhint">Nhu cầu & kỳ vọng thay đổi</div></div>
+              <div class="a3fp-sub"><div class="a3fp-sublbl">Competitors</div><div class="a3fp-subhint">Động thái đối thủ</div></div>
+              <div class="a3fp-sub"><div class="a3fp-sublbl">Suppliers</div><div class="a3fp-subhint">Biến động chuỗi cung ứng</div></div>
+              <div class="a3fp-sub"><div class="a3fp-sublbl">Technology</div><div class="a3fp-subhint">Công nghệ mới / disruption</div></div>
+            </div>
+          </div>
+          <div class="a3fp-cell">
+            <div class="a3fp-lbl" style="color:var(--violet);">IMPLICATIONS / Hàm ý chiến lược</div>
+            <div class="a3fp-hint">Thông tin này có nghĩa gì với chiến lược hiện tại? Cần điều chỉnh gì trên X-Matrix?</div>
+          </div>
+          <div class="a3fp-cell" style="grid-column:span 3;">
+            <div class="a3fp-lbl" style="color:var(--violet);">RECOMMENDED ACTIONS / Khuyến nghị</div>
+            <div class="a3fp-hint">Hành động cụ thể đề xuất · Ai cần biết thông tin này · Timeline xem xét</div>
+          </div>
+        </div>
+        <div class="a3fp-footer">
+          <span>Approver:</span><span>Review date:</span><span>Source / Reference:</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A3-X -->
+<div class="a3-panel" id="tab-a3x">
+  <div class="grid">
+    <div class="card ca c5">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div class="a3-form-badge" style="background:var(--amber-lt);color:var(--amber);">A3-X</div>
+        <div>
+          <h3 class="card-title" style="margin:0 0 4px;">The X-Matrix</h3>
+          <p style="font-size:12px;color:var(--tx-3);">Plan Phase · "A3 of A3s" · Strategy Cascade</p>
+        </div>
+      </div>
+      <p class="card-body" style="margin-bottom:14px;">Jackson: <em>"A3-X là A3 của các A3s"</em> — nó liên kết toàn bộ các A3-T thành một <strong>grand experiment</strong> duy nhất hướng tới strategic intent. Người mang A3-X chịu trách nhiệm phối hợp và giám sát toàn bộ projects trong phần "tactics".</p>
+      <div class="a3-meta-row">
+        <span class="tag ta">Plan Phase</span>
+        <span class="tag ta">Mid-term Strategy</span>
+        <span class="tag ta">Annual Hoshin</span>
+      </div>
+      <div class="divider"></div>
+      <div class="steps">
+        <div class="step"><div class="snum snum-a">!</div><div><div class="stitle">Scope</div><div class="sdesc">Dùng để build mid-term strategy (3–5 năm) <strong>VÀ</strong> annual hoshin (6–18 tháng). Có thể in back-to-back với A3-T liên quan để tiện tham chiếu.</div></div></div>
+      </div>
+    </div>
+    <div class="card c7">
+      <span class="overline ov-a">Cấu trúc form A3-X</span>
+      <div class="a3-form-preview" style="border-color:var(--amber-border);background:linear-gradient(145deg,#FFFEF7,#FEF9E7);">
+        <div class="a3fp-header" style="background:rgba(245,158,11,.10);border-color:var(--amber-border);">
+          <span class="a3fp-title" style="color:var(--amber);">A3-X · Hoshin X-Matrix</span>
+          <div class="a3fp-meta"><span>Business Unit:</span><span>Period:</span><span>Team Leader:</span></div>
+        </div>
+        <!-- X-Matrix grid -->
+        <div class="a3fp-xmatrix">
+          <div class="a3fp-xm-corner"></div>
+          <div class="a3fp-xm-north">
+            <div class="a3fp-lbl" style="color:var(--blue);">↑ ANNUAL TACTICS (NORTH)</div>
+            <div class="a3fp-hint">Tactical projects 6–18 tháng · mỗi tactic = 1 A3-T</div>
+            <div style="display:flex;gap:4px;margin-top:6px;">
+              <div class="xm-tactic-col">T1</div><div class="xm-tactic-col">T2</div><div class="xm-tactic-col">T3</div><div class="xm-tactic-col">T4</div>
+            </div>
+          </div>
+          <div class="a3fp-xm-corner"></div>
+
+          <div class="a3fp-xm-west">
+            <div class="a3fp-lbl" style="color:var(--violet);">LONG-TERM STRATEGY (WEST) ▶</div>
+            <div class="a3fp-hint">3–5 breakthroughs dài hạn</div>
+            <div class="xm-strategy-rows">
+              <div class="xm-strat-row">S1 · Breakthrough 1</div>
+              <div class="xm-strat-row">S2 · Breakthrough 2</div>
+              <div class="xm-strat-row">S3 · Breakthrough 3</div>
+            </div>
+          </div>
+          <div class="a3fp-xm-center">
+            <div class="a3fp-lbl" style="color:var(--tx-3);text-align:center;font-size:8px;">CORRELATION<br>● Strong ◉ Medium</div>
+            <div class="xm-corr-mini">
+              <span class="dot d-s">●</span><span class="dot d-m">◉</span><span class="dot d-0"></span><span class="dot d-s">●</span>
+              <span class="dot d-0"></span><span class="dot d-s">●</span><span class="dot d-s">●</span><span class="dot d-m">◉</span>
+              <span class="dot d-m">◉</span><span class="dot d-0"></span><span class="dot d-s">●</span><span class="dot d-s">●</span>
+            </div>
+          </div>
+          <div class="a3fp-xm-east">
+            <div class="a3fp-lbl" style="color:var(--emerald);">◀ RESULT METRICS (EAST)</div>
+            <div class="a3fp-hint">Process metrics + Financial targets</div>
+            <div class="xm-metric-rows">
+              <div class="xm-metric-row">M1 · Revenue target</div>
+              <div class="xm-metric-row">M2 · Cycle time</div>
+              <div class="xm-metric-row">M3 · Quality rate</div>
+            </div>
+          </div>
+
+          <div class="a3fp-xm-corner"></div>
+          <div class="a3fp-xm-south">
+            <div class="a3fp-lbl" style="color:var(--amber);">PROJECTS & TEAMS (SOUTH) ↑</div>
+            <div class="a3fp-hint">Team charters · Trách nhiệm · Resource allocation</div>
+            <div style="display:flex;gap:4px;margin-top:6px;">
+              <div class="xm-team-col">Team A</div><div class="xm-team-col">Team B</div><div class="xm-team-col">Team C</div><div class="xm-team-col">Team D</div>
+            </div>
+          </div>
+          <div class="a3fp-xm-corner"></div>
+        </div>
+        <div class="a3fp-footer"><span>Hoshin Team Leader:</span><span>Date approved:</span><span>Version:</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A3-T -->
+<div class="a3-panel" id="tab-a3t">
+  <div class="grid">
+    <div class="card cb c5">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div class="a3-form-badge" style="background:var(--blue-lt);color:var(--blue);">A3-T</div>
+        <div>
+          <h3 class="card-title" style="margin:0 0 4px;">Team Charter Proposal</h3>
+          <p style="font-size:12px;color:var(--tx-3);">Plan Phase · Action Planning · All Levels</p>
+        </div>
+      </div>
+      <p class="card-body" style="margin-bottom:12px;">Đây là A3 "cổ điển" nhất — phỏng theo form proposal gốc của Toyota. Dùng để hỗ trợ action planning ở <strong>mọi cấp</strong> trong Catchball. Người mang A3-T chịu trách nhiệm thực thi một project/initiative được liệt kê là tactic trên A3-X.</p>
+      <div class="a3-meta-row">
+        <span class="tag tb">Plan Phase</span>
+        <span class="tag tb">All Team Levels</span>
+      </div>
+      <div class="divider"></div>
+      <div class="steps">
+        <div class="step"><div class="snum snum-b">9</div><div><div class="stitle">9 yếu tố cốt lõi (Toyota standard)</div><div class="sdesc">Theme · Problem statement · Target statement · PDCA process · Systematic analysis · Proposed solution · Implementation timeline · Graphics · Date & Owner</div></div></div>
+        <div class="step"><div class="snum snum-b">!</div><div><div class="stitle">Tip thực chiến</div><div class="sdesc">Có thể in A3-T back-to-back với A3-X liên quan. Manager có nhiều dự án → mang nhiều A3-T hoặc in back-to-back.</div></div></div>
+      </div>
+    </div>
+    <div class="card c7">
+      <span class="overline ov-b">Cấu trúc form A3-T (Classic Toyota Proposal)</span>
+      <div class="a3-form-preview" style="border-color:var(--blue-border);background:linear-gradient(145deg,#F5FAFF,#E8F3FF);">
+        <div class="a3fp-header" style="background:var(--blue-md);border-color:var(--blue-border);">
+          <span class="a3fp-title" style="color:var(--blue);">A3-T · Team Charter Proposal</span>
+          <div class="a3fp-meta"><span>Theme:</span><span>Team Leader:</span><span>Date:</span></div>
+        </div>
+        <div class="a3fp-body-2col">
+          <!-- LEFT: PLAN -->
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);">
+            <div class="a3fp-cell" style="background:rgba(0,113,227,.05);">
+              <div class="a3fp-lbl" style="color:var(--blue);">① BACKGROUND / Bối cảnh</div>
+              <div class="a3fp-hint">Tại sao dự án này tồn tại? Link tới tactic nào trên A3-X · Hoshin nào đang hỗ trợ?</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--blue);">② CURRENT CONDITION / Hiện trạng</div>
+              <div class="a3fp-hint">Data thực tế bây giờ · Visual: value stream map, charts · Gap so với target là bao nhiêu?</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--blue);">③ TARGET CONDITION / Mục tiêu</div>
+              <div class="a3fp-hint">Future state cụ thể · SMART target · Timeline · Scope của cải tiến</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--blue);">④ ROOT CAUSE ANALYSIS</div>
+              <div class="a3fp-hint">5 Whys / Fishbone (CEDAC) / DMAIC Analyze · Brainstorm improvement ideas · Block flow diagram</div>
+            </div>
+          </div>
+          <!-- RIGHT: DO/CHECK/ACT -->
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);">
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--emerald);">⑤ PROPOSED SOLUTION / Countermeasures</div>
+              <div class="a3fp-hint">Giải pháp đề xuất · Cross-functional coordination · Resources cần thiết</div>
+            </div>
+            <div class="a3fp-cell" style="flex:2;">
+              <div class="a3fp-lbl" style="color:var(--emerald);">⑥ IMPLEMENTATION PLAN / Kế hoạch thực hiện</div>
+              <table class="a3fp-impl-table">
+                <thead><tr><th>Action</th><th>Who</th><th>When</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Hành động 1</td><td>Owner</td><td>MM/YY</td><td class="status-dot">○</td></tr>
+                  <tr><td>Hành động 2</td><td>Owner</td><td>MM/YY</td><td class="status-dot">○</td></tr>
+                  <tr><td>Hành động 3</td><td>Owner</td><td>MM/YY</td><td class="status-dot">○</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--emerald);">⑦ EFFECT CONFIRMATION / Xác nhận hiệu quả</div>
+              <div class="a3fp-hint">Metrics theo dõi · Checkpoint review schedule · So sánh before/after</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--emerald);">⑧ FOLLOW-UP / Standardize</div>
+              <div class="a3fp-hint">Tiêu chuẩn hóa kết quả · Kaizen tiếp theo · Chia sẻ lesson learned</div>
+            </div>
+          </div>
+        </div>
+        <div class="a3fp-footer"><span>Team members:</span><span>Reviewed by:</span><span>A3-X reference:</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A3-SR -->
+<div class="a3-panel" id="tab-a3sr">
+  <div class="grid">
+    <div class="card ce c5">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div class="a3-form-badge" style="background:var(--emerald-lt);color:var(--emerald);">A3-SR</div>
+        <div>
+          <h3 class="card-title" style="margin:0 0 4px;">Status Report</h3>
+          <p style="font-size:12px;color:var(--tx-3);">Check Phase · Monthly · Individual Project</p>
+        </div>
+      </div>
+      <p class="card-body" style="margin-bottom:12px;">Báo cáo tiến độ <strong>hàng tháng</strong> cho từng project cụ thể được định nghĩa bởi A3-T hoặc A3-P. Liệt kê những trở ngại trong triển khai và kế hoạch vượt qua chúng.</p>
+      <div class="a3-meta-row">
+        <span class="tag te">Check Phase</span>
+        <span class="tag te">Monthly</span>
+        <span class="tag te">Per Project</span>
+      </div>
+      <div class="divider"></div>
+      <div class="steps">
+        <div class="step"><div class="snum snum-e">!</div><div><div class="stitle">Khi nào chuyển sang dùng?</div><div class="sdesc">Một số tổ chức bắt đầu bằng cách tích hợp A3-SR vào A3-T và A3-P. Sau khi nhóm quen với Hoshin planning, <strong>chuyển sang A3-SR riêng</strong> để khuyến khích phản ánh kỹ hơn — đây là yêu cầu của giai đoạn Check.</div></div></div>
+      </div>
+    </div>
+    <div class="card c7">
+      <span class="overline ov-e">Cấu trúc form A3-SR</span>
+      <div class="a3-form-preview" style="border-color:rgba(29,122,78,.25);background:linear-gradient(145deg,#F3FFF9,#E6F9F0);">
+        <div class="a3fp-header" style="background:rgba(16,185,129,.10);border-color:rgba(29,122,78,.2);">
+          <span class="a3fp-title" style="color:var(--emerald);">A3-SR · Monthly Status Report</span>
+          <div class="a3fp-meta"><span>Project (A3-T ref):</span><span>Month:</span><span>Owner:</span></div>
+        </div>
+        <div class="a3fp-body-2col">
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);">
+            <div class="a3fp-cell" style="background:rgba(16,185,129,.05);">
+              <div class="a3fp-lbl" style="color:var(--emerald);">① PLAN (Target this period)</div>
+              <div class="a3fp-hint">Mục tiêu dự kiến cho tháng này là gì? (trích từ A3-T implementation plan)</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--emerald);">② ACTUAL PROGRESS / Thực tế</div>
+              <div class="a3fp-hint">Đã hoàn thành được gì? Số liệu cụ thể · Trends · Visual charts</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--emerald);">③ PROCESS METRICS</div>
+              <div class="a3fp-hint">
+                <div class="sr-metric-row"><span>Target:</span><span class="sr-val">—</span></div>
+                <div class="sr-metric-row"><span>Actual:</span><span class="sr-val">—</span></div>
+                <div class="sr-metric-row"><span>Gap:</span><span class="sr-val sr-gap">—</span></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);">
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--emerald);">④ OBSTACLES / Trở ngại</div>
+              <div class="a3fp-hint">Những gì đang cản trở tiến độ? Root cause ngắn gọn</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--emerald);">⑤ COUNTERMEASURES / Kế hoạch vượt qua</div>
+              <div class="a3fp-hint">Hành động cụ thể · Ai chịu trách nhiệm · Deadline mới nếu có</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--emerald);">⑥ NEXT PERIOD PLAN</div>
+              <div class="a3fp-hint">Kế hoạch tháng tới · Adjustments to original A3-T · Escalation needed?</div>
+            </div>
+          </div>
+        </div>
+        <div class="a3fp-footer"><span>Overall status:</span><span class="status-green">● On Track</span><span class="status-yellow">◉ At Risk</span><span class="status-red">○ Off Track</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A3-SSR -->
+<div class="a3-panel" id="tab-a3ssr">
+  <div class="grid">
+    <div class="card c5" style="background:linear-gradient(145deg,#FFFEF7,#FEF9E7);border-color:var(--amber-border);">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div class="a3-form-badge" style="background:#FEF3C7;color:#92400E;">A3-SSR</div>
+        <div>
+          <h3 class="card-title" style="margin:0 0 4px;">Summary Status Report</h3>
+          <p style="font-size:12px;color:var(--tx-3);">Check Phase · Periodic · Multiple Projects</p>
+        </div>
+      </div>
+      <p class="card-body" style="margin-bottom:12px;">Báo cáo tổng hợp theo <strong>định kỳ (tháng/2 tháng/quý)</strong> — tóm tắt tiến độ của <em>nhiều hoshin projects</em> được liệt kê là tactics trên cùng một A3-X. Dành cho cấp tactical và hoshin team.</p>
+      <div class="a3-meta-row">
+        <span class="tag ta">Check Phase</span>
+        <span class="tag ta">Monthly-Quarterly</span>
+        <span class="tag ta">Multi-Project</span>
+      </div>
+      <div class="divider"></div>
+      <div class="steps">
+        <div class="step"><div class="snum snum-a">!</div><div><div class="stitle">Cách dùng</div><div class="sdesc">In A3-SSR back-to-back với A3-X mà nó liên quan. Dùng A3-SSR để xác định exceptions, sau đó document exceptions bằng A3-P.</div></div></div>
+      </div>
+    </div>
+    <div class="card c7">
+      <span class="overline ov-a">Cấu trúc form A3-SSR</span>
+      <div class="a3-form-preview" style="border-color:rgba(196,123,0,.25);background:linear-gradient(145deg,#FFFEF7,#FEF9E7);">
+        <div class="a3fp-header" style="background:rgba(245,158,11,.10);border-color:var(--amber-border);">
+          <span class="a3fp-title" style="color:var(--amber);">A3-SSR · Summary Status Report</span>
+          <div class="a3fp-meta"><span>A3-X reference:</span><span>Period:</span><span>Manager:</span></div>
+        </div>
+        <div style="padding:10px 12px;background:rgba(245,158,11,.05);border-bottom:1px solid var(--amber-border);">
+          <div class="a3fp-lbl" style="color:var(--amber);">STRATEGY & ANNUAL HOSHIN SUMMARY</div>
+          <div class="a3fp-hint" style="margin-bottom:8px;">Tóm tắt chiến lược và hoshin năm — trích từ A3-X liên quan</div>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="a3fp-ssr-table">
+            <thead>
+              <tr>
+                <th style="width:30%;">Tactic / A3-T</th>
+                <th>Owner</th>
+                <th>Target</th>
+                <th>Actual</th>
+                <th>Status</th>
+                <th>Key Issue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>T1 · [Tên tactic]</td>
+                <td>Team A</td>
+                <td>85%</td>
+                <td>82%</td>
+                <td class="status-green">●</td>
+                <td style="font-size:10px;color:var(--tx-2);">Minor delay wk3</td>
+              </tr>
+              <tr>
+                <td>T2 · [Tên tactic]</td>
+                <td>Team B</td>
+                <td>100%</td>
+                <td>65%</td>
+                <td class="status-red">○</td>
+                <td style="font-size:10px;color:var(--tx-2);">Resource gap → A3-P raised</td>
+              </tr>
+              <tr>
+                <td>T3 · [Tên tactic]</td>
+                <td>Team C</td>
+                <td>70%</td>
+                <td>75%</td>
+                <td class="status-green">●</td>
+                <td style="font-size:10px;color:var(--tx-2);">Ahead of schedule</td>
+              </tr>
+              <tr>
+                <td>T4 · [Tên tactic]</td>
+                <td>Team D</td>
+                <td>50%</td>
+                <td>40%</td>
+                <td class="status-yellow">◉</td>
+                <td style="font-size:10px;color:var(--tx-2);">Monitoring closely</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);">
+          <div class="a3fp-cell">
+            <div class="a3fp-lbl" style="color:var(--amber);">EXCEPTIONS / Vấn đề nổi bật</div>
+            <div class="a3fp-hint">Những gì cần escalate lên hoshin team · Tactic nào đang off-track cần A3-P</div>
+          </div>
+          <div class="a3fp-cell">
+            <div class="a3fp-lbl" style="color:var(--amber);">NEXT PERIOD PRIORITIES</div>
+            <div class="a3fp-hint">Ưu tiên chu kỳ tiếp theo · Resource decisions · Course corrections</div>
+          </div>
+        </div>
+        <div class="a3fp-footer"><span>● On Track</span><span class="status-yellow">◉ At Risk → Monitor</span><span class="status-red">○ Off Track → A3-P</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- A3-P -->
+<div class="a3-panel" id="tab-a3p">
+  <div class="grid">
+    <div class="card c5" style="background:linear-gradient(145deg,#FFF5F5,#FFE5E7);border-color:rgba(215,0,21,.18);">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div class="a3-form-badge" style="background:var(--red-lt);color:var(--red);">A3-P</div>
+        <div>
+          <h3 class="card-title" style="margin:0 0 4px;">Problem Solving Report</h3>
+          <p style="font-size:12px;color:var(--tx-3);">Check Phase · Anytime · Course Correction</p>
+        </div>
+      </div>
+      <p class="card-body" style="margin-bottom:12px;">A3 "cổ điển" thứ hai — format gần giống A3-T nhưng dùng cho vấn đề <strong>ngoài kế hoạch</strong>. "P" = Problem (hoặc "impromptu" vì không nằm trong annual hoshin ban đầu).</p>
+      <div class="a3-meta-row">
+        <span class="tag tr">Check Phase</span>
+        <span class="tag tr">Anytime</span>
+        <span class="tag tr">Unplanned</span>
+      </div>
+      <div class="divider"></div>
+      <div class="steps">
+        <div class="step"><div class="snum" style="background:var(--red-lt);color:var(--red);border:1px solid rgba(215,0,21,.2);">!</div><div><div class="stitle">2 trường hợp dùng A3-P</div><div class="sdesc"><strong>(1)</strong> Milestone quan trọng của A3-T bị lỡ → cần course correction.<br><strong>(2)</strong> Vấn đề đột xuất không nằm trong annual hoshin — ví dụ: sản phẩm/quy trình đang chạy bình thường bỗng có vấn đề.</div></div></div>
+        <div class="step"><div class="snum" style="background:var(--red-lt);color:var(--red);border:1px solid rgba(215,0,21,.2);">≈</div><div><div class="stitle">Giống A3-T về cấu trúc</div><div class="sdesc">Format PDCA giống hệt A3-T. Khác biệt duy nhất: A3-P giải quyết vấn đề <em>không được lên kế hoạch</em> từ trước.</div></div></div>
+      </div>
+    </div>
+    <div class="card c7">
+      <span class="overline ov" style="color:var(--red);">Cấu trúc form A3-P (Problem Solving — tương tự A3-T)</span>
+      <div class="a3-form-preview" style="border-color:rgba(215,0,21,.20);background:linear-gradient(145deg,#FFF5F5,#FFE5E7);">
+        <div class="a3fp-header" style="background:rgba(215,0,21,.08);border-color:rgba(215,0,21,.18);">
+          <span class="a3fp-title" style="color:var(--red);">A3-P · Problem Solving Report</span>
+          <div class="a3fp-meta"><span>Problem Title:</span><span>Raised by:</span><span>Date:</span></div>
+        </div>
+        <div class="a3fp-body-2col">
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);">
+            <div class="a3fp-cell" style="background:rgba(215,0,21,.04);">
+              <div class="a3fp-lbl" style="color:var(--red);">① PROBLEM STATEMENT</div>
+              <div class="a3fp-hint">Mô tả vấn đề rõ ràng · Data quantify · Timeframe · So sánh với standard/target · Tại sao đây là problem?</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--red);">② CURRENT CONDITION</div>
+              <div class="a3fp-hint">Tình trạng thực tế hiện tại · Visual representation · Gap với expected state</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--red);">③ TARGET / Resolution Goal</div>
+              <div class="a3fp-hint">Cần đạt được gì để xem problem là "solved"? · Deadline giải quyết</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--red);">④ ROOT CAUSE ANALYSIS</div>
+              <div class="a3fp-hint">5 Whys / Fishbone · Xác định nguyên nhân gốc rễ · Không giải quyết triệu chứng</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);">
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--red);">⑤ COUNTERMEASURES</div>
+              <div class="a3fp-hint">Giải pháp cho root cause · Containment actions ngay lập tức · Long-term fix</div>
+            </div>
+            <div class="a3fp-cell" style="flex:2;">
+              <div class="a3fp-lbl" style="color:var(--red);">⑥ IMPLEMENTATION PLAN</div>
+              <table class="a3fp-impl-table">
+                <thead><tr><th>Action</th><th>Who</th><th>When</th><th>Done?</th></tr></thead>
+                <tbody>
+                  <tr><td>Containment</td><td></td><td>Immediate</td><td class="status-dot">○</td></tr>
+                  <tr><td>Root fix</td><td></td><td>MM/DD</td><td class="status-dot">○</td></tr>
+                  <tr><td>Verify</td><td></td><td>MM/DD</td><td class="status-dot">○</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--red);">⑦ EFFECT CONFIRMATION</div>
+              <div class="a3fp-hint">Metrics xác nhận problem đã solved · Before/after comparison</div>
+            </div>
+            <div class="a3fp-cell">
+              <div class="a3fp-lbl" style="color:var(--red);">⑧ PREVENTION / Ngăn tái diễn</div>
+              <div class="a3fp-hint">Cập nhật SOP / standard work · Chia sẻ với teams khác · Lesson learned vào A3-SSR</div>
+            </div>
+          </div>
+        </div>
+        <div class="a3fp-footer"><span>Link to A3-T:</span><span>Link to A3-SSR:</span><span>Resolved date:</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== STYLES for new section ===== -->
+<style>
+/* Tab navigation */
+.a3-tab-nav{
+  display:flex;gap:6px;flex-wrap:wrap;
+  margin-bottom:20px;
+  padding:6px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--r-in);
+}
+.a3-tab{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:8px 14px;border-radius:var(--r-sm);
+  font-size:13px;font-weight:700;color:var(--tx-2);
+  background:none;border:1px solid transparent;
+  cursor:pointer;transition:all 200ms ease;
+}
+.a3-tab span{font-size:10px;font-weight:500;color:var(--tx-3);}
+.a3-tab:hover{background:var(--bg-subtle);color:var(--tx-1);}
+.a3-tab.active{background:var(--tx-1);color:#fff;border-color:var(--tx-1);}
+.a3-tab.active span{color:rgba(255,255,255,.6);}
+
+/* Panels */
+.a3-panel{display:none;}
+.a3-panel.active{display:block;}
+
+/* Form badge */
+.a3-form-badge{
+  font-size:13px;font-weight:900;letter-spacing:.04em;
+  padding:6px 14px;border-radius:var(--r-sm);
+  flex-shrink:0;white-space:nowrap;
+}
+
+/* Meta row tags */
+.a3-meta-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;}
+
+/* Form preview */
+.a3-form-preview{
+  border:1.5px solid;border-radius:var(--r-in);
+  overflow:hidden;font-family:var(--font);
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+.a3fp-header{
+  padding:9px 14px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid;gap:12px;
+}
+.a3fp-title{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
+.a3fp-meta{display:flex;gap:14px;font-size:10px;color:var(--tx-3);flex-wrap:wrap;}
+.a3fp-footer{
+  display:flex;gap:16px;flex-wrap:wrap;
+  padding:7px 12px;font-size:10px;color:var(--tx-3);
+  background:rgba(0,0,0,.02);border-top:1px solid var(--border);
+}
+.a3fp-body-2col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+.a3fp-body-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.a3fp-cell{background:var(--bg-card);padding:10px 12px;display:flex;flex-direction:column;gap:5px;}
+.a3fp-lbl{font-size:9px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;}
+.a3fp-hint{font-size:11px;color:var(--tx-2);line-height:1.55;}
+.a3fp-subgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px;}
+.a3fp-sub{background:var(--bg-subtle);border-radius:4px;padding:5px 7px;}
+.a3fp-sublbl{font-size:9px;font-weight:700;color:var(--tx-1);margin-bottom:2px;}
+.a3fp-subhint{font-size:10px;color:var(--tx-2);}
+
+/* Implementation table */
+.a3fp-impl-table{width:100%;border-collapse:collapse;margin-top:6px;font-size:11px;}
+.a3fp-impl-table th{
+  padding:4px 6px;text-align:left;font-size:9px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--tx-3);
+  border-bottom:1px solid var(--border);
+}
+.a3fp-impl-table td{
+  padding:5px 6px;border-bottom:1px solid rgba(0,0,0,.04);
+  color:var(--tx-2);
+}
+.a3fp-impl-table tr:last-child td{border-bottom:none;}
+.status-dot{text-align:center;color:var(--tx-3);}
+
+/* X-Matrix form */
+.a3fp-xmatrix{
+  display:grid;
+  grid-template-columns:1fr 2fr 1fr;
+  grid-template-rows:auto auto auto;
+  gap:1px;background:var(--border);
+}
+.a3fp-xm-corner{background:var(--bg-subtle);padding:8px;}
+.a3fp-xm-north{background:var(--bg-card);padding:10px 12px;grid-column:2;}
+.a3fp-xm-west{background:var(--bg-card);padding:10px 12px;}
+.a3fp-xm-center{background:var(--bg-subtle);padding:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.a3fp-xm-east{background:var(--bg-card);padding:10px 12px;}
+.a3fp-xm-south{background:var(--bg-card);padding:10px 12px;grid-column:2;}
+.xm-tactic-col,.xm-team-col{
+  flex:1;text-align:center;padding:4px 2px;
+  background:var(--bg-subtle);border-radius:4px;
+  font-size:9px;font-weight:700;color:var(--tx-2);
+}
+.xm-strategy-rows,.xm-metric-rows{display:flex;flex-direction:column;gap:3px;margin-top:6px;}
+.xm-strat-row,.xm-metric-row{
+  font-size:10px;color:var(--tx-2);
+  background:var(--bg-subtle);border-radius:4px;
+  padding:4px 8px;
+}
+.xm-corr-mini{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:3px;
+  margin-top:6px;
+}
+.xm-corr-mini .dot{width:16px;height:16px;font-size:7px;}
+
+/* SSR table */
+.a3fp-ssr-table{width:100%;border-collapse:collapse;font-size:11px;}
+.a3fp-ssr-table th{
+  padding:6px 8px;text-align:left;font-size:9px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--tx-3);
+  border-bottom:1.5px solid var(--border-md);
+  white-space:nowrap;
+}
+.a3fp-ssr-table td{
+  padding:6px 8px;border-bottom:1px solid var(--border);
+  color:var(--tx-2);vertical-align:top;
+}
+.a3fp-ssr-table tr:last-child td{border-bottom:none;}
+
+/* SR metrics */
+.sr-metric-row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--border);font-size:11px;}
+.sr-metric-row:last-child{border-bottom:none;}
+.sr-val{font-weight:700;color:var(--tx-1);}
+.sr-gap{color:var(--red);}
+
+/* Status colors */
+.status-green{color:var(--emerald);font-weight:800;}
+.status-yellow{color:var(--amber);font-weight:800;}
+.status-red{color:var(--red);font-weight:800;}
+
+@media(max-width:639px){
+  .a3fp-body-2col,.a3fp-body-3col{grid-template-columns:1fr;}
+  .a3fp-xmatrix{grid-template-columns:1fr;}
+  .a3fp-xm-north,.a3fp-xm-south{grid-column:1;}
+  .a3fp-subgrid{grid-template-columns:1fr;}
+}
+</style>
+
+<script>
+// Tab switching
+document.querySelectorAll('.a3-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+    document.querySelectorAll('.a3-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.a3-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + target).classList.add('active');
+  });
+});
+</script>
+
+<!-- ═══════════════════ SECTION XI — KẾT NỐI & SYNTOPICAL ═══════════════════ -->
+<div class="sec sec-e"><span>XI · Kết Nối Hệ Thống & Ứng Dụng</span></div>
+
+<div class="grid">
+
+  <!-- X-Matrix + A3 phối hợp -->
+  <div class="card c8">
+    <span class="overline ov-e">Syntopical Connection</span>
+    <h3 class="card-title">X-Matrix + A3 = Hệ Thống Hoàn Chỉnh</h3>
+    <p class="card-body" style="margin-bottom:14px;">
+      Bruce Sheridan: <em>"X-Matrix và A3 phục vụ ở hai giai đoạn khác nhau, nhưng chia sẻ cùng một thuộc tính: cả hai sắp xếp một lượng thông tin khổng lồ thành bức tranh logic, dễ hiểu — điều mà nếu không có chúng, sẽ rất khó nhìn thấy."</em>
+    </p>
+    <div class="flow">
+      <div class="fstep" style="background:var(--amber-lt);color:var(--amber);border-color:var(--amber-border);font-size:12px;">X-Matrix<br><small style="font-weight:400;font-size:10px;">Organizational Alignment</small></div>
+      <span class="ficon">→</span>
+      <div class="fstep" style="background:var(--blue-lt);color:var(--blue);border-color:var(--blue-border);font-size:12px;">A3-T (Charter)<br><small style="font-weight:400;font-size:10px;">Charter từng team</small></div>
+      <span class="ficon">→</span>
+      <div class="fstep" style="background:var(--emerald-lt);color:var(--emerald);border-color:rgba(29,122,78,.2);font-size:12px;">A3-R (Review)<br><small style="font-weight:400;font-size:10px;">Check hàng tháng</small></div>
+      <span class="ficon">→</span>
+      <div class="fstep" style="background:var(--violet-lt);color:var(--violet);border-color:rgba(88,86,214,.2);font-size:12px;">Cập nhật X-Matrix<br><small style="font-weight:400;font-size:10px;">Annual review & next cycle</small></div>
+    </div>
+    <div class="divider"></div>
+    <table class="tbl">
+      <thead><tr><th>Tiêu chí</th><th>X-Matrix</th><th>A3 Report</th></tr></thead>
+      <tbody>
+        <tr><td>Tầm nhìn</td><td>Toàn tổ chức</td><td>Một team / một dự án</td></tr>
+        <tr><td>Tần suất</td><td>Cập nhật hàng năm</td><td>Sống — cập nhật liên tục</td></tr>
+        <tr><td>Ai dùng</td><td>Hoshin Team (lãnh đạo)</td><td>Mọi cấp team</td></tr>
+        <tr><td>Mục đích chính</td><td>Alignment — căn chỉnh</td><td>Execution — thực thi</td></tr>
+        <tr><td>Output</td><td>Sinh ra A3-T cho mỗi team</td><td>A3-R báo ngược về X-Matrix</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Application Bridge OE -->
+  <div class="card ce c4">
+    <span class="overline ov-e">OE Lens · Application Bridge</span>
+    <h3 class="card-title">Ứng dụng thực chiến</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="snum snum-e">🔍</div>
+        <div>
+          <div class="stitle">Góc Tư Vấn</div>
+          <div class="sdesc">Khi audit: "Cho tôi xem X-Matrix và 3 A3 gần nhất." Hai tài liệu này phơi bày ngay sức khỏe chiến lược thực sự của tổ chức.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-e">🏢</div>
+        <div>
+          <div class="stitle">Góc Vận Hành</div>
+          <div class="sdesc">Thay báo cáo dài bằng A3-R. Mỗi monthly review: cập nhật A3 → nhìn Bowling Chart → quyết định điều chỉnh.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-e">🌿</div>
+        <div>
+          <div class="stitle">Góc Nhân Rộng (Ladysfit)</div>
+          <div class="sdesc">X-Matrix hệ thống + A3-T cho mỗi cơ sở franchise = cơ chế alignment có thể nhân rộng không giới hạn số cơ sở.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum snum-e">🎓</div>
+        <div>
+          <div class="stitle">Góc Đào Tạo</div>
+          <div class="sdesc">Dạy A3 trước X-Matrix — A3 học được trong 1 buổi, X-Matrix cần thực hành nhiều vòng mới thành thạo.</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:12px;">
+      <p><strong>Quick Test:</strong> Nhân viên tuyến đầu có thể chỉ vào X-Matrix và nói <em>"tôi làm việc này vì chiến lược kia"</em> không? Nếu không — Hoshin chưa được deploy thực sự.</p>
+    </div>
+  </div>
+
+  <!-- Hoshin Kanri Forest + Điểm mù -->
+  <div class="card c6">
+    <span class="overline ov-e">Villalba-Diez (2017)</span>
+    <h3 class="card-title">🌳 Hoshin Kanri Tree / Forest</h3>
+    <p class="card-body" style="margin-bottom:12px;">Mở rộng Hoshin Kanri thành triết lý thiết kế tổ chức — học từ tự nhiên để xây dựng hệ thống Lean bền vững.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="snum" style="background:#E8F5E9;color:#2E7D32;border:1px solid rgba(46,125,50,.2);">🌲</div>
+        <div><div class="stitle">"Cây" = Value Stream</div><div class="sdesc">Cấu trúc (CPD)ⁿA: Check → Plan → Do (lặp n lần) → Act. Đơn vị giao tiếp chuẩn hóa trong tổ chức Lean.</div></div>
+      </div>
+      <div class="step">
+        <div class="snum" style="background:#E8F5E9;color:#2E7D32;border:1px solid rgba(46,125,50,.2);">🌲🌲</div>
+        <div><div class="stitle">"Rừng" = Value Stream Network</div><div class="sdesc">Nhiều cây kết thành rừng — bao gồm khách hàng, nhà cung cấp, và mọi stakeholder trong hệ sinh thái Lean.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Điểm mù & Open Questions -->
+  <div class="card c-dark c6">
+    <span class="overline" style="color:rgba(255,255,255,.5);">Q3 — Truth · Điểm Mù</span>
+    <h3 class="card-title" style="color:#fff;">3 Giới hạn cần nhận thức</h3>
+    <div class="steps" style="margin-top:10px;">
+      <div class="step">
+        <div class="snum" style="background:rgba(215,0,21,.2);color:#FF6B6B;border:1px solid rgba(215,0,21,.3);">1</div>
+        <div>
+          <div class="stitle" style="color:#fff;">Thiếu hướng dẫn cho SME chưa có Daily Management</div>
+          <div class="sdesc" style="color:rgba(255,255,255,.6);">Hầu hết tài liệu giả định tổ chức đã có nền tảng Lean vững. Doanh nghiệp nhỏ cần bước trung gian trước khi implement Hoshin Kanri.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum" style="background:rgba(215,0,21,.2);color:#FF6B6B;border:1px solid rgba(215,0,21,.3);">2</div>
+        <div>
+          <div class="stitle" style="color:#fff;">Catchball tốt tốn rất nhiều thời gian & kỹ năng</div>
+          <div class="sdesc" style="color:rgba(255,255,255,.6);">Các sách mô tả Catchball như quá trình tự nhiên, nhưng thiếu hướng dẫn xử lý conflict thực sự giữa các cấp.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum" style="background:rgba(215,0,21,.2);color:#FF6B6B;border:1px solid rgba(215,0,21,.3);">3</div>
+        <div>
+          <div class="stitle" style="color:#fff;">Nặng về manufacturing, nhẹ về dịch vụ</div>
+          <div class="sdesc" style="color:rgba(255,255,255,.6);">Jackson & Villalba-Diez viết cho lean manufacturing. Vinardi cố gắng mở rộng sang dịch vụ nhưng case studies vẫn thiên về công nghiệp nặng.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid V -->
+
+</div><!-- /page -->
+</body>
+</html>
