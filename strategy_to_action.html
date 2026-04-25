@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ Mục Tiêu Ra Hành Động — 5 Phương Pháp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&subset=vietnamese&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   LIGHT BENTO · Strategy-to-Action Edition
+   Teal + Violet + Amber palette
+═══════════════════════════════════════════ */
+:root {
+  --font:"Plus Jakarta Sans",system-ui,sans-serif;
+  --bg-page:#F2F2F7;
+  --bg-card:#FFFFFF;
+  --bg-alt:#F8F8FC;
+  --bg-subtle:#EFEFF4;
+  --tx-1:#1D1D1F; --tx-2:#48484A; --tx-3:#8E8E93;
+
+  --vi:#5856D6; --vi-lt:#EBE9FC; --vi-md:rgba(88,86,214,.10); --vi-bd:rgba(88,86,214,.20);
+  --em:#1A7A50; --em-lt:#D1FAE5; --em-md:rgba(26,122,80,.10); --em-bd:rgba(26,122,80,.20);
+  --am:#C47B00; --am-lt:#FEF3C7; --am-md:rgba(196,123,0,.10); --am-bd:rgba(196,123,0,.20);
+  --bl:#0071E3; --bl-lt:#E3F0FF; --bl-md:rgba(0,113,227,.10); --bl-bd:rgba(0,113,227,.20);
+  --tl:#0095A8; --tl-lt:#CCFBF1; --tl-md:rgba(0,149,168,.10); --tl-bd:rgba(0,149,168,.20);
+  --rd:#D70015; --rd-lt:#FFE5E7; --rd-md:rgba(215,0,21,.08); --rd-bd:rgba(215,0,21,.18);
+  --or:#C05621; --or-lt:#FEEBC8; --or-md:rgba(192,86,33,.10); --or-bd:rgba(192,86,33,.20);
+
+  --border:rgba(0,0,0,.08); --border-md:rgba(0,0,0,.12);
+  --sh-sm:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.06);
+  --sh-md:0 4px 20px rgba(0,0,0,.09),0 1px 4px rgba(0,0,0,.05);
+  --sh-lg:0 8px 32px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.06);
+
+  --r:20px; --r-in:14px; --r-sm:10px; --r-xs:6px; --r-pill:999px;
+  --gap:18px; --p:26px;
+  --spring:cubic-bezier(0.34,1.56,0.64,1);
+  --tx-anim:transform 280ms var(--spring),box-shadow 280ms ease;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:var(--bg-page);color:var(--tx-1);
+  -webkit-font-smoothing:antialiased;line-height:1.6;
+  background-image:radial-gradient(circle,rgba(0,0,0,.024) 1px,transparent 1px);
+  background-size:28px 28px;}
+
+.page{max-width:1280px;margin:0 auto;padding:52px 24px 96px;}
+
+/* HEADER */
+.page-header{text-align:center;margin-bottom:56px;}
+.ov-hero{display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--vi);margin-bottom:18px;}
+.ov-hero::before,.ov-hero::after{content:'';width:32px;height:1px;background:var(--vi);opacity:.4;}
+.page-title{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-.03em;
+  line-height:1.08;color:var(--tx-1);margin-bottom:14px;}
+.page-title .hi{background:linear-gradient(135deg,#5856D6 0%,#0095A8 50%,#C47B00 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.page-subtitle{font-size:17px;color:var(--tx-2);max-width:620px;margin:0 auto;line-height:1.7;}
+
+/* SECTION */
+.sec{display:flex;align-items:center;gap:12px;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tx-3);margin:52px 0 20px;}
+.sec::after{content:'';flex:1;height:1px;background:var(--border-md);}
+.sec span{padding:4px 12px;border-radius:var(--r-pill);font-size:10px;}
+.sv span{background:var(--vi-lt);color:var(--vi);}
+.se span{background:var(--em-lt);color:var(--em);}
+.sa span{background:var(--am-lt);color:var(--am);}
+.sb span{background:var(--bl-lt);color:var(--bl);}
+.st span{background:var(--tl-lt);color:var(--tl);}
+.so span{background:var(--or-lt);color:var(--or);}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);}
+.c3{grid-column:span 3;} .c4{grid-column:span 4;} .c5{grid-column:span 5;}
+.c6{grid-column:span 6;} .c7{grid-column:span 7;} .c8{grid-column:span 8;}
+.c9{grid-column:span 9;} .c12{grid-column:span 12;}
+.r2{grid-row:span 2;}
+
+/* CARD */
+.card{background:var(--bg-card);border-radius:var(--r);border:1px solid var(--border);
+  box-shadow:var(--sh-sm);padding:var(--p);overflow:hidden;position:relative;
+  display:flex;flex-direction:column;min-height:180px;transition:var(--tx-anim);}
+.card.r2{min-height:380px;}
+.card:hover{transform:translateY(-3px) scale(1.003);box-shadow:var(--sh-lg);}
+.cv{background:linear-gradient(145deg,#FAFAFF 0%,#F0EFFD 100%);border-color:var(--vi-bd);}
+.ce{background:linear-gradient(145deg,#F2FFF8 0%,#E6F9F0 100%);border-color:var(--em-bd);}
+.ca{background:linear-gradient(145deg,#FFFEF7 0%,#FEF9E7 100%);border-color:var(--am-bd);}
+.cb{background:linear-gradient(145deg,#F5FAFF 0%,#E8F3FF 100%);border-color:var(--bl-bd);}
+.ct{background:linear-gradient(145deg,#F0FFFD 0%,#E0F7F4 100%);border-color:var(--tl-bd);}
+.co{background:linear-gradient(145deg,#FFFAF0 0%,#FFF0D9 100%);border-color:var(--or-bd);}
+.c-dark{background:linear-gradient(145deg,#1D1D1F 0%,#2D2D2F 100%);
+  border-color:rgba(255,255,255,.08);color:#FAFAFA;}
+.c-dark .card-title,.c-dark .card-title-lg,.c-dark .ov{color:#FAFAFA;}
+.c-dark .card-body{color:rgba(255,255,255,.68);}
+.c-dark .divider{background:rgba(255,255,255,.10);}
+.c-dark strong{color:#FAFAFA;}
+
+/* TYPOGRAPHY */
+.ov{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:10px;display:block;}
+.ov-v{color:var(--vi);} .ov-e{color:var(--em);} .ov-a{color:var(--am);}
+.ov-b{color:var(--bl);} .ov-t{color:var(--tl);} .ov-o{color:var(--or);}
+.ov-3{color:var(--tx-3);}
+
+.card-title-lg{font-size:clamp(22px,2.8vw,32px);font-weight:800;letter-spacing:-.025em;
+  line-height:1.12;margin-bottom:12px;color:var(--tx-1);}
+.card-title{font-size:clamp(16px,2vw,21px);font-weight:700;letter-spacing:-.02em;
+  line-height:1.25;margin-bottom:10px;color:var(--tx-1);}
+.card-title-sm{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.3;margin-bottom:8px;color:var(--tx-1);}
+.card-body{font-size:14px;line-height:1.75;color:var(--tx-2);flex:1;}
+.card-body strong{color:var(--tx-1);font-weight:600;}
+.stat-num{font-size:clamp(44px,6vw,68px);font-weight:800;letter-spacing:-.04em;line-height:1;}
+
+/* TAGS */
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;
+  padding:3px 10px;border-radius:var(--r-pill);border:1px solid;}
+.tv{color:var(--vi);border-color:var(--vi-bd);background:var(--vi-md);}
+.te{color:var(--em);border-color:var(--em-bd);background:var(--em-md);}
+.ta{color:var(--am);border-color:var(--am-bd);background:var(--am-md);}
+.tb{color:var(--bl);border-color:var(--bl-bd);background:var(--bl-md);}
+.tt{color:var(--tl);border-color:var(--tl-bd);background:var(--tl-md);}
+.to{color:var(--or);border-color:var(--or-bd);background:var(--or-md);}
+.tr{color:var(--rd);border-color:var(--rd-bd);background:var(--rd-md);}
+
+.divider{height:1px;background:var(--border);margin:14px 0;}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+.step{display:flex;gap:12px;align-items:flex-start;}
+.sn{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;margin-top:1px;}
+.sn-v{background:var(--vi-lt);color:var(--vi);}
+.sn-e{background:var(--em-lt);color:var(--em);}
+.sn-a{background:var(--am-lt);color:var(--am);}
+.sn-b{background:var(--bl-lt);color:var(--bl);}
+.sn-t{background:var(--tl-lt);color:var(--tl);}
+.sn-o{background:var(--or-lt);color:var(--or);}
+.sn-dark{background:#1D1D1F;color:#fff;}
+.st{font-size:13px;font-weight:700;color:var(--tx-1);margin-bottom:2px;}
+.sd{font-size:12px;color:var(--tx-2);line-height:1.6;}
+
+/* INSIGHT / WARN */
+.insight{border-radius:var(--r-sm);padding:12px 14px;margin-top:12px;border:1px solid;}
+.insight p{font-size:12.5px;line-height:1.65;}
+.iv{background:var(--vi-md);border-color:var(--vi-bd);}
+.iv p strong{color:var(--vi);}
+.ie{background:var(--em-md);border-color:var(--em-bd);}
+.ie p strong{color:var(--em);}
+.ia{background:var(--am-md);border-color:var(--am-bd);}
+.ia p strong{color:var(--am);}
+.ib{background:var(--bl-md);border-color:var(--bl-bd);}
+.ib p strong{color:var(--bl);}
+.it{background:var(--tl-md);border-color:var(--tl-bd);}
+.it p strong{color:var(--tl);}
+.io{background:var(--or-md);border-color:var(--or-bd);}
+.io p strong{color:var(--or);}
+.ir{background:var(--rd-md);border-color:var(--rd-bd);}
+
+.pbox{background:var(--bg-subtle);border:1px solid var(--border-md);border-radius:var(--r-in);
+  padding:16px 18px;margin-top:14px;position:relative;overflow:hidden;}
+.pbox::before{content:'"';position:absolute;top:-8px;left:10px;font-size:72px;
+  font-weight:900;opacity:.06;color:var(--tx-1);line-height:1;font-family:Georgia,serif;}
+.pbox-text{font-size:13.5px;line-height:1.7;color:var(--tx-2);font-style:italic;
+  position:relative;z-index:1;}
+.pbox-text strong{color:var(--tx-1);font-style:normal;}
+.pbox-src{font-size:11px;color:var(--tx-3);margin-top:8px;font-style:normal;position:relative;z-index:1;}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:12px;}
+.tbl th{text-align:left;padding:8px 10px;font-size:10px;font-weight:700;letter-spacing:.10em;
+  text-transform:uppercase;color:var(--tx-3);border-bottom:1.5px solid var(--border-md);}
+.tbl td{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;
+  line-height:1.5;color:var(--tx-2);}
+.tbl td:first-child{font-weight:600;color:var(--tx-1);}
+.tbl tr:last-child td{border-bottom:none;}
+
+/* PILL */
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;
+  color:var(--tx-2);background:var(--bg-subtle);padding:5px 12px;
+  border-radius:var(--r-pill);border:1px solid var(--border);}
+
+/* FLOW */
+.flow{display:flex;align-items:center;gap:6px;margin:14px 0;flex-wrap:wrap;}
+.fs{flex:1;min-width:90px;padding:9px 10px;border-radius:var(--r-sm);
+  font-size:11px;font-weight:700;text-align:center;border:1px solid;}
+.fi{font-size:18px;color:var(--tx-3);flex-shrink:0;padding:0 2px;}
+
+/* METHOD CARD — colored header bar */
+.method-card{border-radius:var(--r-in);overflow:hidden;border:1px solid var(--border);
+  box-shadow:var(--sh-sm);background:var(--bg-card);}
+.method-head{padding:14px 18px;display:flex;align-items:center;gap:12px;}
+.method-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;
+  justify-content:center;font-size:20px;flex-shrink:0;}
+.method-title{font-size:15px;font-weight:800;letter-spacing:-.01em;}
+.method-origin{font-size:10px;font-weight:600;letter-spacing:.06em;opacity:.75;margin-top:2px;}
+.method-body{padding:14px 18px;border-top:1px solid var(--border);}
+
+/* REVENUE TREE */
+.rtree{margin-top:14px;}
+.rt-root{background:var(--vi);color:#fff;border-radius:var(--r-sm);padding:12px 16px;
+  text-align:center;font-size:15px;font-weight:800;letter-spacing:-.01em;margin-bottom:10px;}
+.rt-row{display:grid;gap:8px;margin-bottom:8px;}
+.rt-2{grid-template-columns:1fr 1fr;}
+.rt-3{grid-template-columns:1fr 1fr 1fr;}
+.rt-4{grid-template-columns:1fr 1fr 1fr 1fr;}
+.rt-node{border-radius:var(--r-sm);padding:9px 12px;border:1px solid;font-size:11.5px;
+  font-weight:600;text-align:center;line-height:1.4;}
+.rt-connector{display:flex;justify-content:center;margin:0 0 4px;color:var(--tx-3);font-size:14px;}
+.rt-action{border-radius:var(--r-xs);padding:6px 10px;font-size:10.5px;
+  font-weight:600;text-align:center;margin-top:6px;border:1px dashed;}
+
+/* OGSM TABLE */
+.ogsm{width:100%;border-collapse:collapse;border-radius:var(--r-in);overflow:hidden;font-size:12px;}
+.ogsm thead th{padding:10px 14px;font-weight:700;font-size:11px;text-align:left;
+  letter-spacing:.06em;text-transform:uppercase;}
+.ogsm tbody td{padding:10px 14px;border-top:1px solid var(--border);vertical-align:top;
+  line-height:1.6;color:var(--tx-2);}
+.ogsm tbody td:first-child{font-weight:700;font-size:13px;white-space:nowrap;}
+.ogsm-label{display:inline-flex;align-items:center;gap:5px;font-size:10px;
+  font-weight:700;padding:2px 7px;border-radius:var(--r-pill);border:1px solid;
+  margin-bottom:4px;display:block;width:fit-content;}
+
+/* OKR CARD */
+.okr-block{background:var(--bg-subtle);border-radius:var(--r-sm);padding:14px 16px;
+  border:1px solid var(--border);margin-top:10px;}
+.okr-o{font-size:13px;font-weight:700;color:var(--tx-1);display:flex;gap:8px;
+  align-items:flex-start;margin-bottom:10px;}
+.okr-o-badge{background:var(--tl);color:#fff;border-radius:var(--r-xs);padding:2px 7px;
+  font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;flex-shrink:0;margin-top:2px;}
+.okr-krs{display:flex;flex-direction:column;gap:6px;}
+.okr-kr{display:flex;gap:8px;align-items:flex-start;}
+.okr-kr-num{min-width:20px;height:20px;border-radius:var(--r-xs);background:var(--tl-lt);
+  color:var(--tl);display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:800;flex-shrink:0;margin-top:2px;}
+.okr-kr-text{font-size:12px;color:var(--tx-2);line-height:1.6;}
+.okr-kr-text strong{color:var(--tx-1);}
+
+/* BSC 4 PERSPECTIVES */
+.bsc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;}
+.bsc-card{border-radius:var(--r-sm);padding:12px 14px;border:1px solid;}
+.bsc-label{font-size:9px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;
+  margin-bottom:6px;}
+.bsc-obj{font-size:12px;font-weight:600;color:var(--tx-1);margin-bottom:4px;}
+.bsc-kpi{font-size:11px;color:var(--tx-2);}
+
+/* COMPARISON MATRIX */
+.matrix-wrap{overflow-x:auto;margin-top:12px;}
+.matrix{width:100%;border-collapse:collapse;font-size:11.5px;min-width:600px;}
+.matrix th{padding:9px 10px;text-align:left;font-size:10px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--tx-3);
+  border-bottom:1.5px solid var(--border-md);background:var(--bg-subtle);}
+.matrix td{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;
+  color:var(--tx-2);line-height:1.5;}
+.matrix td:first-child{font-weight:700;color:var(--tx-1);}
+.matrix tr:last-child td{border-bottom:none;}
+.matrix tr:nth-child(even) td{background:rgba(0,0,0,.015);}
+.dot-check{color:var(--em);font-weight:800;}
+.dot-mid{color:var(--am);font-weight:800;}
+.dot-no{color:var(--tx-3);}
+
+/* SCROLL REVEAL */
+@supports(animation-timeline:view()){
+  .card{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 25%;}
+  @keyframes rv{from{opacity:0;transform:translateY(18px) scale(0.985);}to{opacity:1;transform:none;}}
+}
+
+/* RESPONSIVE */
+@media(max-width:1023px){
+  .grid{grid-template-columns:repeat(6,1fr);}
+  .c3,.c4{grid-column:span 3;} .c5,.c6{grid-column:span 6;}
+  .c7,.c8,.c9,.c12{grid-column:span 6;} .r2{grid-row:span 1;min-height:auto;}
+  .rt-4{grid-template-columns:1fr 1fr;} .bsc-grid{grid-template-columns:1fr;}
+}
+@media(max-width:639px){
+  .grid{grid-template-columns:1fr;gap:14px;}
+  .c3,.c4,.c5,.c6,.c7,.c8,.c9,.c12{grid-column:span 1;}
+  .page{padding:32px 16px 64px;}
+  .rt-2,.rt-3{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){
+  .card,.card:hover{animation:none!important;transition:none!important;transform:none!important;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════ HEADER ═══════ -->
+<header style="text-align:center;margin-bottom:56px;">
+  <p class="ov-hero">Adler · Strategy Execution · Comparative Frameworks</p>
+  <h1 class="page-title">Từ <span class="hi">Mục Tiêu Năm</span><br>Ra Hành Động Quan Trọng</h1>
+  <p class="page-subtitle" style="font-size:17px;color:var(--tx-2);max-width:640px;margin:0 auto;line-height:1.7;">Ví dụ thực tế: Mục tiêu doanh số <strong>2 tỷ năm 2026</strong>. 5 phương pháp để biết <em>hành động nào quan trọng nhất cần làm</em> — và khi nào dùng cái nào.</p>
+</header>
+
+<!-- ═══════ SECTION 0: VẤN ĐỀ CỐT LÕI ═══════ -->
+<div class="sec sv"><span>0 · Câu Hỏi Cốt Lõi Trước Khi Chọn Phương Pháp</span></div>
+
+<div class="grid">
+
+  <div class="card cv c8">
+    <span class="ov ov-v">Bẫy phổ biến nhất</span>
+    <h2 class="card-title-lg">Tại sao "có mục tiêu" mà vẫn không biết làm gì?</h2>
+    <p class="card-body">
+      "Doanh số 2 tỷ" là một <strong>outcome</strong> — kết quả anh muốn thấy ở cuối năm. Nhưng outcome không tự xảy ra. Vấn đề là: <em>hành động nào hôm nay tạo ra doanh số ngày mai?</em><br><br>
+      Có 3 bẫy thường gặp khi chuyển đổi mục tiêu thành hành động:
+    </p>
+    <div class="steps" style="margin-top:12px;">
+      <div class="step">
+        <div class="sn" style="background:var(--rd-lt);color:var(--rd);">1</div>
+        <div><div class="st">Nhảy thẳng từ mục tiêu xuống task list</div>
+        <div class="sd">"Doanh số 2 tỷ → Gọi thêm 50 khách/ngày" — không có logic kết nối. Task nhiều nhưng không biết cái nào quan trọng nhất.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn" style="background:var(--rd-lt);color:var(--rd);">2</div>
+        <div><div class="st">Không phân tích nguồn gốc của con số</div>
+        <div class="sd">2 tỷ đến từ đâu? Khách mới hay khách cũ? Tăng giá hay tăng lượng? Không biết nguồn gốc → không biết đòn bẩy nào quan trọng.</div></div>
+      </div>
+      <div class="step">
+        <div class="sn" style="background:var(--rd-lt);color:var(--rd);">3</div>
+        <div><div class="st">Làm hành động nhưng thiếu leading indicator</div>
+        <div class="sd">Chỉ đo doanh số (lagging). Đến cuối Q3 mới biết đang thua — quá muộn để điều chỉnh.</div></div>
+      </div>
+    </div>
+    <div class="insight iv" style="margin-top:14px;">
+      <p>Mọi phương pháp dưới đây đều giải quyết một vấn đề: <strong>tạo chuỗi logic nhân quả</strong> từ "hành động hôm nay" → "kết quả ngày mai" → "mục tiêu cuối năm". Khác nhau ở cách phân tích và mức độ chi tiết.</p>
+    </div>
+  </div>
+
+  <div class="card c4" style="gap:16px;">
+    <span class="ov ov-v">5 câu hỏi cần trả lời</span>
+    <h3 class="card-title">Trước khi chọn phương pháp, hỏi:</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="sn sn-v">?</div>
+        <div><div class="st">Mục tiêu đến từ đâu?</div>
+        <div class="sd">Khách mới · Khách cũ · Tăng giá · Tăng tần suất mua</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-v">?</div>
+        <div><div class="st">Gap hiện tại là bao nhiêu?</div>
+        <div class="sd">Năm ngoái bao nhiêu? Cần tăng thêm bao nhiêu %?</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-v">?</div>
+        <div><div class="st">Đâu là đòn bẩy lớn nhất?</div>
+        <div class="sd">Conversion rate, AOV, Retention, hay Acquisition?</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-v">?</div>
+        <div><div class="st">Ai làm gì?</div>
+        <div class="sd">Hành động nào thuộc Sales, Marketing, Product, Ops?</div></div>
+      </div>
+      <div class="step">
+        <div class="sn sn-v">?</div>
+        <div><div class="st">Đo gì hàng tuần/tháng?</div>
+        <div class="sd">Leading indicator nào báo trước kết quả sẽ tốt hay xấu?</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid 0 -->
+
+<!-- ═══════ SECTION I: REVENUE TREE ═══════ -->
+<div class="sec sv"><span>I · Revenue Tree — Phân Rã Mục Tiêu Thành Đòn Bẩy</span></div>
+
+<div class="grid">
+
+  <div class="card cv c12">
+    <span class="ov ov-v">Bước 0 bắt buộc — Trước khi dùng bất kỳ framework nào</span>
+    <h2 class="card-title-lg" style="margin-bottom:8px;">Revenue Tree: Mục tiêu 2 tỷ đến từ đâu?</h2>
+    <p style="font-size:14px;color:var(--tx-2);line-height:1.7;margin-bottom:20px;">
+      Phân rã doanh thu theo công thức toán học: <strong>Revenue = Volume × Price × Frequency × Retention</strong>. Mỗi nhánh là một "đòn bẩy" — tác động vào nhánh nào sẽ sinh ra hành động tương ứng ở đó.
+    </p>
+
+    <div class="rtree">
+      <!-- Root -->
+      <div class="rt-root">🎯 DOANH SỐ 2 TỶ / 2026</div>
+      <div class="rt-connector">↓ Phân rã theo nguồn</div>
+
+      <!-- Level 1: 2 nhánh chính -->
+      <div class="rt-row rt-2">
+        <div class="rt-node" style="background:var(--vi-lt);border-color:var(--vi-bd);color:var(--vi);">
+          <div style="font-size:12px;margin-bottom:4px;">KHÁCH MỚI</div>
+          <div style="font-size:18px;font-weight:800;">1.2 tỷ (60%)</div>
+        </div>
+        <div class="rt-node" style="background:var(--em-lt);border-color:var(--em-bd);color:var(--em);">
+          <div style="font-size:12px;margin-bottom:4px;">KHÁCH CŨ (Retention)</div>
+          <div style="font-size:18px;font-weight:800;">0.8 tỷ (40%)</div>
+        </div>
+      </div>
+      <div class="rt-connector">↓ Phân rã tiếp</div>
+
+      <!-- Level 2: 4 nhánh -->
+      <div class="rt-row rt-4">
+        <div class="rt-node" style="background:var(--vi-md);border-color:var(--vi-bd);color:var(--vi);">
+          <div style="font-size:10px;font-weight:700;margin-bottom:3px;">Số khách mới</div>
+          <div style="font-size:15px;font-weight:800;">200 KH</div>
+          <div style="font-size:10px;color:var(--tx-3);">× 6tr/KH</div>
+        </div>
+        <div class="rt-node" style="background:var(--vi-md);border-color:var(--vi-bd);color:var(--vi);">
+          <div style="font-size:10px;font-weight:700;margin-bottom:3px;">Conversion rate</div>
+          <div style="font-size:15px;font-weight:800;">20% → 25%</div>
+          <div style="font-size:10px;color:var(--tx-3);">800 leads cần</div>
+        </div>
+        <div class="rt-node" style="background:var(--em-md);border-color:var(--em-bd);color:var(--em);">
+          <div style="font-size:10px;font-weight:700;margin-bottom:3px;">Tần suất mua lại</div>
+          <div style="font-size:15px;font-weight:800;">2.5 → 3.0 lần</div>
+          <div class="div" style="font-size:10px;color:var(--tx-3);">+20%</div>
+        </div>
+        <div class="rt-node" style="background:var(--em-md);border-color:var(--em-bd);color:var(--em);">
+          <div style="font-size:10px;font-weight:700;margin-bottom:3px;">Giá trị đơn hàng</div>
+          <div style="font-size:15px;font-weight:800;">5tr → 6tr</div>
+          <div style="font-size:10px;color:var(--tx-3);">Upsell +20%</div>
+        </div>
+      </div>
+      <div class="rt-connector">↓ Mỗi đòn bẩy sinh ra hành động cụ thể</div>
+
+      <!-- Level 3: Actions -->
+      <div class="rt-row rt-4">
+        <div style="border-radius:var(--r-sm);padding:10px;background:var(--vi-lt);border:1px dashed var(--vi-bd);">
+          <div style="font-size:10px;font-weight:700;color:var(--vi);margin-bottom:6px;">⚡ HÀNH ĐỘNG</div>
+          <div style="font-size:11px;color:var(--tx-2);line-height:1.6;">
+            • Mở 2 kênh marketing mới<br>
+            • Google Ads + TikTok<br>
+            • Referral program
+          </div>
+        </div>
+        <div style="border-radius:var(--r-sm);padding:10px;background:var(--vi-lt);border:1px dashed var(--vi-bd);">
+          <div style="font-size:10px;font-weight:700;color:var(--vi);margin-bottom:6px;">⚡ HÀNH ĐỘNG</div>
+          <div style="font-size:11px;color:var(--tx-2);line-height:1.6;">
+            • Cải thiện sales script<br>
+            • Follow-up automation<br>
+            • Demo personalized
+          </div>
+        </div>
+        <div style="border-radius:var(--r-sm);padding:10px;background:var(--em-lt);border:1px dashed var(--em-bd);">
+          <div style="font-size:10px;font-weight:700;color:var(--em);margin-bottom:6px;">⚡ HÀNH ĐỘNG</div>
+          <div style="font-size:11px;color:var(--tx-2);line-height:1.6;">
+            • Email/Zalo nurture sequence<br>
+            • Loyalty program<br>
+            • Check-in định kỳ
+          </div>
+        </div>
+        <div style="border-radius:var(--r-sm);padding:10px;background:var(--em-lt);border:1px dashed var(--em-bd);">
+          <div style="font-size:10px;font-weight:700;color:var(--em);margin-bottom:6px;">⚡ HÀNH ĐỘNG</div>
+          <div style="font-size:11px;color:var(--tx-2);line-height:1.6;">
+            • Thiết kế gói bundle<br>
+            • Training team upsell<br>
+            • Premium tier mới
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight iv" style="margin-top:16px;">
+      <p><strong>Tại sao bắt đầu bằng Revenue Tree?</strong> Vì nó trả lời câu hỏi: "Trong 4 đòn bẩy (Volume, Conversion, Frequency, AOV) — cái nào có impact lớn nhất với effort nhỏ nhất?" Đây là ưu tiên hóa có cơ sở toán học, không phải direct feel.</p>
+    </div>
+  </div>
+
+</div><!-- /grid I -->
+
+<!-- ═══════ SECTION II: 5 PHƯƠNG PHÁP ═══════ -->
+<div class="sec sa"><span>II · 5 Phương Pháp Triển Khai — Từ Mục Tiêu Ra Hành Động</span></div>
+
+<div class="grid">
+
+  <!-- METHOD 1: OGSM -->
+  <div class="card ca c6">
+    <span class="ov ov-a">Phương pháp 1 · P&G · Coca-Cola · Toyota</span>
+    <h3 class="card-title">OGSM — 1 trang chiến lược hoàn chỉnh</h3>
+    <p style="font-size:13px;color:var(--tx-2);line-height:1.65;margin-bottom:14px;">
+      <strong>O</strong>bjective · <strong>G</strong>oals · <strong>S</strong>trategies · <strong>M</strong>easures. Ra đời 1950s tại Nhật, được P&G dùng để align toàn cầu trên 1 trang. Đặc biệt hiệu quả cho tổ chức cần <em>kết nối tầm nhìn dài hạn với hành động ngắn hạn</em>.
+    </p>
+
+    <table class="ogsm">
+      <thead>
+        <tr style="background:var(--am);">
+          <th style="color:#fff;width:20%;">Thành phần</th>
+          <th style="color:#fff;width:40%;">Ví dụ: Doanh số 2 tỷ</th>
+          <th style="color:#fff;width:40%;">Bản chất</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="ogsm-label" style="background:var(--vi-lt);color:var(--vi);border-color:var(--vi-bd);">O · Objective</span>
+          </td>
+          <td>"Trở thành thương hiệu fitness nữ hàng đầu Hà Nội"</td>
+          <td>Định tính · Dài hạn · Cảm hứng · Không đo được trực tiếp</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="ogsm-label" style="background:var(--em-lt);color:var(--em);border-color:var(--em-bd);">G · Goals</span>
+          </td>
+          <td>Doanh thu 2 tỷ Q4/2026 · 200 hội viên mới · Retention 75%</td>
+          <td>Định lượng · SMART · Đo được · Có deadline</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="ogsm-label" style="background:var(--am-lt);color:var(--am);border-color:var(--am-bd);">S · Strategies</span>
+          </td>
+          <td>• Mở kênh TikTok & Referral<br>• Nâng gói dịch vụ lên 6 triệu<br>• Loyalty program 3 tháng</td>
+          <td>Hướng đi cụ thể · Chọn lựa ưu tiên · Tối đa 3–5 strategies</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="ogsm-label" style="background:var(--bl-lt);color:var(--bl);border-color:var(--bl-bd);">M · Measures</span>
+          </td>
+          <td>
+            <strong>Dashboard KPIs:</strong> Leads/tuần · Conversion% · AOV<br>
+            <strong>Actions:</strong> Lịch post TikTok · Kịch bản upsell · Cuộc gọi check-in
+          </td>
+          <td>2 lớp: KPI (theo dõi) + Actions (thực thi) — mỗi action có owner & deadline</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="insight ia" style="margin-top:10px;">
+      <p><strong>Khi nào dùng OGSM:</strong> Khi cần 1 document duy nhất align toàn bộ tổ chức. Phù hợp cho SME đến multinational. Mạnh ở chỗ: Strategies = choices (buộc phải chọn, không phải làm tất cả).</p>
+    </div>
+  </div>
+
+  <!-- METHOD 2: OKR -->
+  <div class="card ct c6">
+    <span class="ov ov-t">Phương pháp 2 · Intel · Google · Spotify · LinkedIn</span>
+    <h3 class="card-title">OKR — Mục tiêu tham vọng + Kết quả đo được</h3>
+    <p style="font-size:13px;color:var(--tx-2);line-height:1.65;margin-bottom:14px;">
+      <strong>O</strong>bjectives & <strong>K</strong>ey <strong>R</strong>esults. Andy Grove (Intel 1970s) → John Doerr → Google. Đặc biệt mạnh cho môi trường <em>nhanh, agile, cần alignment bottom-up</em>. Chu kỳ quarterly thay vì annual.
+    </p>
+
+    <div class="okr-block">
+      <div class="okr-o">
+        <span class="okr-o-badge">Objective</span>
+        <span>"Trở thành lựa chọn đầu tiên của phụ nữ Hà Nội muốn bắt đầu hành trình fitness"</span>
+      </div>
+      <div class="okr-krs">
+        <div class="okr-kr">
+          <div class="okr-kr-num">KR1</div>
+          <div class="okr-kr-text"><strong>Đạt 200 hội viên mới</strong> trong Q4/2026 (từ 120 hiện tại)</div>
+        </div>
+        <div class="okr-kr">
+          <div class="okr-kr-num">KR2</div>
+          <div class="okr-kr-text"><strong>Tăng conversion rate từ 20% lên 28%</strong> (lead → hội viên)</div>
+        </div>
+        <div class="okr-kr">
+          <div class="okr-kr-num">KR3</div>
+          <div class="okr-kr-text"><strong>Đạt NPS ≥ 70</strong> từ hội viên hiện tại</div>
+        </div>
+        <div class="okr-kr">
+          <div class="okr-kr-num">KR4</div>
+          <div class="okr-kr-text"><strong>Retention rate ≥ 75%</strong> sau 3 tháng đầu</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p style="font-size:11px;font-weight:700;color:var(--tl);margin-bottom:6px;letter-spacing:.06em;">↓ TỪ KEY RESULT → INITIATIVES (Hành động)</p>
+    <div style="background:var(--tl-lt);border:1px solid var(--tl-bd);border-radius:var(--r-sm);padding:10px 12px;">
+      <div style="font-size:11.5px;color:var(--tx-2);line-height:1.7;">
+        <strong style="color:var(--tl);">KR2 (Conversion 28%)</strong> → Initiative: Redesign sales script + Follow-up sequence 5 ngày + Train 3 sales rep<br>
+        <strong style="color:var(--tl);">KR4 (Retention 75%)</strong> → Initiative: Onboarding program tuần 1-4 + Check-in call tháng 2
+      </div>
+    </div>
+    <div class="insight it" style="margin-top:10px;">
+      <p><strong>Điểm mạnh của OKR:</strong> Key Results là <em>outcomes, không phải tasks</em>. Ai làm gì để đạt KR là quyền của team — tạo tự chủ thực sự. Sweet spot score: 60–70% (không phải 100%).</p>
+    </div>
+  </div>
+
+  <!-- METHOD 3: BSC Strategy Map -->
+  <div class="card cb c6">
+    <span class="ov ov-b">Phương pháp 3 · Kaplan & Norton · Fortune 500</span>
+    <h3 class="card-title">Balanced Scorecard + Strategy Map</h3>
+    <p style="font-size:13px;color:var(--tx-2);line-height:1.65;margin-bottom:12px;">
+      BSC nhìn tổ chức qua <strong>4 góc nhân quả</strong>: Learning & Growth → Internal Process → Customer → Financial. Strategy Map là bức tranh trực quan của chuỗi nhân quả đó. Mạnh nhất ở chỗ: <em>giải thích tại sao hành động hôm nay sinh ra doanh thu ngày mai.</em>
+    </p>
+
+    <div class="bsc-grid">
+      <div class="bsc-card" style="background:var(--bl-lt);border-color:var(--bl-bd);">
+        <div class="bsc-label" style="color:var(--bl);">💰 FINANCIAL</div>
+        <div class="bsc-obj">Doanh thu 2 tỷ</div>
+        <div class="bsc-kpi" style="color:var(--tx-2);">KPI: Revenue · Gross Margin</div>
+      </div>
+      <div class="bsc-card" style="background:var(--em-lt);border-color:var(--em-bd);">
+        <div class="bsc-label" style="color:var(--em);">😊 CUSTOMER</div>
+        <div class="bsc-obj">Hội viên chọn & giới thiệu Ladysfit</div>
+        <div class="bsc-kpi" style="color:var(--tx-2);">KPI: NPS · Retention · Referrals</div>
+      </div>
+      <div class="bsc-card" style="background:var(--am-lt);border-color:var(--am-bd);">
+        <div class="bsc-label" style="color:var(--am);">⚙️ INTERNAL PROCESS</div>
+        <div class="bsc-obj">Quy trình onboarding & upsell xuất sắc</div>
+        <div class="bsc-kpi" style="color:var(--tx-2);">KPI: Conversion rate · AOV · Time-to-value</div>
+      </div>
+      <div class="bsc-card" style="background:var(--vi-lt);border-color:var(--vi-bd);">
+        <div class="bsc-label" style="color:var(--vi);">🌱 LEARNING & GROWTH</div>
+        <div class="bsc-obj">Trainer có kỹ năng tư vấn & bán hàng</div>
+        <div class="bsc-kpi" style="color:var(--tx-2);">KPI: Training hours · Skill assessment · Turnover</div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg-subtle);border-radius:var(--r-sm);padding:10px 14px;margin-top:10px;border:1px solid var(--border);">
+      <div style="font-size:11px;font-weight:700;color:var(--tx-1);margin-bottom:5px;">Chuỗi nhân quả (Strategy Map logic):</div>
+      <div class="flow" style="margin:0;gap:4px;">
+        <div class="fs" style="background:var(--vi-lt);color:var(--vi);border-color:var(--vi-bd);font-size:10px;min-width:70px;padding:6px 8px;">Train Trainer<br>kỹ năng upsell</div>
+        <span class="fi" style="font-size:14px;">→</span>
+        <div class="fs" style="background:var(--am-lt);color:var(--am);border-color:var(--am-bd);font-size:10px;min-width:70px;padding:6px 8px;">Conversion rate tăng<br>AOV tăng</div>
+        <span class="fi" style="font-size:14px;">→</span>
+        <div class="fs" style="background:var(--em-lt);color:var(--em);border-color:var(--em-bd);font-size:10px;min-width:70px;padding:6px 8px;">Hội viên hài lòng<br>Giới thiệu thêm</div>
+        <span class="fi" style="font-size:14px;">→</span>
+        <div class="fs" style="background:var(--bl-lt);color:var(--bl);border-color:var(--bl-bd);font-size:10px;min-width:70px;padding:6px 8px;">Doanh thu<br>2 tỷ</div>
+      </div>
+    </div>
+    <div class="insight ib" style="margin-top:10px;">
+      <p><strong>Khi nào dùng BSC:</strong> Khi cần giải thích <em>tại sao</em> hành động ở cấp dưới (train trainer) tác động lên mục tiêu cấp trên (doanh thu). Mạnh cho tổ chức trưởng thành, ổn định.</p>
+    </div>
+  </div>
+
+  <!-- METHOD 4: Hoshin Kanri Z-Deploy -->
+  <div class="card ce c6">
+    <span class="ov ov-e">Phương pháp 4 · Toyota · Danaher · GE</span>
+    <h3 class="card-title">Hoshin Kanri — Z-Deployment từ mục tiêu ra hành động tầng tầng</h3>
+    <p style="font-size:13px;color:var(--tx-2);line-height:1.65;margin-bottom:12px;">
+      Đặc điểm độc đáo nhất: <strong>cascade hành động, không cascade mục tiêu</strong>. Hành động của cấp trên trở thành mục tiêu của cấp dưới — tạo ra chuỗi trách nhiệm liên tục.
+    </p>
+    <div style="background:var(--bg-subtle);border-radius:var(--r-sm);padding:14px;border:1px solid var(--border);">
+      <div style="font-size:11px;font-weight:700;color:var(--tx-3);letter-spacing:.08em;margin-bottom:10px;">Z-DEPLOYMENT: DOANH SỐ 2 TỶ</div>
+      <!-- Level 1 -->
+      <div style="display:grid;grid-template-columns:70px 1fr 1fr;gap:6px;margin-bottom:6px;">
+        <div style="background:var(--vi-lt);color:var(--vi);border:1px solid var(--vi-bd);border-radius:var(--r-xs);padding:6px;font-size:9px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;">CEO<br>L1</div>
+        <div style="background:var(--vi-lt);border:1px solid var(--vi-bd);border-radius:var(--r-xs);padding:7px 10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--vi);">🎯 MỤC TIÊU</div>
+          <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Doanh thu 2 tỷ</div>
+        </div>
+        <div style="background:var(--em-lt);border:1px solid var(--em-bd);border-radius:var(--r-xs);padding:7px 10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--em);">⚡ HÀNH ĐỘNG</div>
+          <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Tăng retention lên 75%</div>
+        </div>
+      </div>
+      <!-- Z arrow -->
+      <div style="text-align:left;padding-left:76px;color:var(--em);font-size:11px;font-weight:700;margin-bottom:4px;">↘ Z-deploy</div>
+      <!-- Level 2 -->
+      <div style="display:grid;grid-template-columns:70px 1fr 1fr;gap:6px;margin-bottom:6px;">
+        <div style="background:var(--em-lt);color:var(--em);border:1px solid var(--em-bd);border-radius:var(--r-xs);padding:6px;font-size:9px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;">Director<br>L2</div>
+        <div style="background:var(--em-lt);border:1px solid var(--em-bd);border-radius:var(--r-xs);padding:7px 10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--em);">🎯 MỤC TIÊU (= HOW L1)</div>
+          <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Retention 75%</div>
+        </div>
+        <div style="background:var(--tl-lt);border:1px solid var(--tl-bd);border-radius:var(--r-xs);padding:7px 10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--tl);">⚡ HÀNH ĐỘNG</div>
+          <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Chuẩn hóa onboarding 4 tuần</div>
+        </div>
+      </div>
+      <!-- Z arrow -->
+      <div style="text-align:left;padding-left:76px;color:var(--tl);font-size:11px;font-weight:700;margin-bottom:4px;">↘ Z-deploy</div>
+      <!-- Level 3 -->
+      <div style="display:grid;grid-template-columns:70px 1fr 1fr;gap:6px;">
+        <div style="background:var(--tl-lt);color:var(--tl);border:1px solid var(--tl-bd);border-radius:var(--r-xs);padding:6px;font-size:9px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;">Trainer<br>L3</div>
+        <div style="background:var(--tl-lt);border:1px solid var(--tl-bd);border-radius:var(--r-xs);padding:7px 10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--tl);">🎯 MỤC TIÊU (= HOW L2)</div>
+          <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Chuẩn hóa onboarding</div>
+        </div>
+        <div style="background:var(--bl-lt);border:1px solid var(--bl-bd);border-radius:var(--r-xs);padding:7px 10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--bl);">⚡ IMPACT POINT</div>
+          <div style="font-size:11px;color:var(--tx-1);font-weight:600;">Gọi check-in 100% HV tuần 4</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight ie" style="margin-top:10px;">
+      <p><strong>Khi nào dùng Hoshin Kanri:</strong> Khi có nhiều cấp tổ chức và cần alignment thực sự (không chỉ thông báo). Mạnh cho franchise, chuỗi, tập đoàn. Yêu cầu Catchball để đạt đồng thuận.</p>
+    </div>
+  </div>
+
+  <!-- METHOD 5: OGSM-lite / 4DX -->
+  <div class="card co c6">
+    <span class="ov ov-o">Phương pháp 5 · FranklinCovey · SME-friendly</span>
+    <h3 class="card-title">4DX — 4 Nguyên Tắc Thực Thi (4 Disciplines of Execution)</h3>
+    <p style="font-size:13px;color:var(--tx-2);line-height:1.65;margin-bottom:12px;">
+      Chris McChesney & Sean Covey. Không phải framework phức tạp — là <strong>4 nguyên tắc tư duy</strong> để từ bất kỳ mục tiêu nào chuyển ra hành động hiệu quả. Đặc biệt thực tế cho SME và team nhỏ.
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="sn sn-o">1</div>
+        <div>
+          <div class="st">Focus on the Wildly Important Goal (WIG)</div>
+          <div class="sd">Chỉ 1–2 mục tiêu tối thượng. "Doanh số 2 tỷ" là WIG. Không làm tất cả — làm 1 thứ quan trọng nhất trước. Mọi nguồn lực tập trung.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn sn-o">2</div>
+        <div>
+          <div class="st">Act on Lead Measures (không chỉ Lag)</div>
+          <div class="sd">Doanh thu là lag measure (biết muộn). Tìm lead measure: VD "Số buổi tư vấn/tuần" hoặc "% hội viên được check-in tháng 2". Đây là những thứ team có thể <em>kiểm soát được</em>.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn sn-o">3</div>
+        <div>
+          <div class="st">Keep a Compelling Scoreboard</div>
+          <div class="sd">Bảng điểm đơn giản, mọi người đều thấy, cập nhật hàng tuần. Hiển thị: lag measure (doanh thu hiện tại) + lead measure (buổi tư vấn tuần này).</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn sn-o">4</div>
+        <div>
+          <div class="st">Create a Cadence of Accountability</div>
+          <div class="sd">Weekly 15-phút WIG meeting: "Tuần qua tôi cam kết X → đạt/không đạt vì Y → tuần này tôi cam kết Z." Không phải báo cáo — là cam kết cá nhân.</div>
+        </div>
+      </div>
+    </div>
+    <div class="insight io" style="margin-top:10px;">
+      <p><strong>Khi nào dùng 4DX:</strong> Khi team đang "chạy trong lốc xoáy" (whirlwind of daily tasks) và cần focus ngay lập tức vào 1 mục tiêu quan trọng nhất. Phù hợp SME, startup, team sales.</p>
+    </div>
+  </div>
+
+  <!-- METHOD 6: Gap Analysis -->
+  <div class="card cv c6">
+    <span class="ov ov-v">Bonus · Công cụ nền tảng trước mọi phương pháp</span>
+    <h3 class="card-title">Gap Analysis + Driver Tree — Tìm Đòn Bẩy Trước Khi Hành Động</h3>
+    <p style="font-size:13px;color:var(--tx-2);line-height:1.65;margin-bottom:12px;">
+      Trước khi dùng bất kỳ framework nào, cần biết: <em>Khoảng cách thực tế là bao nhiêu, và cái gì tạo ra nó?</em> Driver Tree (Revenue Tree) là công cụ phân tích đòn bẩy — bắt buộc.
+    </p>
+    <div style="background:var(--bg-subtle);border-radius:var(--r-sm);padding:12px 14px;border:1px solid var(--border);">
+      <table style="width:100%;font-size:12px;border-collapse:collapse;">
+        <thead>
+          <tr style="border-bottom:1.5px solid var(--border-md);">
+            <th style="text-align:left;padding:5px 8px;color:var(--tx-3);font-size:10px;letter-spacing:.08em;text-transform:uppercase;">Driver</th>
+            <th style="text-align:center;padding:5px 8px;color:var(--tx-3);font-size:10px;">Hiện tại</th>
+            <th style="text-align:center;padding:5px 8px;color:var(--tx-3);font-size:10px;">Target</th>
+            <th style="text-align:center;padding:5px 8px;color:var(--tx-3);font-size:10px;">Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:6px 8px;font-weight:600;color:var(--tx-1);">Leads/tháng</td>
+            <td style="text-align:center;padding:6px 8px;">120</td>
+            <td style="text-align:center;padding:6px 8px;color:var(--em);font-weight:700;">200</td>
+            <td style="text-align:center;padding:6px 8px;"><span class="tag te" style="font-size:10px;">Cao</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:rgba(26,122,80,.04);">
+            <td style="padding:6px 8px;font-weight:600;color:var(--tx-1);">Conversion rate</td>
+            <td style="text-align:center;padding:6px 8px;">18%</td>
+            <td style="text-align:center;padding:6px 8px;color:var(--em);font-weight:700;">25%</td>
+            <td style="text-align:center;padding:6px 8px;"><span class="tag te" style="font-size:10px;">Rất cao</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:6px 8px;font-weight:600;color:var(--tx-1);">AOV (giá TB)</td>
+            <td style="text-align:center;padding:6px 8px;">5.2tr</td>
+            <td style="text-align:center;padding:6px 8px;color:var(--am);font-weight:700;">6.0tr</td>
+            <td style="text-align:center;padding:6px 8px;"><span class="tag ta" style="font-size:10px;">Trung bình</span></td>
+          </tr>
+          <tr>
+            <td style="padding:6px 8px;font-weight:600;color:var(--tx-1);">Retention (3th)</td>
+            <td style="text-align:center;padding:6px 8px;">58%</td>
+            <td style="text-align:center;padding:6px 8px;color:var(--em);font-weight:700;">75%</td>
+            <td style="text-align:center;padding:6px 8px;"><span class="tag te" style="font-size:10px;">Rất cao</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight iv" style="margin-top:10px;">
+      <p>Gap Analysis cho thấy: <strong>Conversion rate và Retention</strong> có impact cao nhất với effort hợp lý nhất → Đây là 2 priority số 1 trước khi làm gì khác. Không có bảng này → chọn hành động theo cảm tính.</p>
+    </div>
+  </div>
+
+</div><!-- /grid II -->
+
+<!-- ═══════ SECTION III: SO SÁNH 5 PHƯƠNG PHÁP ═══════ -->
+<div class="sec so"><span>III · Khi Nào Dùng Phương Pháp Nào?</span></div>
+
+<div class="grid">
+
+  <div class="card c12">
+    <span class="ov ov-o">Comparison Matrix · Adler tổng hợp</span>
+    <h3 class="card-title">5 Phương Pháp — Chọn Cái Phù Hợp Với Ngữ Cảnh</h3>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Phương pháp</th>
+            <th>Câu hỏi giải quyết</th>
+            <th>Chu kỳ</th>
+            <th>Phù hợp nhất</th>
+            <th>Điểm yếu</th>
+            <th>Cascade?</th>
+            <th>SME?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag ta">OGSM</span></td>
+            <td>Chiến lược → Action trên 1 trang</td>
+            <td>1–3 năm</td>
+            <td>Align toàn tổ chức, multinational</td>
+            <td>Không có bottom-up, ít agile</td>
+            <td class="dot-check">✓✓</td>
+            <td class="dot-mid">△</td>
+          </tr>
+          <tr>
+            <td><span class="tag tt">OKR</span></td>
+            <td>Objectives → đo bằng Key Results cụ thể</td>
+            <td>Quarterly</td>
+            <td>Tech, agile, team trẻ, startup</td>
+            <td>Cần kỷ luật cao, không link chiến lược dài hạn tốt</td>
+            <td class="dot-check">✓</td>
+            <td class="dot-check">✓✓</td>
+          </tr>
+          <tr>
+            <td><span class="tag tb">BSC / Strategy Map</span></td>
+            <td>Giải thích chuỗi nhân quả giữa hành động và kết quả</td>
+            <td>Annual → Quarterly</td>
+            <td>Tổ chức trưởng thành, ổn định, regulated</td>
+            <td>Phức tạp, cần tư vấn setup, chậm adapt</td>
+            <td class="dot-check">✓✓</td>
+            <td class="dot-mid">△</td>
+          </tr>
+          <tr>
+            <td><span class="tag te">Hoshin Kanri</span></td>
+            <td>Cascade hành động từ CEO đến frontline</td>
+            <td>Annual + Monthly</td>
+            <td>Franchise, chuỗi, manufacturing, tổ chức nhiều tầng</td>
+            <td>Tốn nhiều thời gian Catchball, yêu cầu Lean culture</td>
+            <td class="dot-check">✓✓✓</td>
+            <td class="dot-mid">△</td>
+          </tr>
+          <tr>
+            <td><span class="tag to">4DX</span></td>
+            <td>Focus vào 1 mục tiêu + tìm lead measures</td>
+            <td>Weekly</td>
+            <td>SME, team sales, khi đang quá tải daily tasks</td>
+            <td>Không đủ cho chiến lược phức tạp, chỉ 1 WIG</td>
+            <td class="dot-no">✗</td>
+            <td class="dot-check">✓✓✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider"></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div style="background:var(--vi-lt);border:1px solid var(--vi-bd);border-radius:var(--r-sm);padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;color:var(--vi);letter-spacing:.08em;margin-bottom:5px;">GỢI Ý: LADYSFIT FRANCHISE</div>
+        <div style="font-size:12.5px;color:var(--tx-1);line-height:1.6;"><strong>Hoshin Kanri</strong> cho HQ → cơ sở. <strong>OGSM</strong> cho từng cơ sở (1 trang, dễ dùng). <strong>4DX</strong> cho Trainer (weekly WIG meeting). Kết hợp 3 tầng.</div>
+      </div>
+      <div style="background:var(--em-lt);border:1px solid var(--em-bd);border-radius:var(--r-sm);padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;color:var(--em);letter-spacing:.08em;margin-bottom:5px;">NGUYÊN TẮC CHỌN</div>
+        <div style="font-size:12.5px;color:var(--tx-1);line-height:1.6;">Bắt đầu với <strong>Revenue Tree</strong> (phân tích đòn bẩy). Sau đó chọn framework dựa trên: quy mô tổ chức, mức độ agile cần thiết, và tầng nào cần alignment.</div>
+      </div>
+      <div style="background:var(--am-lt);border:1px solid var(--am-bd);border-radius:var(--r-sm);padding:12px 14px;">
+        <div style="font-size:10px;font-weight:700;color:var(--am);letter-spacing:.08em;margin-bottom:5px;">NGUYÊN TẮC VỀ SỐ LƯỢNG</div>
+        <div style="font-size:12.5px;color:var(--tx-1);line-height:1.6;">OGSM: tối đa <strong>5 strategies</strong>. OKR: tối đa <strong>3–5 objectives</strong>, mỗi O có 3–5 KR. 4DX: chỉ <strong>1–2 WIG</strong>. Hoshin: tối đa <strong>5 breakthroughs</strong>. Ít hơn = focus hơn = kết quả tốt hơn.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid III -->
+
+<!-- ═══════ SECTION IV: FLOW THỰC HÀNH ═══════ -->
+<div class="sec se"><span>IV · Quy Trình Thực Hành — Từ Mục Tiêu 2 Tỷ Ra Hành Động Hàng Tuần</span></div>
+
+<div class="grid">
+
+  <div class="card c-dark c12" style="min-height:auto;">
+    <span class="ov" style="color:rgba(255,255,255,.5);">End-to-End · 6 bước · Áp dụng cho bất kỳ mục tiêu nào</span>
+    <h3 class="card-title" style="margin-bottom:16px;">Bản đồ hành động: Mục tiêu 2 tỷ → Daily work</h3>
+
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;">
+      <div style="background:rgba(88,86,214,.25);border:1px solid rgba(88,86,214,.4);border-radius:var(--r-sm);padding:12px 10px;text-align:center;">
+        <div style="font-size:22px;margin-bottom:6px;">🔍</div>
+        <div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:4px;">BƯỚC 1</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:4px;">Revenue Tree</div>
+        <div style="font-size:10.5px;color:rgba(255,255,255,.6);line-height:1.5;">Phân rã mục tiêu. Tìm 4 đòn bẩy. Tính impact của từng đòn bẩy.</div>
+      </div>
+      <div style="background:rgba(196,123,0,.2);border:1px solid rgba(196,123,0,.4);border-radius:var(--r-sm);padding:12px 10px;text-align:center;">
+        <div style="font-size:22px;margin-bottom:6px;">📊</div>
+        <div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:4px;">BƯỚC 2</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:4px;">Gap Analysis</div>
+        <div style="font-size:10.5px;color:rgba(255,255,255,.6);line-height:1.5;">Đo gap hiện tại. Xác định 2–3 đòn bẩy ưu tiên cao nhất.</div>
+      </div>
+      <div style="background:rgba(0,113,227,.2);border:1px solid rgba(0,113,227,.4);border-radius:var(--r-sm);padding:12px 10px;text-align:center;">
+        <div style="font-size:22px;margin-bottom:6px;">🗺️</div>
+        <div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:4px;">BƯỚC 3</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:4px;">Chọn Framework</div>
+        <div style="font-size:10.5px;color:rgba(255,255,255,.6);line-height:1.5;">OGSM / OKR / Hoshin / 4DX — tùy ngữ cảnh và quy mô.</div>
+      </div>
+      <div style="background:rgba(26,122,80,.2);border:1px solid rgba(26,122,80,.4);border-radius:var(--r-sm);padding:12px 10px;text-align:center;">
+        <div style="font-size:22px;margin-bottom:6px;">⚡</div>
+        <div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:4px;">BƯỚC 4</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:4px;">Xác định Hành động</div>
+        <div style="font-size:10.5px;color:rgba(255,255,255,.6);line-height:1.5;">Tối đa 5 strategic actions. Mỗi action có owner + deadline + KPI.</div>
+      </div>
+      <div style="background:rgba(0,149,168,.2);border:1px solid rgba(0,149,168,.4);border-radius:var(--r-sm);padding:12px 10px;text-align:center;">
+        <div style="font-size:22px;margin-bottom:6px;">📈</div>
+        <div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:4px;">BƯỚC 5</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:4px;">Lead Measures</div>
+        <div style="font-size:10.5px;color:rgba(255,255,255,.6);line-height:1.5;">Mỗi action có 1–2 lead indicators. Đo tuần, không đợi tháng.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-sm);padding:12px 10px;text-align:center;">
+        <div style="font-size:22px;margin-bottom:6px;">🔄</div>
+        <div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:4px;">BƯỚC 6</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:4px;">Weekly Review</div>
+        <div style="font-size:10.5px;color:rgba(255,255,255,.6);line-height:1.5;">15 phút/tuần: đạt/không đạt → điều chỉnh → cam kết tuần tới.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.10em;margin-bottom:6px;">KEY PRINCIPLE 1</div>
+        <div style="font-size:13px;color:#FAFAFA;line-height:1.6;">Bắt đầu bằng <strong>con số, không phải hành động</strong>. Revenue Tree trước — chọn đòn bẩy sau — mới chọn hành động.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.10em;margin-bottom:6px;">KEY PRINCIPLE 2</div>
+        <div style="font-size:13px;color:#FAFAFA;line-height:1.6;"><strong>Lead measures thay vì chỉ lag measures</strong>. Doanh thu là lag — biết quá muộn. Tìm leading indicator để điều chỉnh sớm.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.10em;margin-bottom:6px;">KEY PRINCIPLE 3</div>
+        <div style="font-size:13px;color:#FAFAFA;line-height:1.6;"><strong>Ít hơn là nhiều hơn</strong>. 3 hành động được thực hiện 100% > 10 hành động bị pha loãng. Chọn theo impact/effort ratio.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid IV -->
+
+<!-- ═══════ SECTION V: MASTERPLAN 3 TẦNG THỰC TẾ ═══════ -->
+<div class="sec se"><span>V · Hệ Thống Masterplan 3 Tầng — Thực Tế Triển Khai</span></div>
+
+<div class="grid">
+
+  <!-- INTRO CARD -->
+  <div class="card ce c12" style="min-height:auto;padding:20px var(--p);">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div style="flex:1;min-width:300px;">
+        <span class="ov ov-e" style="margin-bottom:6px;">Hệ thống Masterplan 3 cấp độ · OGSM + RACI + Hoshin Kanri tích hợp</span>
+        <h3 class="card-title" style="margin-bottom:8px;">Cấu trúc 3 Sheet — Từ Chiến lược đến Cá nhân</h3>
+        <p style="font-size:13.5px;color:var(--tx-2);line-height:1.7;">
+          Hệ thống gồm 3 tầng lồng nhau: <strong>Sheet 1</strong> (Chiến lược công ty → Quarterly) → <strong>Sheet 2</strong> (Mục tiêu bộ phận → Monthly) → <strong>Sheet 3</strong> (Cá nhân → Weekly actions). Mỗi tầng cascade xuống tầng dưới — đúng nguyên lý Z-Deployment của Hoshin Kanri.
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+        <div class="pill" style="background:var(--em-lt);border-color:var(--em-bd);color:var(--em);">✓ Tích hợp OGSM</div>
+        <div class="pill" style="background:var(--vi-lt);border-color:var(--vi-bd);color:var(--vi);">✓ RACI rõ ràng</div>
+        <div class="pill" style="background:var(--am-lt);border-color:var(--am-bd);color:var(--am);">✓ Control + Review</div>
+        <div class="pill" style="background:var(--bl-lt);border-color:var(--bl-bd);color:var(--bl);">✓ Budget tracking</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHEET 1 -->
+  <div class="card ca c12">
+    <span class="ov ov-a">Sheet 1 · Cấp Công Ty · Chu kỳ: Quarterly (Q1 → Q4)</span>
+    <h3 class="card-title">Mục Tiêu Chiến Lược Phòng Tập — Annual Hoshin Level</h3>
+    <p style="font-size:13px;color:var(--tx-2);margin-bottom:16px;line-height:1.65;">
+      Tầng cao nhất: liên kết <strong>Mục tiêu chiến lược công ty</strong> với <strong>Mục tiêu bộ phận</strong> theo từng quý. Đây là X-Matrix được đơn giản hóa thành dạng bảng — phù hợp triển khai thực tế hơn là vẽ sơ đồ trừu tượng.
+    </p>
+
+    <!-- Column structure visual -->
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;min-width:900px;">
+        <thead>
+          <tr>
+            <th colspan="2" style="background:var(--am);color:#fff;padding:8px 12px;text-align:center;font-size:10px;letter-spacing:.08em;border-radius:var(--r-xs) 0 0 0;">WHERE — Ai chịu trách nhiệm</th>
+            <th colspan="3" style="background:var(--tl);color:#fff;padding:8px 12px;text-align:center;font-size:10px;letter-spacing:.08em;">(What) KẾT QUẢ ĐẠT ĐƯỢC</th>
+            <th style="background:var(--vi);color:#fff;padding:8px 12px;text-align:center;font-size:10px;letter-spacing:.08em;">(Why)</th>
+            <th colspan="2" style="background:var(--bl);color:#fff;padding:8px 12px;text-align:center;font-size:10px;letter-spacing:.08em;">WHEN</th>
+            <th colspan="4" style="background:var(--em);color:#fff;padding:8px 12px;text-align:center;font-size:10px;letter-spacing:.08em;">(Who) RACI</th>
+            <th style="background:var(--or);color:#fff;padding:8px 12px;text-align:center;font-size:10px;letter-spacing:.08em;border-radius:0 var(--r-xs) 0 0;">CONTROL</th>
+          </tr>
+          <tr style="background:var(--bg-subtle);">
+            <th style="padding:7px 10px;text-align:left;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">Mục tiêu chiến lược</th>
+            <th style="padding:7px 10px;text-align:left;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">Mục tiêu bộ phận</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">KPIs Output</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">Thực đạt</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">%</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">Mức độ quan trọng</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">Bắt đầu</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">Kết thúc</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">R — Chịu trách nhiệm</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">A — Thực hiện</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">C — Tư vấn</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">I — Thông báo</th>
+            <th style="padding:7px 10px;text-align:center;color:var(--tx-2);font-size:10px;border-bottom:1.5px solid var(--border-md);">P.Pháp KS + Tần suất + Ngân sách</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Q1 header -->
+          <tr>
+            <td colspan="13" style="background:var(--am-lt);padding:7px 12px;font-weight:800;font-size:11px;color:var(--am);letter-spacing:.06em;border-left:3px solid var(--am);">QUÝ 1 — Ví dụ Ladysfit</td>
+          </tr>
+          <tr style="background:rgba(0,0,0,.01);">
+            <td style="padding:8px 10px;font-weight:600;color:var(--tx-1);">Đạt doanh thu 500tr Q1</td>
+            <td style="padding:8px 10px;color:var(--tx-2);">Sales: 50 hội viên mới</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:700;color:var(--em);">50 HV</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-3);">—</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-3);">—</td>
+            <td style="padding:8px 10px;text-align:center;"><span class="tag ta" style="font-size:10px;">Rất quan trọng</span></td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">01/01</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">31/03</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">Sales Manager</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">Sales Team</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">Marketing</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">CEO</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);font-size:11px;">Weekly report · 500tr</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 10px;font-weight:600;color:var(--tx-1);">Retention 75% Q1</td>
+            <td style="padding:8px 10px;color:var(--tx-2);">Ops: Chuẩn hóa onboarding</td>
+            <td style="padding:8px 10px;text-align:center;font-weight:700;color:var(--em);">75% rate</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-3);">—</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-3);">—</td>
+            <td style="padding:8px 10px;text-align:center;"><span class="tag te" style="font-size:10px;">Quan trọng</span></td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">01/01</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">31/03</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">Ops Manager</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">Head Trainer</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">CEO</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);">—</td>
+            <td style="padding:8px 10px;text-align:center;color:var(--tx-2);font-size:11px;">Monthly survey · —</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight ia" style="margin-top:12px;">
+      <p><strong>Cột "Mức độ quan trọng"</strong> chính là cơ chế ưu tiên hóa của OGSM — buộc người điền phải đánh giá Why trước khi cam kết nguồn lực. <strong>RACI 4 cột</strong> loại bỏ mơ hồ về trách nhiệm — đây là điểm mà hầu hết kế hoạch thất bại.</p>
+    </div>
+  </div>
+
+  <!-- SHEET 2 -->
+  <div class="card cb c6">
+    <span class="ov ov-b">Sheet 2 · Cấp Bộ Phận · Chu kỳ: Monthly (Tháng 1 → 12)</span>
+    <h3 class="card-title">Mục Tiêu Quý Của Bộ Phận — Tactical Level</h3>
+    <p style="font-size:13px;color:var(--tx-2);margin-bottom:14px;line-height:1.65;">
+      Tầng trung gian: nhận mục tiêu từ Sheet 1, phân rã thành <strong>"Các hành động quan trọng"</strong> theo từng tháng. Cột How có câu hỏi định hướng rất chuẩn: <em>"Ta phải hoàn thành những hoạt động cụ thể nào để đạt được mục tiêu?"</em>
+    </p>
+
+    <div style="background:var(--bg-subtle);border-radius:var(--r-sm);padding:14px;border:1px solid var(--border);">
+      <div style="font-size:10px;font-weight:700;color:var(--bl);letter-spacing:.08em;margin-bottom:10px;">VÍ DỤ: THÁNG 2 — BỘ PHẬN SALES</div>
+      <div class="steps">
+        <div class="step">
+          <div class="sn sn-b">MT</div>
+          <div><div class="st" style="color:var(--bl);">Mục tiêu bộ phận</div>
+          <div class="sd">Đạt 18 hội viên mới trong tháng 2 (target Q1: 50HV)</div></div>
+        </div>
+        <div class="step">
+          <div class="sn" style="background:var(--bl-lt);color:var(--bl);">H1</div>
+          <div><div class="st">Hành động quan trọng 1</div>
+          <div class="sd">Chạy TikTok Ads 5 ngày/tuần, budget 2tr/tuần → KPI: 80 leads</div></div>
+        </div>
+        <div class="step">
+          <div class="sn" style="background:var(--bl-lt);color:var(--bl);">H2</div>
+          <div><div class="st">Hành động quan trọng 2</div>
+          <div class="sd">Follow-up tất cả leads trong 24h → KPI: Conversion 22%</div></div>
+        </div>
+        <div class="step">
+          <div class="sn" style="background:var(--bl-lt);color:var(--bl);">H3</div>
+          <div><div class="st">Hành động quan trọng 3</div>
+          <div class="sd">Referral program: 5 HV cũ giới thiệu → KPI: 5 leads chất lượng</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p style="font-size:12px;font-weight:700;color:var(--tx-1);margin-bottom:8px;">Điểm mạnh của Sheet 2:</p>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--tx-2);">
+        <span style="color:var(--bl);font-weight:800;flex-shrink:0;">✓</span>
+        <span>Cột <strong>How</strong> là "actions quan trọng" — không phải tasks lặt vặt. Đúng nguyên lý Hoshin: chỉ những hành động thực sự di chuyển needle.</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--tx-2);">
+        <span style="color:var(--bl);font-weight:800;flex-shrink:0;">✓</span>
+        <span>Mỗi action có KPI riêng → đây là <strong>lead measure</strong>, không phải chỉ đo kết quả cuối (doanh thu).</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--tx-2);">
+        <span style="color:var(--bl);font-weight:800;flex-shrink:0;">✓</span>
+        <span>RACI giữ nguyên từ Sheet 1 → <strong>traceability</strong> rõ ràng xuyên suốt 3 tầng.</span>
+      </div>
+    </div>
+    <div class="insight ib" style="margin-top:12px;">
+      <p><strong>Lưu ý quan trọng:</strong> Sheet 2 nên có tối đa <strong>3–5 hành động quan trọng/tháng</strong> cho mỗi bộ phận. Nhiều hơn → mất focus → tất cả đều tầm thường.</p>
+    </div>
+  </div>
+
+  <!-- SHEET 3 -->
+  <div class="card cv c6">
+    <span class="ov ov-v">Sheet 3 · Cấp Cá Nhân · Chu kỳ: Monthly → Weekly tasks</span>
+    <h3 class="card-title">Mục Tiêu Tháng Của Từng Cá Nhân — Action Level</h3>
+    <p style="font-size:13px;color:var(--tx-2);margin-bottom:14px;line-height:1.65;">
+      Tầng thực thi: nhận hành động quan trọng từ Sheet 2, phân rã thành <strong>"Các hành động chi tiết"</strong> mà cá nhân thực hiện hàng tuần. Đây là nơi chiến lược "chạm đất" — biến thành checklist hàng ngày.
+    </p>
+
+    <div style="background:var(--bg-subtle);border-radius:var(--r-sm);padding:14px;border:1px solid var(--border);">
+      <div style="font-size:10px;font-weight:700;color:var(--vi);letter-spacing:.08em;margin-bottom:10px;">VÍ DỤ: THÁNG 2 — SALES STAFF NGUYỄN VĂN A</div>
+      <div class="steps">
+        <div class="step">
+          <div class="sn sn-v">MT</div>
+          <div><div class="st" style="color:var(--vi);">Mục tiêu + Hành động quan trọng</div>
+          <div class="sd">Đóng góp 6 hội viên mới trong tháng 2 (nhận từ Sheet 2: H2 — Follow-up leads 24h)</div></div>
+        </div>
+        <div class="step">
+          <div class="sn" style="background:var(--vi-lt);color:var(--vi);">T1</div>
+          <div><div class="st">Hành động chi tiết 1</div>
+          <div class="sd">Gọi điện/nhắn tin tất cả leads mới trong 24h → Log vào CRM → KPI: 100% leads được contact</div></div>
+        </div>
+        <div class="step">
+          <div class="sn" style="background:var(--vi-lt);color:var(--vi);">T2</div>
+          <div><div class="st">Hành động chi tiết 2</div>
+          <div class="sd">Gửi video tour + offer personalized cho leads chưa trả lời sau 48h</div></div>
+        </div>
+        <div class="step">
+          <div class="sn" style="background:var(--vi-lt);color:var(--vi);">T3</div>
+          <div><div class="st">Hành động chi tiết 3</div>
+          <div class="sd">Review conversion rate mỗi thứ Sáu → báo cáo 1 trang cho Manager</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p style="font-size:12px;font-weight:700;color:var(--tx-1);margin-bottom:8px;">Điểm mạnh của Sheet 3:</p>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--tx-2);">
+        <span style="color:var(--vi);font-weight:800;flex-shrink:0;">✓</span>
+        <span>Cột <strong>"Mục tiêu cá nhân + Hành động quan trọng"</strong> = OKR tự nhiên: Objective từ Sheet 2, Key Results là KPIs cụ thể của cá nhân.</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--tx-2);">
+        <span style="color:var(--vi);font-weight:800;flex-shrink:0;">✓</span>
+        <span>Cột <strong>Chi phí</strong> ở cấp cá nhân giúp track ngân sách micro — phòng tránh overspend ở các hoạt động nhỏ.</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--tx-2);">
+        <span style="color:var(--vi);font-weight:800;flex-shrink:0;">✓</span>
+        <span>Tần suất review cá nhân hóa theo từng người → không phải ai cũng review cùng một nhịp.</span>
+      </div>
+    </div>
+    <div class="insight iv" style="margin-top:12px;">
+      <p><strong>Đây là "Impact Point" của Hoshin Kanri</strong> — nơi chiến lược 2 tỷ được chuyển thành "gọi điện lead trong 24h". Khoảng cách từ CEO đến cá nhân được thu hẹp bằng 3 tầng cascade này.</p>
+    </div>
+  </div>
+
+  <!-- CASCADE VISUAL -->
+  <div class="card c-dark c12" style="min-height:auto;">
+    <span class="ov" style="color:rgba(255,255,255,.5);">Cascade Logic · 3 tầng kết nối</span>
+    <h3 class="card-title" style="margin-bottom:16px;">Chuỗi Kết Nối Từ Chiến Lược → Hành Động Cá Nhân</h3>
+
+    <div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;">
+
+      <!-- Sheet 1 -->
+      <div style="background:rgba(196,123,0,.2);border:1px solid rgba(196,123,0,.35);border-radius:var(--r-sm);padding:16px 14px;">
+        <div style="font-size:10px;font-weight:800;color:#FCD34D;letter-spacing:.10em;margin-bottom:10px;">SHEET 1 · CÔNG TY · QUARTERLY</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:6px;">Mục tiêu chiến lược</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:8px;">"Doanh thu 500tr Q1"</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:6px;">Mục tiêu bộ phận</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.6;">"Sales: 50 hội viên mới"</div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+          <div style="font-size:10px;color:rgba(255,255,255,.4);font-weight:600;letter-spacing:.06em;">KPIs OUTPUT + RACI + BUDGET</div>
+        </div>
+      </div>
+
+      <!-- Arrow 1 -->
+      <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;">
+        <div style="text-align:center;">
+          <div style="font-size:22px;color:rgba(255,255,255,.4);">↓</div>
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:.06em;writing-mode:vertical-lr;text-orientation:mixed;transform:rotate(180deg);margin:4px auto;">Z-DEPLOY</div>
+          <div style="font-size:22px;color:rgba(255,255,255,.4);">↓</div>
+        </div>
+      </div>
+
+      <!-- Sheet 2 -->
+      <div style="background:rgba(0,113,227,.2);border:1px solid rgba(0,113,227,.35);border-radius:var(--r-sm);padding:16px 14px;">
+        <div style="font-size:10px;font-weight:800;color:#93C5FD;letter-spacing:.10em;margin-bottom:10px;">SHEET 2 · BỘ PHẬN · MONTHLY</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:6px;">Mục tiêu bộ phận</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:8px;">"18 HV mới tháng 2"</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:6px;">Hành động quan trọng</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.6;">"Chạy TikTok Ads · Follow-up 24h · Referral program"</div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+          <div style="font-size:10px;color:rgba(255,255,255,.4);font-weight:600;letter-spacing:.06em;">HOW + KPIs + RACI + CHI PHÍ</div>
+        </div>
+      </div>
+
+      <!-- Arrow 2 -->
+      <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;">
+        <div style="text-align:center;">
+          <div style="font-size:22px;color:rgba(255,255,255,.4);">↓</div>
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:.06em;writing-mode:vertical-lr;text-orientation:mixed;transform:rotate(180deg);margin:4px auto;">Z-DEPLOY</div>
+          <div style="font-size:22px;color:rgba(255,255,255,.4);">↓</div>
+        </div>
+      </div>
+
+      <!-- Sheet 3 -->
+      <div style="background:rgba(88,86,214,.2);border:1px solid rgba(88,86,214,.35);border-radius:var(--r-sm);padding:16px 14px;">
+        <div style="font-size:10px;font-weight:800;color:#C4B5FD;letter-spacing:.10em;margin-bottom:10px;">SHEET 3 · CÁ NHÂN · WEEKLY</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:6px;">Mục tiêu + Hành động quan trọng</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:8px;">"Đóng góp 6 HV — Follow-up leads"</div>
+        <div style="font-size:12px;font-weight:700;color:#FAFAFA;margin-bottom:6px;">Hành động chi tiết</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.6;">"Gọi lead trong 24h · Log CRM · Video tour 48h · Review thứ Sáu"</div>
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+          <div style="font-size:10px;color:rgba(255,255,255,.4);font-weight:600;letter-spacing:.06em;">TASKS + KPIs + REVIEW CADENCE</div>
+        </div>
+      </div>
+    </div><!-- /cascade grid -->
+
+    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div style="background:rgba(255,255,255,.05);border-radius:var(--r-sm);padding:11px 12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.08em;margin-bottom:4px;">FRAMEWORKS TÍCH HỢP</div>
+        <div style="font-size:12px;color:#FAFAFA;line-height:1.6;">OGSM (1 trang/tầng) + Hoshin Z-Deploy + RACI + 4DX (lead/lag measures)</div>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border-radius:var(--r-sm);padding:11px 12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.08em;margin-bottom:4px;">NHỊP REVIEW</div>
+        <div style="font-size:12px;color:#FAFAFA;line-height:1.6;">Sheet 1: Monthly review · Sheet 2: Weekly check · Sheet 3: Daily standup hoặc weekly 1:1</div>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border-radius:var(--r-sm);padding:11px 12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.08em;margin-bottom:4px;">ĐIỂM MẠNH</div>
+        <div style="font-size:12px;color:#FAFAFA;line-height:1.6;">Traceability hoàn hảo — đọc ngược từ bất kỳ task nào lên đến mục tiêu công ty. Không có "việc làm không biết để làm gì".</div>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border-radius:var(--r-sm);padding:11px 12px;border:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.08em;margin-bottom:4px;">CẢI THIỆN GỢI Ý</div>
+        <div style="font-size:12px;color:#FAFAFA;line-height:1.6;">Thêm cột "Lead Indicator" riêng biệt bên cạnh KPI Output — phân biệt rõ leading vs lagging measure trong cùng 1 dòng.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid V -->
+
+</div><!-- /page -->
+</body>
+</html>
