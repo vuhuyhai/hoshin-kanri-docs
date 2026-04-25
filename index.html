@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoshin Kanri — Knowledge Hub · Vũ Hải</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&subset=vietnamese&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   LIGHT BENTO — Hoshin Kanri Hub
+   Apple-warm · Clean · Scholarly
+══════════════════════════════════════ */
+:root {
+  --font: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --bg-page:   #F2F2F7;
+  --bg-card:   #FFFFFF;
+  --bg-alt:    #F8F8FC;
+  --bg-subtle: #EFEFF4;
+
+  --tx-1: #1D1D1F;
+  --tx-2: #48484A;
+  --tx-3: #8E8E93;
+
+  --amber:  #C47B00;
+  --amber-lt: #FEF3C7;
+  --amber-md: rgba(196,123,0,.10);
+  --amber-bd: rgba(196,123,0,.22);
+
+  --blue:   #0071E3;
+  --blue-lt: #E3F0FF;
+  --blue-md: rgba(0,113,227,.09);
+  --blue-bd: rgba(0,113,227,.20);
+
+  --violet: #5856D6;
+  --violet-lt: #EBE9FC;
+  --violet-md: rgba(88,86,214,.09);
+  --violet-bd: rgba(88,86,214,.20);
+
+  --emerald: #1A7A50;
+  --emerald-lt: #D1FAE5;
+  --emerald-md: rgba(26,122,80,.09);
+  --emerald-bd: rgba(26,122,80,.20);
+
+  --border: rgba(0,0,0,.08);
+  --border-md: rgba(0,0,0,.12);
+
+  --sh-sm: 0 1px 3px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.06);
+  --sh-lg: 0 8px 28px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.05);
+
+  --r: 20px; --r-in: 13px; --r-sm: 10px; --r-pill: 999px;
+  --gap: 18px; --p: 28px;
+  --spring: cubic-bezier(0.34,1.56,0.64,1);
+  --tx-anim: transform 280ms var(--spring), box-shadow 280ms ease;
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--tx-1);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  background-image: radial-gradient(circle, rgba(0,0,0,.024) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.page { max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px; }
+
+/* ── HEADER ── */
+.site-header { text-align: center; margin-bottom: 60px; }
+
+.ov-hero {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 18px;
+}
+.ov-hero::before,.ov-hero::after {
+  content: ''; width: 28px; height: 1px; background: var(--amber); opacity: .45;
+}
+
+.site-title {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 800; letter-spacing: -.03em; line-height: 1.06;
+  color: var(--tx-1); margin-bottom: 14px;
+}
+.site-title .hi {
+  background: linear-gradient(135deg, var(--amber) 0%, #D97706 50%, var(--violet) 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.site-subtitle {
+  font-size: 16px; line-height: 1.75; color: var(--tx-2);
+  max-width: 520px; margin: 0 auto;
+}
+
+/* ── BENTO GRID ── */
+.grid { display: grid; grid-template-columns: repeat(12,1fr); gap: var(--gap); }
+.g-row { margin-bottom: var(--gap); }
+
+.c3  { grid-column: span 3;  }
+.c4  { grid-column: span 4;  }
+.c5  { grid-column: span 5;  }
+.c6  { grid-column: span 6;  }
+.c7  { grid-column: span 7;  }
+.c8  { grid-column: span 8;  }
+.c12 { grid-column: span 12; }
+.r2  { grid-row: span 2; }
+
+/* ── BASE CARD ── */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--r); border: 1px solid var(--border);
+  box-shadow: var(--sh-sm); padding: var(--p);
+  overflow: hidden; position: relative;
+  display: flex; flex-direction: column;
+  min-height: 190px; transition: var(--tx-anim);
+  text-decoration: none; color: inherit;
+}
+.card.r2 { min-height: 400px; }
+.card:hover { transform: translateY(-3px) scale(1.003); box-shadow: var(--sh-lg); }
+
+/* Tinted cards */
+.ca { background: linear-gradient(145deg,#FFFEF5,#FEF9E7); border-color: var(--amber-bd); }
+.cb { background: linear-gradient(145deg,#F5FAFF,#E8F3FF); border-color: var(--blue-bd); }
+.cv { background: linear-gradient(145deg,#FAFAFF,#F0EFFD); border-color: var(--violet-bd); }
+.ce { background: linear-gradient(145deg,#F2FFF8,#E6F9F0); border-color: var(--emerald-bd); }
+.cp { background: var(--bg-alt); border-color: var(--border); }
+.cd { background: linear-gradient(145deg,#1D1D1F,#2D2D2F); border-color: rgba(255,255,255,.08); color: #FAFAFA; }
+
+/* ── TYPOGRAPHY ── */
+.ov {
+  font-size: 10px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; margin-bottom: 12px; display: block;
+}
+.oa  { color: var(--amber);   }
+.ob  { color: var(--blue);    }
+.ovc { color: var(--violet);  }
+.oe  { color: var(--emerald); }
+.og  { color: var(--tx-3);    }
+
+.title-lg {
+  font-size: clamp(22px,3vw,36px); font-weight: 800;
+  letter-spacing: -.025em; line-height: 1.12; margin-bottom: 12px; color: var(--tx-1);
+}
+.title {
+  font-size: clamp(17px,2.2vw,22px); font-weight: 700;
+  letter-spacing: -.018em; line-height: 1.22; margin-bottom: 10px; color: var(--tx-1);
+}
+.cd .title, .cd .title-lg { color: #FAFAFA; }
+
+.body { font-size: 14px; line-height: 1.75; color: var(--tx-2); flex: 1; }
+.body strong { color: var(--tx-1); font-weight: 600; }
+.cd .body { color: rgba(255,255,255,.68); }
+.cd .body strong { color: #FAFAFA; }
+
+.stat {
+  font-size: clamp(52px,7vw,80px); font-weight: 800;
+  letter-spacing: -.04em; line-height: 1;
+}
+
+/* ── CHIPS ── */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.chip {
+  font-size: 10px; font-weight: 600; padding: 4px 10px;
+  border-radius: var(--r-pill); border: 1px solid var(--border);
+  background: var(--bg-subtle); color: var(--tx-3);
+  white-space: nowrap;
+}
+.chip-a { border-color:var(--amber-bd);  background:var(--amber-md);   color:var(--amber);   }
+.chip-b { border-color:var(--blue-bd);   background:var(--blue-md);    color:var(--blue);    }
+.chip-v { border-color:var(--violet-bd); background:var(--violet-md);  color:var(--violet);  }
+.chip-e { border-color:var(--emerald-bd);background:var(--emerald-md); color:var(--emerald); }
+
+/* ── CTA ── */
+.cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 700; padding: 9px 18px;
+  border-radius: var(--r-sm); text-decoration: none;
+  margin-top: 16px; width: fit-content;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.cta:hover { opacity: .88; transform: translateY(-1px); }
+.cta-a { background: var(--amber);   color: #fff; }
+.cta-b { background: var(--blue);    color: #fff; }
+.cta-e { background: var(--emerald); color: #fff; }
+
+/* ── DIVIDER ── */
+.divider { height: 1px; background: var(--border); margin: 14px 0; }
+
+/* ── SOURCE LIST ── */
+.src-list { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.src-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--tx-2); line-height: 1.5; }
+.src-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); flex-shrink: 0; margin-top: 5px; }
+
+/* ── CONCEPT LIST ── */
+.concept-list { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.concept-item { display: flex; align-items: flex-start; gap: 10px; }
+.c-badge {
+  font-size: 10px; font-weight: 800; padding: 3px 7px;
+  border-radius: var(--r-sm); flex-shrink: 0; white-space: nowrap; margin-top: 1px;
+}
+.c-text { font-size: 13px; color: var(--tx-2); line-height: 1.55; }
+.c-text strong { color: var(--tx-1); }
+
+/* ── FRAMEWORK GRID ── */
+.fw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.fw-item {
+  border-radius: var(--r-sm); padding: 11px 13px;
+  border: 1px solid var(--border); background: var(--bg-subtle);
+}
+.fw-name { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+.fw-desc { font-size: 11px; color: var(--tx-3); line-height: 1.45; }
+
+/* ── STEP LIST ── */
+.step-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.step-item { display: flex; align-items: flex-start; gap: 9px; }
+.s-dot {
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
+}
+.s-text { font-size: 12.5px; color: var(--tx-2); line-height: 1.55; }
+.s-text strong { color: var(--tx-1); }
+
+/* ── META TABLE ── */
+.meta-table { display: flex; flex-direction: column; gap: 7px; margin-top: 10px; }
+.meta-row { display: flex; justify-content: space-between; align-items: flex-start; font-size: 12px; gap: 8px; }
+.meta-label { color: var(--tx-3); flex-shrink: 0; }
+.meta-val { color: var(--tx-1); font-weight: 600; text-align: right; }
+
+/* ── FOOTER ── */
+.site-footer {
+  margin-top: 52px; padding-top: 28px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-brand { font-size: 13px; font-weight: 700; color: var(--tx-3); }
+.footer-brand span { color: var(--amber); }
+.footer-note { font-size: 11px; color: var(--tx-3); letter-spacing: .06em; }
+
+/* ── SCROLL REVEAL ── */
+@supports (animation-timeline: view()) {
+  .card {
+    animation: rv linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 28%;
+  }
+  @keyframes rv {
+    from { opacity: 0; transform: translateY(18px) scale(0.985); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1023px) {
+  .grid { grid-template-columns: repeat(6,1fr); }
+  .c3,.c4 { grid-column: span 3; }
+  .c5,.c6 { grid-column: span 3; }
+  .c7,.c8 { grid-column: span 6; }
+  .c12    { grid-column: span 6; }
+  .r2     { grid-row: span 1; min-height: auto; }
+  .fw-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 767px) {
+  .grid { grid-template-columns: repeat(2,1fr); }
+  .c3,.c4,.c5,.c6 { grid-column: span 1; }
+  .c7,.c8,.c12    { grid-column: span 2; }
+  .fw-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 479px) {
+  .grid { grid-template-columns: 1fr; gap: 14px; }
+  .c3,.c4,.c5,.c6,.c7,.c8,.c12 { grid-column: span 1; }
+  .page { padding: 36px 16px 60px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card,.card:hover { animation: none !important; transition: none !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="ov-hero">Knowledge Hub · Adler Deep Learning · 2025</div>
+    <h1 class="site-title"><span class="hi">Hoshin Kanri</span><br>Knowledge Hub</h1>
+    <p class="site-subtitle">Bộ tài liệu học sâu từ 4 nguồn chính thống — từ định nghĩa gốc đến hệ thống triển khai chiến lược hoàn chỉnh.</p>
+  </header>
+
+  <!-- ═══ ROW 1: HERO + STATS ═══ -->
+  <div class="grid g-row">
+
+    <!-- Hero doc 1 -->
+    <a href="hoshin_kanri_complete.html" class="card ca c8 r2">
+      <span class="ov oa">📚 Volume 01 · Tài liệu chính</span>
+      <h2 class="title-lg">Bản Đồ Kiến Thức<br>Hoàn Chỉnh</h2>
+      <p class="body">Toàn bộ hệ thống Hoshin Kanri trên <strong>13 sections</strong> — từ định nghĩa gốc Nhật ngữ, 6 công cụ SCAN, X-Matrix anatomy, 6 loại A3 Report chính thống của Toyota đến Z-Deployment, Cascading Teams 4 tầng và Hoshin Kanri Forest.</p>
+      <div class="chips">
+        <span class="chip chip-a">SCAN · 6 Tools</span>
+        <span class="chip chip-a">Strategic Intent</span>
+        <span class="chip chip-a">X-Matrix</span>
+        <span class="chip chip-a">A3 · 6 Loại</span>
+        <span class="chip chip-a">Z-Deployment</span>
+        <span class="chip chip-a">Catchball</span>
+        <span class="chip chip-a">Kaikaku & Kaizen</span>
+        <span class="chip chip-a">Hoshin Forest</span>
+      </div>
+      <span class="cta cta-a">Mở tài liệu →</span>
+    </a>
+
+    <!-- Stat: 4 sources -->
+    <div class="card cp c4">
+      <span class="ov og">Nguồn · Syntopical Reading</span>
+      <div class="stat" style="color:var(--amber);">4</div>
+      <p class="body" style="margin-top:8px;flex:0 0 auto;">Sách chuyên khảo được đọc song song</p>
+      <div class="divider"></div>
+      <div class="src-list">
+        <div class="src-item"><div class="src-dot"></div>Kesterson — Basics of Hoshin Kanri (2015)</div>
+        <div class="src-item"><div class="src-dot"></div>Vinardi — Business Strategy with Hoshin Kanri (2023)</div>
+        <div class="src-item"><div class="src-dot"></div>Jackson — Hoshin Kanri for the Lean Enterprise (2006)</div>
+        <div class="src-item"><div class="src-dot"></div>Villalba-Diez — The Hoshin Kanri Forest (2017)</div>
+      </div>
+    </div>
+
+    <!-- Stat: 13 sections -->
+    <div class="card cp c4" style="min-height:auto;">
+      <span class="ov og">Tổng cộng</span>
+      <div class="stat" style="color:var(--violet);">13</div>
+      <p class="body" style="margin-top:8px;">Sections trong tài liệu chính — từ Định nghĩa gốc đến Kết nối hệ thống</p>
+    </div>
+
+  </div><!-- /row 1 -->
+
+  <!-- ═══ ROW 2: DOC 2 + DOC 3 ═══ -->
+  <div class="grid g-row">
+
+    <!-- Doc 2 -->
+    <a href="strategy_to_action.html" class="card cb c6">
+      <span class="ov ob">📋 Volume 02 · Execution Guide</span>
+      <h2 class="title">Từ Mục Tiêu Ra Hành Động</h2>
+      <p class="body">5 phương pháp chuyển mục tiêu thành action cụ thể. Ví dụ thực tế: <strong>mục tiêu doanh số 2 tỷ</strong> — Revenue Tree, Gap Analysis, OGSM, OKR, 4DX và Masterplan 3 tầng.</p>
+      <div class="chips">
+        <span class="chip chip-b">Revenue Tree</span>
+        <span class="chip chip-b">Gap Analysis</span>
+        <span class="chip chip-b">OGSM</span>
+        <span class="chip chip-b">OKR</span>
+        <span class="chip chip-b">4DX</span>
+        <span class="chip chip-b">BSC</span>
+        <span class="chip chip-b">Masterplan 3 tầng</span>
+      </div>
+      <span class="cta cta-b">Mở tài liệu →</span>
+    </a>
+
+    <!-- Doc 3 -->
+    <a href="hoshin_do_execution.html" class="card ce c6">
+      <span class="ov oe">⚡ Volume 03 · DO Phase Deep Dive</span>
+      <h2 class="title">Giai Đoạn DO & Execution</h2>
+      <p class="body">MBO vs Hoshin Kanri, Z-Deployment 3 cấp, 4 tầng Cascading Teams, 5 vòng Catchball, Masterplan chi tiết và cơ chế Kaikaku + Kaizen song song với KPI Tree.</p>
+      <div class="chips">
+        <span class="chip chip-e">MBO vs Hoshin</span>
+        <span class="chip chip-e">Z-Deployment</span>
+        <span class="chip chip-e">4 Tầng Teams</span>
+        <span class="chip chip-e">Catchball 5 vòng</span>
+        <span class="chip chip-e">KPI Tree</span>
+        <span class="chip chip-e">Kaikaku</span>
+      </div>
+      <span class="cta cta-e">Mở tài liệu →</span>
+    </a>
+
+  </div><!-- /row 2 -->
+
+  <!-- ═══ ROW 3: FRAMEWORKS + PDCA + CONTEXT ═══ -->
+  <div class="grid">
+
+    <!-- Frameworks — 5 cols -->
+    <div class="card cv c5">
+      <span class="ov ovc">5 Frameworks thực thi chiến lược</span>
+      <h3 class="title" style="font-size:17px;margin-bottom:12px;">Chọn phương pháp phù hợp ngữ cảnh</h3>
+      <div class="fw-grid">
+        <div class="fw-item">
+          <div class="fw-name" style="color:var(--amber);">OGSM</div>
+          <div class="fw-desc">1 trang · Align toàn tổ chức · P&G · Coca-Cola</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-name" style="color:var(--blue);">OKR</div>
+          <div class="fw-desc">Quarterly · Bottom-up · Google · Spotify</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-name" style="color:var(--violet);">BSC</div>
+          <div class="fw-desc">4 perspectives · Nhân quả · Kaplan & Norton</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-name" style="color:var(--emerald);">4DX</div>
+          <div class="fw-desc">WIG + Lead measures · SME · FranklinCovey</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:12px;color:var(--tx-3);line-height:1.6;">Hoshin Kanri cascade <em>hành động</em> — không phải mục tiêu — qua Z-Deployment. Đây là điểm vượt trội so với MBO và BSC.</p>
+    </div>
+
+    <!-- PDCA — 4 cols -->
+    <div class="card cp c4">
+      <span class="ov og">Chu trình · 5 bước</span>
+      <div class="stat" style="color:var(--emerald);font-size:60px;">5</div>
+      <div class="divider" style="margin:12px 0;"></div>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="s-dot" style="background:var(--amber-lt);color:var(--amber);">S</div>
+          <div class="s-text"><strong>SCAN</strong> — 6 công cụ phân tích môi trường</div>
+        </div>
+        <div class="step-item">
+          <div class="s-dot" style="background:var(--blue-lt);color:var(--blue);">P</div>
+          <div class="s-text"><strong>PLAN</strong> — X-Matrix + Catchball alignment</div>
+        </div>
+        <div class="step-item">
+          <div class="s-dot" style="background:var(--emerald-lt);color:var(--emerald);">D</div>
+          <div class="s-text"><strong>DO</strong> — Z-Deploy + Kaikaku teams</div>
+        </div>
+        <div class="step-item">
+          <div class="s-dot" style="background:var(--violet-lt);color:var(--violet);">C</div>
+          <div class="s-text"><strong>CHECK</strong> — A3-SR + Bowling Chart</div>
+        </div>
+        <div class="step-item">
+          <div class="s-dot" style="background:var(--amber-lt);color:var(--amber);">A</div>
+          <div class="s-text"><strong>ACT</strong> — Kaizen + Standardize</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Context — 3 cols -->
+    <div class="card cd c3">
+      <span class="ov og">Context</span>
+      <p style="font-size:13px;color:rgba(255,255,255,.68);line-height:1.65;margin-bottom:14px;">
+        Tổng hợp theo phương pháp <strong style="color:#FAFAFA;">Syntopical Reading</strong> của Adler — đọc song song 4 nguồn, so sánh điểm đồng thuận và bất đồng giữa tác giả.
+      </p>
+      <div class="divider" style="background:rgba(255,255,255,.10);"></div>
+      <div class="meta-table">
+        <div class="meta-row">
+          <span class="meta-label">Người tổng hợp</span>
+          <span class="meta-val" style="color:#FAFAFA;">Vũ Hải</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Phương pháp</span>
+          <span class="meta-val" style="color:var(--amber);">Adler Deep Learning</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Ứng dụng</span>
+          <span class="meta-val" style="color:#FAFAFA;">Ladysfit Franchise</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Năm</span>
+          <span class="meta-val" style="color:#FAFAFA;">2025</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /row 3 -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-brand"><span>Hoshin Kanri</span> Knowledge Hub</div>
+    <div class="footer-note">Adler Deep Learning · Syntopical Reading · Vũ Hải 2025</div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>
